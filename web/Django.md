@@ -1,8 +1,4 @@
----
-title: Django
-date: 2018-1-31 22:10:29
-categories: [web]
----
+
 
 
 <!-- TOC -->

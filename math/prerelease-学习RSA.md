@@ -1,8 +1,3 @@
----
-title: 学习RSA
-date: 2018-01-02 14:15:28
-categories: [math]
----
 
 
 <!-- TOC -->

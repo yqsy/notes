@@ -1,8 +1,4 @@
----
-title: shell
-date: 2017-11-03 21:41:00
-categories: [linux, 系统管理]
----
+
 
 <!-- TOC -->
 

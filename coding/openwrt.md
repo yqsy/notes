@@ -1,8 +1,4 @@
----
-title: openwrt
-date: 2018-2-15 22:20:43
-categories: [coding]
----
+
 
 <!-- TOC -->
 

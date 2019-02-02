@@ -1,8 +1,3 @@
----
-title: ocr
-date: 2017-12-10 20:32:14
-categories: [other]
----
 
 
 <!-- TOC -->

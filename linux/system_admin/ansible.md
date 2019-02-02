@@ -1,8 +1,4 @@
----
-title: ansible
-date: 2018-1-30 23:56:06
-categories: [linux, 系统管理]
----
+
 <!-- TOC -->
 
 - [1. 资源](#1-资源)

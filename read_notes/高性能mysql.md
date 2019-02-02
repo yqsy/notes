@@ -1,8 +1,4 @@
----
-title: 高性能mysql
-date: 2017-12-3 15:52:21
-categories: [读书笔记]
----
+
 
 <!-- TOC -->
 

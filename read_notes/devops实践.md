@@ -1,8 +1,3 @@
----
-title: devops实践
-date: 2017-12-3 15:33:54
-categories: [读书笔记]
----
 
 
 <!-- TOC -->

@@ -1,8 +1,3 @@
----
-title: 共识算法
-date: 2018-07-09 17:57:25
-categories: [business]
----
 
 
 <!-- TOC -->

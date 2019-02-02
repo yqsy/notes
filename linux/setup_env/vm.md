@@ -1,8 +1,4 @@
----
-title: vm
-date: 2018-02-01 13:29:12
-categories: [linux, 搭建环境]
----
+
 
 <!-- TOC -->
 

@@ -1,8 +1,4 @@
----
-title: c++numbersuffix
-date: 2018-10-15 01:58:21
-categories: [编程语言]
----
+
 
 <!-- TOC -->
 

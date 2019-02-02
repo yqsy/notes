@@ -1,8 +1,4 @@
----
-title: mysql必知必会
-date: 2017-12-3 15:21:54
-categories: [读书笔记]
----
+
 
 <!-- TOC -->
 

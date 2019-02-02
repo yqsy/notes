@@ -1,8 +1,4 @@
----
-title: cuckoocycle
-date: 2018-10-26 14:15:28
-categories: [math]
----
+
 
 <!-- TOC -->
 

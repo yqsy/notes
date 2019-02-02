@@ -1,8 +1,3 @@
----
-title: c++ singleton
-date: 2017-11-08 22:58:21
-categories: [编程语言]
----
 
 <!-- TOC -->
 

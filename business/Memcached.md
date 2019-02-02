@@ -1,8 +1,3 @@
----
-title: Memcached
-date: 2018-5-10 22:41:03
-categories: [项目分析]
----
 
 <!-- TOC -->
 

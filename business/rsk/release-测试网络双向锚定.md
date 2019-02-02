@@ -1,8 +1,3 @@
----
-title: 双向锚定
-date: 2018-09-06 10:33:42
-categories: [business, rsk]
----
 
 
 <!-- TOC -->

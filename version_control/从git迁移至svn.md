@@ -1,8 +1,3 @@
----
-title: 从git迁移至svn
-date: 2018-01-01 15:10:36
-categories: [版本管理]
----
 
 <!-- TOC -->
 

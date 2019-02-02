@@ -1,8 +1,4 @@
----
-title: nSequence双向支付通道
-date: 2018-02-01 13:29:12
-categories: [business, bitcoin]
----
+
 
 <!-- TOC -->
 

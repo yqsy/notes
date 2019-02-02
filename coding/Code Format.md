@@ -1,8 +1,4 @@
----
-title: Code Format
-date: 2017-11-19 15:20:00
-categories: [coding]
----
+
 
 <!-- TOC -->
 

@@ -1,8 +1,3 @@
----
-title: haproxy
-date: 2018-2-17 23:23:46
-categories: [微服务]
----
 
 
 <!-- TOC -->

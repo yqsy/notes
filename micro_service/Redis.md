@@ -1,8 +1,3 @@
----
-title: Redis
-date: 2018-1-13 20:10:40
-categories: [微服务]
----
 
 <!-- TOC -->
 

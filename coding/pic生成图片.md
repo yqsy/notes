@@ -1,8 +1,3 @@
----
-title: pic生成图片
-date: 2017-12-12 07:35:15
-categories: [coding]
----
 
 <!-- TOC -->
 

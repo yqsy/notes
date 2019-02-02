@@ -1,8 +1,4 @@
----
-title: Domains
-date: 2017-12-10 12:03:28
-categories: [coding]
----
+
 
 <!-- TOC -->
 

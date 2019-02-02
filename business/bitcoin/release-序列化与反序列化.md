@@ -1,8 +1,4 @@
----
-title: 序列化与反序列化
-date: 2018-02-01 13:29:12
-categories: [business, bitcoin]
----
+
 
 <!-- TOC -->
 

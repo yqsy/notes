@@ -1,8 +1,3 @@
----
-title: nLockTime时间锁交易
-date: 2018-02-01 13:29:12
-categories: [business, bitcoin]
----
 
 <!-- TOC -->
 

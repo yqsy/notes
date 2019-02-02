@@ -1,8 +1,4 @@
----
-title: 货币的供应
-date: 2018-02-01 13:29:12
-categories: [business, bitcoin]
----
+
 
 <!-- TOC -->
 

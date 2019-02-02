@@ -1,8 +1,3 @@
----
-title: ipfs
-date: 2018-07-13 13:11:45
-categories: [business]
----
 
 
 <!-- TOC -->

@@ -1,8 +1,4 @@
----
-title: 创世奖励无法被花费
-date: 2018-02-01 13:29:12
-categories: [business, bitcoin]
----
+
 
 <!-- TOC -->
 
