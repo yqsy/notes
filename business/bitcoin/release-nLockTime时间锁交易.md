@@ -424,8 +424,8 @@ python脚本:
 <a id="markdown-6-交易数据" name="6-交易数据"></a>
 # 6. 交易数据
 
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/nLockTime (nLockTime)
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/cltv_freezefund  (场景四 冻结资金实践)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/nLockTime (nLockTime)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/cltv_freezefund  (场景四 冻结资金实践)
 
 <a id="markdown-7-参考资料" name="7-参考资料"></a>
 # 7. 参考资料

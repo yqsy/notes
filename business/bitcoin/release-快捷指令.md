@@ -21,7 +21,7 @@ categories: [business, bitcoin]
 # 2. 将命令行放到zshrc
 
 ```bash
-wget -O ~/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/bitcoincmd.rc
+wget -O ~/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoincmd.rc
 
 cat >> ~/.zshrc << EOF
 source ~/.bitcoincmd.rc

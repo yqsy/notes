@@ -62,7 +62,7 @@ CTransactionSignatureSerializer
 
 我们尝试做一笔引用1笔输出的交易,`花费区块1的奖励,在102块区块中输出到新的地址`:
 
-https://github.com/yqsy/yqsy.notes/tree/master/source/_posts/business/bitcoin/debug/spendheight1
+https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/debug/spendheight1
 
 
 提取相关hash的代码: 
@@ -85,7 +85,7 @@ return ss.GetHash();
 
 我们尝试做一笔引用2笔输出的交易,`花费区块1 & 2的奖励,在103块区块中输出到新的地址,并且有找零`:
 
-https://github.com/yqsy/yqsy.notes/tree/master/source/_posts/business/bitcoin/debug/spendheight2
+https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/debug/spendheight2
 
 
 ![](./pic/p2pkh_2in_sign.png)
@@ -100,7 +100,7 @@ https://github.com/yqsy/yqsy.notes/tree/master/source/_posts/business/bitcoin/de
 
 我们尝试做一笔引用一笔隔离见证输出的交易,花费区块1的见面管理,在101区块中输出到新的地址:
 
-https://github.com/yqsy/yqsy.notes/tree/master/source/_posts/business/bitcoin/debug/spendsegwitheight1
+https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/debug/spendsegwitheight1
 
 ![](./pic/p2wpkh_sign.png)
 

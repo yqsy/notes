@@ -130,7 +130,7 @@ class BlockHeader:
 
 详细源码:  
 
-* https://github.com/yqsy/yqsy.notes/blob/master/source/_posts/business/bitcoin/py/loadblock.py
+* https://github.com/yqsy/notes/blob/master/business/bitcoin/py/loadblock.py
 
 因为索引是存储在leveldb中的,所以需要安装`pyvel支持库`
 ```bash

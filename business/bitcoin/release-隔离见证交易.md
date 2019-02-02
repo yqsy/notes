@@ -539,10 +539,10 @@ bhtx 102 2
 <a id="markdown-6-交易数据" name="6-交易数据"></a>
 # 6. 交易数据
 
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/P2WPKH (P2WPKH)
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/P2WSH  (P2WSH)
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/P2SH (P2SH-P2WPKH)
-* https://raw.githubusercontent.com/yqsy/yqsy.notes/master/source/_posts/business/bitcoin/script/RETURN (P2SH-P2WSH)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/P2WPKH (P2WPKH)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/P2WSH  (P2WSH)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/P2SH-P2WPKH (P2SH-P2WPKH)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/P2SH-P2WSH (P2SH-P2WSH)
 
 <a id="markdown-7-参考资料" name="7-参考资料"></a>
 # 7. 参考资料
