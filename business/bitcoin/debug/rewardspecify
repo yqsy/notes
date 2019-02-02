@@ -1,0 +1,18 @@
+# 奖励到指定地址
+
+
+# 获得coinbase的地址
+COINBASEEC=`bx seed | bx ec-new`
+COINBASEECADDRESS_INFO=`parse_privkey $COINBASEEC`
+
+# 提取P2PKH地址
+COINBASECP2PKHADDR=`echo $COINBASEECADDRESS_INFO | sed -n 13p | awk '{print $2}'`
+
+bitcoin-cli generatetoaddress 101 $COINBASECP2PKHADDR
+
+# 提取私钥并导入到钱包
+COINBASEPRIKEYWIF=`echo $COINBASEECADDRESS_INFO | sed -n 10p | awk '{print $2}'`
+bitcoin-cli importprivkey $COINBASEPRIKEYWIF
+
+# 查询余额
+bitcoin-cli getbalance

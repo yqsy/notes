@@ -1,0 +1,92 @@
+# 锁定
+
+{
+  "txid": "79d7b818b6e1a99e2bbdb51263c3d552a25af19f35a1857faf174c0651e5243c",
+  "hash": "79d7b818b6e1a99e2bbdb51263c3d552a25af19f35a1857faf174c0651e5243c",
+  "version": 2,
+  "size": 189,
+  "vsize": 189,
+  "weight": 756,
+  "locktime": 101,
+  "vin": [
+    {
+      "txid": "107b310b43a84e40de60f870a52f97129200312d61ef5189e84d1dea313e614c",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304402200c58aabc0383061f93a9028902f745dbf751bf8f25d7c8b80ae1682e0a9dff4c022068a4abdf0e5bbe450798ac16de2f937c67134838a6edd0f8253f3bddaa56e484[ALL] 023908ead084840b8a67307025837548d44e65a59fb528263c263d1fa5e1782a4d",
+        "hex": "47304402200c58aabc0383061f93a9028902f745dbf751bf8f25d7c8b80ae1682e0a9dff4c022068a4abdf0e5bbe450798ac16de2f937c67134838a6edd0f8253f3bddaa56e4840121023908ead084840b8a67307025837548d44e65a59fb528263c263d1fa5e1782a4d"
+      },
+      "sequence": 4294967294
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99996220,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_HASH160 54962354b2a5c22198a30e1bb2241eff3e7cc039 OP_EQUAL",
+        "hex": "a91454962354b2a5c22198a30e1bb2241eff3e7cc03987",
+        "reqSigs": 1,
+        "type": "scripthash",
+        "addresses": [
+          "39QGYRrmYXM3pLD6xAEoQiyiA1Gd4uZ2j1"
+        ]
+      }
+    }
+  ]
+}
+
+
+# 见证
+
+{
+  "txid": "60c7804e1373055030713b806bbead921990fddf5fe87fd7ab0e1902ae239eb6",
+  "hash": "60c7804e1373055030713b806bbead921990fddf5fe87fd7ab0e1902ae239eb6",
+  "version": 1,
+  "size": 239,
+  "vsize": 239,
+  "weight": 956,
+  "locktime": 300,
+  "vin": [
+    {
+      "txid": "79d7b818b6e1a99e2bbdb51263c3d552a25af19f35a1857faf174c0651e5243c",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304502210093fffc2c51a8754f329f548dabbb57731bcb7c6595cd80106af5020e04fb73d702205ea66469334e698ca9a4456dad9a952bbbad5a5ac2c6ba183646a80f70e36c30[ALL] 0 632103aa9f9253b5e8ce3f23bef805e035c9268a1157ba3d52ca0468ca3ebae3a5aea3ad67022c01b1756821030c080a2e82c342172d5e8845877e8a576cfd5ce2117e78bb15574a39dd00e58eac",
+        "hex": "48304502210093fffc2c51a8754f329f548dabbb57731bcb7c6595cd80106af5020e04fb73d702205ea66469334e698ca9a4456dad9a952bbbad5a5ac2c6ba183646a80f70e36c3001004c4e632103aa9f9253b5e8ce3f23bef805e035c9268a1157ba3d52ca0468ca3ebae3a5aea3ad67022c01b1756821030c080a2e82c342172d5e8845877e8a576cfd5ce2117e78bb15574a39dd00e58eac"
+      },
+      "sequence": 2147483648
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 600682ebd83c160b24d908752dbe52d1b2413b5c OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a914600682ebd83c160b24d908752dbe52d1b2413b5c88ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "19kjfqWzcujpK4SgyuSv6Lk9SfVwrV4hDt"
+        ]
+      }
+    }
+  ]
+}
+
+# 解析一下见证脚本
+
+checksig
+[030c080a2e82c342172d5e8845877e8a576cfd5ce2117e78bb15574a39dd00e58e]
+endif
+drop
+checklocktimeverify
+[2c01]
+else
+checksigverify
+[03aa9f9253b5e8ce3f23bef805e035c9268a1157ba3d52ca0468ca3ebae3a5aea3]
+if
+
+zero
+<sig>

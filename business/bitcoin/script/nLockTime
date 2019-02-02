@@ -1,0 +1,36 @@
+# 锁定 (在2000区块时方可广播,2001区块打包)
+{
+  "txid": "4af28102dc261a731970d1b98e6012f7d64c9435e3b1520032d10300b058a38b",
+  "hash": "4af28102dc261a731970d1b98e6012f7d64c9435e3b1520032d10300b058a38b",
+  "version": 2,
+  "size": 191,
+  "vsize": 191,
+  "weight": 764,
+  "locktime": 2000,
+  "vin": [
+    {
+      "txid": "0993320fc6c82c7781743075c5965b24c1bb00ffb129c56e120a62626185175a",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304402207813fa17f187cbafe9ffa8bdaafb465b30ff161ebf33e1860e2fe96076dbf5cc02205d2e7f18ed452147a0132c92f2eb21af51634d6d985360f615dc8f7f9297d857[ALL] 027b2ca6f4d01feb4afcd3f62442e99bcaa1f57e4424d3f80519538dff79fb9d5f",
+        "hex": "47304402207813fa17f187cbafe9ffa8bdaafb465b30ff161ebf33e1860e2fe96076dbf5cc02205d2e7f18ed452147a0132c92f2eb21af51634d6d985360f615dc8f7f9297d8570121027b2ca6f4d01feb4afcd3f62442e99bcaa1f57e4424d3f80519538dff79fb9d5f"
+      },
+      "sequence": 4294967294
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 b1b65ae84da128996a6ee797cce35d86891ed144 OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a914b1b65ae84da128996a6ee797cce35d86891ed14488ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "1HCf4D7vZgftwfVQUGCVEdo7EDGHMemWV1"
+        ]
+      }
+    }
+  ]
+}

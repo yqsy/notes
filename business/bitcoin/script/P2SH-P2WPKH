@@ -1,0 +1,82 @@
+# 锁定
+
+{
+  "txid": "1ca159a197940bb7c105bc2e02fab492b34fec5bd45b1f0f2042714936f2a804",
+  "hash": "1ca159a197940bb7c105bc2e02fab492b34fec5bd45b1f0f2042714936f2a804",
+  "version": 2,
+  "size": 189,
+  "vsize": 189,
+  "weight": 756,
+  "locktime": 101,
+  "vin": [
+    {
+      "txid": "1204c7153344c9dc16b9d6ac3b65b3a0c1dc66f58d070799bf9b3a059f14833e",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304402204133042ff60a4b113d9475f85dbced8fa7ea704bb993cc3cf4cbe8d22bfb5ba702202b0194b09d192bf255225e54cf0ff89fa39ed39e666af9db882043f6794b3437[ALL] 024f71218000528ce31ccaaf9378a3bc077fd4a510966b7ed30ddd94b593c6a1cb",
+        "hex": "47304402204133042ff60a4b113d9475f85dbced8fa7ea704bb993cc3cf4cbe8d22bfb5ba702202b0194b09d192bf255225e54cf0ff89fa39ed39e666af9db882043f6794b34370121024f71218000528ce31ccaaf9378a3bc077fd4a510966b7ed30ddd94b593c6a1cb"
+      },
+      "sequence": 4294967294
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99996220,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_HASH160 5f57eca4e4556b66d6e67e804cc81d78e1082523 OP_EQUAL",
+        "hex": "a9145f57eca4e4556b66d6e67e804cc81d78e108252387",
+        "reqSigs": 1,
+        "type": "scripthash",
+        "addresses": [
+          "3AP9Srv7g3hZsgq1AQDyejGjmqkXvSSo5b"
+        ]
+      }
+    }
+  ]
+}
+
+
+
+# 见证
+
+{
+  "txid": "a53ba890fd2b2c30909f49171a87d14f5b89c776476336c9df8a422af08cd854",
+  "hash": "953c350a007446a16893314dc011c4dff6facd135049ffb77d02ab3c1ae13892",
+  "version": 2,
+  "size": 217,
+  "vsize": 136,
+  "weight": 541,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "1ca159a197940bb7c105bc2e02fab492b34fec5bd45b1f0f2042714936f2a804",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "001468f209d6c9b6a3641e8c2e463a35948b75ba80e6",
+        "hex": "16001468f209d6c9b6a3641e8c2e463a35948b75ba80e6"
+      },
+      "txinwitness": [
+        "304402201c0df99a00e30591539687db067035ab7f7c7f97e5559ae5fd2516eca0fabcd602206e8d127fcbd34defd8487ae01c55f6c3b411831b3cbb4be475081b7ddbf941a401",
+        "031c3b655aaa8ff1286e7c6c273c4e2eef32cf5f6a84a6122fbfccb26362ae4384"
+      ],
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 8aaea8d45f4067bacb8fd16ecb482f19bba8b09c OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a9148aaea8d45f4067bacb8fd16ecb482f19bba8b09c88ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "1DeHV2YzVEkSaHetjR6vinfhsqXxNxj1VP"
+        ]
+      }
+    }
+  ]
+}
+

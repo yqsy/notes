@@ -1,0 +1,94 @@
+# 锁定
+
+{
+  "txid": "d2ba0bcb95508639e93c27bd5ccdc62c962939b7a915beedb3d6a90c6f08f2a6",
+  "hash": "d2ba0bcb95508639e93c27bd5ccdc62c962939b7a915beedb3d6a90c6f08f2a6",
+  "version": 2,
+  "size": 189,
+  "vsize": 189,
+  "weight": 756,
+  "locktime": 101,
+  "vin": [
+    {
+      "txid": "c375cf53cd9a1b8aa4b6c1bda002ad7cb9b0a39ed229d94759a1b63edc5b308d",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304402206bc3ef1f74db09c33f8dd41440b035303b03dd1b02c76266a2faac7f33f4e608022032b720a220f5d135d5feba0f8822c106495fa508b6a64c94cab3ec3641e5c277[ALL] 029a9a47d41162f969f0909fdfd4f120dd9709721ce7c79fa68efefe3cffc61d69",
+        "hex": "47304402206bc3ef1f74db09c33f8dd41440b035303b03dd1b02c76266a2faac7f33f4e608022032b720a220f5d135d5feba0f8822c106495fa508b6a64c94cab3ec3641e5c2770121029a9a47d41162f969f0909fdfd4f120dd9709721ce7c79fa68efefe3cffc61d69"
+      },
+      "sequence": 4294967294
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99996220,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_HASH160 8b2ef0d1f81c95ed60740e5f93b734b9f9548035 OP_EQUAL",
+        "hex": "a9148b2ef0d1f81c95ed60740e5f93b734b9f954803587",
+        "reqSigs": 1,
+        "type": "scripthash",
+        "addresses": [
+          "3ENx5hsSQKUkhfYCjtSL3PC5vkF6yTpaAL"
+        ]
+      }
+    }
+  ]
+}
+
+
+# 见证
+
+{
+  "txid": "1cd1462443bf4ca959b3e3bd21db1974f22ea15bff50d6146a052b8cda49da2f",
+  "hash": "a4d92ad52074b5fedc23e1519f3e0d3720c8ca339a88018cd6d60c472160c4ec",
+  "version": 2,
+  "size": 374,
+  "vsize": 184,
+  "weight": 734,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "d2ba0bcb95508639e93c27bd5ccdc62c962939b7a915beedb3d6a90c6f08f2a6",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "0020901bc15c08be56a2eaec335318c89274c28c0bf832c0974cb24eeee0ba33eae1",
+        "hex": "220020901bc15c08be56a2eaec335318c89274c28c0bf832c0974cb24eeee0ba33eae1"
+      },
+      "txinwitness": [
+        "",
+        "3044022045a91192e845abfc4d6ff8e216bedbcb7d2e32b5de7b610c2cb0de0dbe1c3e4202201fd69887b51e569d6d1218e0a57508ec002a0567990ea9117431a28b8c1c8ca501",
+        "304402202c3927b22078776cd5c2f5d20c85ba73d17fae9db9ca1b5b3563207461eec8bb02205380b7bd6b5d87d3ab0fc3132ab19daffb62d7b42b876f1a9c236705fa506c5601",
+        "5221026cc0a4c036ef08f557f2b3e3c577391d1669e6187bbc470c7705d374fd7d9218210328c39cd902990880591856c4a98313c3042a8a86dcd67005e0c8e0730dd99d8e210235413240f4d53c7c74be65bc84e28753be4e726ce464bf56af294921b49125e253ae"
+      ],
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 fea610bb14c11af260a67ed211eb00bda736ae8a OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a914fea610bb14c11af260a67ed211eb00bda736ae8a88ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "1QDTa9b32tfS5woeVzkr2GUxTAaPLewGra"
+        ]
+      }
+    }
+  ]
+}
+
+# 解析一下见证脚本
+
+checkmultisig
+3
+[0235413240f4d53c7c74be65bc84e28753be4e726ce464bf56af294921b49125e2]
+[0328c39cd902990880591856c4a98313c3042a8a86dcd67005e0c8e0730dd99d8e]
+[026cc0a4c036ef08f557f2b3e3c577391d1669e6187bbc470c7705d374fd7d9218]
+2
+
+304402202c3927b22078776cd5c2f5d20c85ba73d17fae9db9ca1b5b3563207461eec8bb02205380b7bd6b5d87d3ab0fc3132ab19daffb62d7b42b876f1a9c236705fa506c5601
+3044022045a91192e845abfc4d6ff8e216bedbcb7d2e32b5de7b610c2cb0de0dbe1c3e4202201fd69887b51e569d6d1218e0a57508ec002a0567990ea9117431a28b8c1c8ca501

@@ -1,0 +1,52 @@
+[压缩]
+私钥: e71ed03e3013e8b5c3d67650c976f9a4979e88d37155ede88ba8c89a19a1dc5e
+私钥WIF: L4xyiVoWxiX2uNYoLqsPAv8RKitc4QWaVXQ7idpThqrju5WBwVkG
+公钥: 02ef3c06cc41d53b99f86263d695969ff984293572fece3fab42e7babe70506b2b
+公钥hash: 68498782034109a47fc5d9897c7943fa4073e71c
+P2PKH地址: 1AWRMrjzueUkYN24Bj3wfxkNdtLsRZhmVQ
+URI: bitcoin:1AWRMrjzueUkYN24Bj3wfxkNdtLsRZhmVQ
+P2SH-P2WPKH: 33TYWDf91H9tvnVxYwRFpmgo5xPLZJoxVX
+P2WPKH: bc1qdpyc0qsrgyy6gl79mxyhc72rlfq88ecur3e7lj
+
+
+bitcoin-cli generatetoaddress 101 bc1qdpyc0qsrgyy6gl79mxyhc72rlfq88ecur3e7lj
+
+PRE_TXID=`_bbasehash 1`
+PRE_VOUT=0
+
+NEWEC=`bx seed | bx ec-new`
+NEWADDRESS_INFO=`parse_privkey $NEWEC`
+NEWP2PkHADDR=`echo $NEWADDRESS_INFO | sed -n 13p | awk '{print $2}'`
+
+# 1) 创建交易
+
+RAWTX=`bitcoin-cli createrawtransaction '''
+[
+    {
+        "txid": "'$PRE_TXID'",
+        "vout": '$PRE_VOUT'
+    }
+]
+''' '''
+{
+    "'$NEWP2PkHADDR'": 49.9999
+}
+''' `
+
+
+# 2) 签名交易
+
+SIGNED_RAWTX_JSON=`bitcoin-cli signrawtransactionwithkey $RAWTX '''
+[
+    "L4xyiVoWxiX2uNYoLqsPAv8RKitc4QWaVXQ7idpThqrju5WBwVkG"
+]
+'''`
+
+SIGNED_RAWTX=`echo $SIGNED_RAWTX_JSON | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj["hex"])'`
+
+
+# 3)发送交易
+bitcoin-cli sendrawtransaction $SIGNED_RAWTX
+
+# 4) 生成打包区块
+bg 1

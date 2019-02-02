@@ -1,0 +1,80 @@
+# 锁定
+{
+  "txid": "f6d07ce6ae308f6da04336002efa62e1c390ffe79371ac1880dfab45e35e8167",
+  "hash": "813be789f630ec413ffb6134cc4b2db7c20eef8dae139d5e4aeb750a4ff2e186",
+  "version": 2,
+  "size": 181,
+  "vsize": 154,
+  "weight": 616,
+  "locktime": 0,
+  "vin": [
+    {
+      "coinbase": "510101",
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 50.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "0397ad8dced8cd99e4c22a460c4eea1878bea907a2300660d4a25d7dec44eb6230 OP_CHECKSIG",
+        "hex": "210397ad8dced8cd99e4c22a460c4eea1878bea907a2300660d4a25d7dec44eb6230ac",
+        "reqSigs": 1,
+        "type": "pubkey",
+        "addresses": [
+          "19wzTcDzGsLgQVcTXTkjaHmFRQemYgXsup"
+        ]
+      }
+    },
+    {
+      "value": 0.00000000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "OP_RETURN aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9",
+        "hex": "6a24aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9",
+        "type": "nulldata"
+      }
+    }
+  ]
+}
+
+
+
+# 见证
+{
+  "txid": "4d9dbf74bc281dc9001c3b85bad61b073e4439d69b2fee69ff11e7f7b7e45082",
+  "hash": "4d9dbf74bc281dc9001c3b85bad61b073e4439d69b2fee69ff11e7f7b7e45082",
+  "version": 2,
+  "size": 157,
+  "vsize": 157,
+  "weight": 628,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "f6d07ce6ae308f6da04336002efa62e1c390ffe79371ac1880dfab45e35e8167",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "304402205a975eb4de0fe8e3d66241200fbf6e57ba374c169fbcc9f7f4889661d3ef47e30220216420185be12d222b759d43b5ea1ecae09d0cca2333c9b32f62688255f504bc[ALL]",
+        "hex": "47304402205a975eb4de0fe8e3d66241200fbf6e57ba374c169fbcc9f7f4889661d3ef47e30220216420185be12d222b759d43b5ea1ecae09d0cca2333c9b32f62688255f504bc01"
+      },
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 af8ddcbedbfb72512892d2b765ea189d5a476343 OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a914af8ddcbedbfb72512892d2b765ea189d5a47634388ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "1H1FCLRRB7wTt1Ga3fjfU9cMrnrMY3uvkQ"
+        ]
+      }
+    }
+  ]
+}
+

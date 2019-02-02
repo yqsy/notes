@@ -1,0 +1,51 @@
+# 花费创世区块的奖励
+
+# 创世区块的奖励地址 (如测试需要修改源码的CMainParams)
+#[压缩]
+#私钥: 373b805746661d0dd9dc690cceddac725d3daa661560e76bafcea5ad2cdd21d7
+#私钥WIF: Ky55LF1jUgtqBfHRXqmq8Jo51597dPvGzAgSyTnwkSqPKxhN3drk
+#公钥: 02d5ff52f26ac105c272d8340acd3b828f21b665fb42281b88b613abb7407de3a7
+#公钥hash: 3ae7b1335023ac7b22ff9d83ab998e01718f31cb
+#P2PKH地址: 16NTkP91u2be52V1wuavLQdMbD9JxCdwYX
+#URI: bitcoin:16NTkP91u2be52V1wuavLQdMbD9JxCdwYX
+#P2SH-P2WPKH: 3H8eQssHsiYtnccaxt45aw6F3yLgb5paHs
+
+
+PRE_TXID=`_bbasehash 0`
+PRE_VOUT=0
+
+NEWEC=`bx seed | bx ec-new`
+NEWADDRESS_INFO=`parse_privkey $NEWEC`
+NEWP2PkHADDR=`echo $NEWADDRESS_INFO | sed -n 13p | awk '{print $2}'`
+
+# 1) 创建交易
+
+RAWTX=`bitcoin-cli createrawtransaction '''
+[
+    {
+        "txid": "'$PRE_TXID'",
+        "vout": '$PRE_VOUT'
+    }
+]
+''' '''
+{
+    "'$NEWP2PkHADDR'": 49.9999
+}
+''' `
+
+
+# 2) 签名交易
+
+SIGNED_RAWTX_JSON=`bitcoin-cli signrawtransactionwithkey $RAWTX '''
+[
+    "Ky55LF1jUgtqBfHRXqmq8Jo51597dPvGzAgSyTnwkSqPKxhN3drk"
+]
+'''`
+
+SIGNED_RAWTX=`echo $SIGNED_RAWTX_JSON | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj["hex"])'`
+
+# 3)发送交易
+bitcoin-cli sendrawtransaction $SIGNED_RAWTX
+
+# 4) 生成打包区块
+bg 1

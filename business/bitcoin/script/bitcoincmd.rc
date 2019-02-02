@@ -1,0 +1,47 @@
+alias bitcoind="bitcoind -rpcuser=ubuntu -rpcpassword=ubuntu -txindex"
+
+alias bitcoin-cli="bitcoin-cli -rpcuser=ubuntu -rpcpassword=ubuntu"
+
+# 出块
+bg() {bitcoin-cli generate $1}
+
+# 区块链信息
+bchain() {bitcoin-cli getblockchaininfo}
+
+# 网络信息
+bnetwork() {bitcoin-cli getnetworkinfo}
+
+# 钱包信息
+bwallet() {bitcoin-cli getwalletinfo}
+
+# 高度 -> 区块信息
+bblock() {HASH=`bitcoin-cli getblockhash $1` && bitcoin-cli getblock $HASH}
+
+# txraw -> decode 
+_btxdecode () {bitcoin-cli decoderawtransaction $1} 
+
+# 交易hash -> txraw -> decode
+_btxhashdecode() {_btxdecode `bitcoin-cli getrawtransaction $1`}
+
+# 高度 -> coinbase hash
+_bbasehash() {bblock $1 | python -c 'import json,sys;obj=json.load(sys.stdin);print (obj["tx"][0])'}
+
+# 高度 -> coinbase hash -> txraw -> decode
+bbasetx() {_btxhashdecode `_bbasehash $1`}
+
+# 高度 -> coinbase hash -> tx
+bbasetxx() {bitcoin-cli gettransaction `_bbasehash $1`}
+
+# 高度, txidx -> tx hash
+_bhtxhash() {bblock $1 | python -c 'import json,sys;obj=json.load(sys.stdin);print (obj["tx"]['$2'])'; }
+
+# 高度, txidx -> tx hash -> txraw -> decode
+bhtx() {_btxhashdecode `_bhtxhash $1 $2`}
+
+# 列高度low & high -> blockhash
+blistblock() {
+    for i in `seq $1 $2`; do
+        hash=`bblock $i | python -c 'import json,sys;obj=json.load(sys.stdin);print (obj["hash"])'`
+        print $i $hash
+    done
+}

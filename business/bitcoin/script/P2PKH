@@ -1,0 +1,80 @@
+# 锁定
+{
+  "txid": "5503301d8b1240015deffc29529038f3fb8c01b0f675f0185136c6cd86d63165",
+  "hash": "b08ee80956440ffcf1903effbfe0006ab954b4f78c386424152b4601b9d3d556",
+  "version": 2,
+  "size": 171,
+  "vsize": 144,
+  "weight": 576,
+  "locktime": 0,
+  "vin": [
+    {
+      "coinbase": "510101",
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 50.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 8eaf00e5ee00820dd8da8485a37eceffb16a6040 OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a9148eaf00e5ee00820dd8da8485a37eceffb16a604088ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "1E1SbhRE1TLdfFykkyWZoyrTLfqLhkMtD5"
+        ]
+      }
+    },
+    {
+      "value": 0.00000000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "OP_RETURN aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9",
+        "hex": "6a24aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9",
+        "type": "nulldata"
+      }
+    }
+  ]
+}
+
+
+# 见证
+{
+  "txid": "c6614007e3f356dc6bbc56e264ff8eb20ef237c9859389e818eccd5f0511ec45",
+  "hash": "c6614007e3f356dc6bbc56e264ff8eb20ef237c9859389e818eccd5f0511ec45",
+  "version": 2,
+  "size": 191,
+  "vsize": 191,
+  "weight": 764,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "5503301d8b1240015deffc29529038f3fb8c01b0f675f0185136c6cd86d63165",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "30440220578547e60be2b9771aff77deff2c84a82234a4fb407398378379a221c356c403022009a577e006531352dc398998ba44e7cdeab793ac348a4e9410915bcb0a07f6fc[ALL] 02b911281337a934290b47aa1d37bf0a2bb5e22cc1763a070dade57793b046101c",
+        "hex": "4730440220578547e60be2b9771aff77deff2c84a82234a4fb407398378379a221c356c403022009a577e006531352dc398998ba44e7cdeab793ac348a4e9410915bcb0a07f6fc012102b911281337a934290b47aa1d37bf0a2bb5e22cc1763a070dade57793b046101c"
+      },
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 49.99990000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_DUP OP_HASH160 2b745916fa4e5627389e51fe61ef89e97604553d OP_EQUALVERIFY OP_CHECKSIG",
+        "hex": "76a9142b745916fa4e5627389e51fe61ef89e97604553d88ac",
+        "reqSigs": 1,
+        "type": "pubkeyhash",
+        "addresses": [
+          "14xmSFVpeSYt7XwLGpZwSG23Ny2HGbvRqS"
+        ]
+      }
+    }
+  ]
+}
+
+
