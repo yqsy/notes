@@ -18,7 +18,7 @@
 cd /mnt/disk1/linux/reference/refer
 git clone --recursive https://github.com/rsksmart/rskj.git
 cd rskj
-git checkout tags/ORCHID-0.6.0 
+git checkout tags/ORCHID-0.6.0 Register
 git branch -d master
 git checkout -b master
 

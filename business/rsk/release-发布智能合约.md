@@ -1,10 +1,8 @@
-
-
 <!-- TOC -->
 
 - [1. 说明](#1-说明)
 - [2. 发布合约到开发环境](#2-发布合约到开发环境)
-- [3. 部署到rsk测试网络](#3-部署到rsk测试网络)
+- [3. 部署到rsk测试网络 (分层钱包)](#3-部署到rsk测试网络-分层钱包)
 - [4. 参考资料](#4-参考资料)
 
 <!-- /TOC -->
@@ -19,6 +17,8 @@
 # 2. 发布合约到开发环境
 
 ```bash
+npm install truffle -g
+
 cd /mnt/disk1/linux/reference/test
 mkdir turffletest
 cd turffletest
@@ -88,8 +88,8 @@ simpleStorage.get().then(bn => bn.toNumber())
 
 ```
 
-<a id="markdown-3-部署到rsk测试网络" name="3-部署到rsk测试网络"></a>
-# 3. 部署到rsk测试网络
+<a id="markdown-3-部署到rsk测试网络-分层钱包" name="3-部署到rsk测试网络-分层钱包"></a>
+# 3. 部署到rsk测试网络 (分层钱包)
 
 给`truffle-concig.js`增加部署环境:
 
@@ -98,7 +98,7 @@ simpleStorage.get().then(bn => bn.toNumber())
 ```js
 var HDWalletProvider = require('truffle-hdwallet-provider')
 
-var mnemonic = '!!! 填写你的助记词'
+var mnemonic = 'ocean credit monitor scorpion must yard like cram foster blade system devote'
 var publicNode = 'https://public-node.testnet.rsk.co:443'
 
 module.exports = {
@@ -118,6 +118,7 @@ module.exports = {
 
 * https://faucet.testnet.rsk.co/ (给测试网络rsk地址充值)
 * https://explorer.testnet.rsk.co/ (测试网浏览器)
+* https://explorer.testnet.rsk.co/address/0xc4b5cf245e903ce3d72796951f5380fdfbe57744 (查询余额)
 
 ```bash
 npm install truffle-hdwallet-provider --save
@@ -131,7 +132,9 @@ web3.eth.getBlockNumber((err, res) => console.log(res))
 # 钱包
 web3.currentProvider.wallets
 
-# 获取一个账号
+# 获取一个账号 m/44'/60'/0'/0/0
+# 0x694ec0cbe8f82798c650ca8546f9961b128dbdc25860c24769eab85b7f326b06 (私钥)
+# 0xc4b5cf245e903ce3d72796951f5380fdfbe57744 (地址)
 var account = Object.keys(web3.currentProvider.wallets)[0]
 
 # 查看帐号
@@ -149,14 +152,11 @@ compile
 # 部署
 migrate --reset
 
-# 合约地址
-# 0xc46A0834f1a5A9CFaFF5437a74d322423C81726D
-
 SimpleStorage.deployed().then(instance => contract = instance)
-
 
 # 调用接口
 contract.set(1)
+
 
 contract.get()
 ```
@@ -167,10 +167,3 @@ contract.get()
 * https://truffleframework.com/docs/truffle/reference/truffle-commands
 * https://github.com/rsksmart/tutorials/wiki/Module-0-%E2%80%93-A-little-about-DApps-and-Smart-Contracts-(10-minutes) (完整流程) 
 
----
-
-上面有:  
-
-* https://iancoleman.io/bip39/ (获取助记词)
-* https://faucet.testnet.rsk.co/ (给测试网络rsk地址充值)
-* https://explorer.testnet.rsk.co/ (测试网浏览器)
