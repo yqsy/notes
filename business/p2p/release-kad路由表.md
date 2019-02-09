@@ -84,7 +84,6 @@ go get github.com/prettymuchbryce/kademlia
 /mnt/disk1/go/src/github.com/prettymuchbryce/kademlia 
 ```
 
-
 nictuku/dht(基于二叉树): 
 
 ```bash
@@ -94,7 +93,6 @@ go get github.com/nictuku/dht
 
 # 目录
 /mnt/disk1/go/src/github.com/nictuku/dht
-
 ```
 
 
