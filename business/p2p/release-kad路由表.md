@@ -2,16 +2,17 @@
 
 <!-- TOC -->
 
-- [1. 说明](#1-说明)
-- [2. 实践](#2-实践)
-- [3. 辅助](#3-辅助)
-- [4. 参考资料](#4-参考资料)
+- [1. 基础信息](#1-基础信息)
+- [2. 辅助](#2-辅助)
+- [3. 论文示例说明](#3-论文示例说明)
+- [4. 实践](#4-实践)
+- [5. 参考资料](#5-参考资料)
 
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
-# 1. 说明
+<a id="markdown-1-基础信息" name="1-基础信息"></a>
+# 1. 基础信息
 
 Kademlia是点对点计算的分布式哈希表,时间复杂度为`O(log(n))`.  是BitTorrent,I2P,IPFS,区块链运用的p2p技术的底层原理.
 
@@ -67,11 +68,29 @@ RoutingTable [][]*Node // 160x20
 * i=1, k桶内存储节点的距离范围为 [2,4)  -> 最长公共祖先长度为 (3 - 1) - 1 = 1 -> 容纳2个节点
 * i=2, k桶内存储节点的距离范围为 [4,8)  -> 最长公共祖先长度为 (3 - 2) - 1 = 0 -> 容纳4个节点
 
+
+
 由上可见,`距离范围越小,最长公共祖先长度越大`.可以推出公式,最长公共祖先长度为`(bit len - i) - 1`. 不同距离范围的k-bucket,容纳的节点数量的公式为`2^i`
 
 
-<a id="markdown-2-实践" name="2-实践"></a>
-# 2. 实践
+
+<a id="markdown-2-辅助" name="2-辅助"></a>
+# 2. 辅助
+
+```python
+def dis(x1, x2):
+    return int(x1, 2) ^ int(x2, 2)
+
+dis('11111', '0011')
+```
+
+<a id="markdown-3-论文示例说明" name="3-论文示例说明"></a>
+# 3. 论文示例说明
+
+
+
+<a id="markdown-4-实践" name="4-实践"></a>
+# 4. 实践
 
 prettymuchbryce/kademlia(基于表): 
 
@@ -96,19 +115,9 @@ go get github.com/nictuku/dht
 ```
 
 
-<a id="markdown-3-辅助" name="3-辅助"></a>
-# 3. 辅助
 
-```python
-def dis(x1, x2):
-    return int(x1, 2) ^ int(x2, 2)
-
-dis('11111', '0011')
-```
-
-
-<a id="markdown-4-参考资料" name="4-参考资料"></a>
-# 4. 参考资料
+<a id="markdown-5-参考资料" name="5-参考资料"></a>
+# 5. 参考资料
 
 * https://en.wikipedia.org/wiki/Kademlia (维基百科)
 * https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf (论文)
