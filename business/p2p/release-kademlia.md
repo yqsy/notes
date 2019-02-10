@@ -164,7 +164,7 @@ go get github.com/nictuku/dht
 * https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf (论文)
 
 
-还不错的分析:
+一些其他的分析:
 
-* https://zhuanlan.zhihu.com/p/38425656 (很多错误,将就看看)
+* https://zhuanlan.zhihu.com/p/38425656 (有一些错误)
 * https://www.jianshu.com/p/f2c31e632f1d 
