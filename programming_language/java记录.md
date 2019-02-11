@@ -9,6 +9,13 @@
 <a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
+```bash
+# 源码编译成字节码 (.class)
+javac HelloWorld.java
+
+# 运行字节码
+java HelloWorld
+```
 
 
 <a id="markdown-2-参考资料" name="2-参考资料"></a>
