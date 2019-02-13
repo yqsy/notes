@@ -15,7 +15,13 @@
 * https://segmentfault.com/a/1190000000349917 (makefile头文件增量编译)
 
 
+![](https://devmanual.gentoo.org/general-concepts/autotools/diagram.png)
+
+
+
 <a id="markdown-2-怎么搜索" name="2-怎么搜索"></a>
 # 2. 怎么搜索
 
 clang site:https://cmake.org/cmake/help
+
+

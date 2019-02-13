@@ -36,6 +36,10 @@ chmod +x ./configure.sh
 # Working directory: /path-to-code/rskJ
 # Use classpath of module: rskj-core_main
 # JRE need to be set as: Default (1.8 - SDK of 'rsk-core_main' module)
+
+# 命令行编译/运行 
+./gradlew build -x test 
+./gradlew run
 ```
 
 <a id="markdown-2-代码组织" name="2-代码组织"></a>
@@ -86,7 +90,29 @@ find *.java -maxdepth 1  -type f -print0 | xargs -0 wc -l | sort -nr | head -n 1
 # 源码大概在4w行左右
 ```
 
+引用的ethereum的源码:
+```bash
+./vm                 9214  # EVM 虚拟机
+./net                7673  # DHT
+./core               5564  # 区块,帐号,交易
+./crypto             3262  # ECIES
+./util               3152  # 辅助源码
+./rpc                2961  # rpc函数接口
+./config             2763  # 配置
+./db                 2365  # 数据库
+./solidity           956   # solc编译器
+./datasource         614   # 数据库包装
+./sync               524   # 同步?
+./listener           433   # 监听
+./validator          353   # 验证规则
+./json               186   # json辅助代码
+./facade             186   # ?
+
+./                   164   # 
+```
+
 <a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 * https://github.com/rsksmart/rskj 
+* https://guides.gradle.org/building-java-applications/
