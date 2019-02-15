@@ -46,8 +46,9 @@
 * [神奇的nBits.md](./release-神奇的nBits.md)
 
 实践:
-* [快捷指令.md](./release-快捷指令.md)
+* [便捷脚本all.md](./release-便捷脚本all.md)
 * [源码编译与调试.md](./release-源码编译与调试.md)
+* [搭建比特币节点.md](./release-搭建比特币节点.md)
 
 使用脚本做交易:
 * [使用python交易](./release-使用python交易.md)

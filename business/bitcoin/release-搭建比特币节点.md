@@ -93,26 +93,11 @@ sudo mv /tmp/bitcoind  /usr/local/bin/bitcoind && sudo mv /tmp/bitcoin-cli   /us
 
 <a id="markdown-3-增加快捷指令" name="3-增加快捷指令"></a>
 # 3. 增加快捷指令
-```bash
 
-# 地址处理
-wget -O ~/.bitcoinaddress.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoinaddress.rc
-
-cat >> ~/.zshrc << EOF
-source ~/.bitcoinaddress.rc
-EOF
-
-# rpc
-wget -O ~/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoincmd.rc
-
-cat >> ~/.zshrc << EOF
-source ~/.bitcoincmd.rc
-EOF
-```
+[便捷脚本all.md](./release-便捷脚本all.md)
 
 <a id="markdown-4-桌面版环境" name="4-桌面版环境"></a>
 # 4. 桌面版环境
-
 
 ```bash
 sudo add-apt-repository ppa:bitcoin/bitcoin
