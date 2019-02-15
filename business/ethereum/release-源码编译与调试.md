@@ -13,6 +13,10 @@
 ```bash
 go get github.com/ethereum/go-ethereum
 
+cd /mnt/disk1/go/src/github.com/ethereum/go-ethereum
+git checkout tags/v1.8.22
+git branch -d master
+git checkout -b master
 ```
 
 <a id="markdown-2-代码组织" name="2-代码组织"></a>
@@ -31,7 +35,7 @@ done
 sort  -k 2 -nr < /tmp/1.txt
 
 ```
-
+/mnt/disk1/linux/reference/test/awesomeProject
 源码:
 ```bash
 ./vendor             548401 # 其他源码
