@@ -23,15 +23,17 @@
 * [离线签名交易.md](./release-离线签名交易.md)
 
 高级交易:
+
 * [nLockTime时间锁交易.md](./release-nLockTime时间锁交易.md)
 * [nLockTime单向支付通道.md](./release-nLockTime单向支付通道.md)
 * [nSequence时间锁交易.md](./release-nSequence时间锁交易.md)
 * [nSequence双向支付通道.md](./release-nSequence双向支付通道.md)
-* [哈希时间锁.md](./release-哈希时间锁.md)
+* ~~[哈希时间锁.md](./release-哈希时间锁.md)~~
 
 其他:
 * [图搜索结合hash的pow.md](./release-图搜索结合hash的pow.md)
 * [创世奖励无法被花费.md](./release-创世奖励无法被花费.md)
+* [26笔交易后余额为0.md](./release-26笔交易后余额为0.md)
 
 存储:
 * [序列化与反序列化.md](./release-序列化与反序列化.md)
@@ -46,3 +48,9 @@
 实践:
 * [快捷指令.md](./release-快捷指令.md)
 * [源码编译与调试.md](./release-源码编译与调试.md)
+
+使用脚本做交易:
+* [使用python交易](./release-使用python交易.md)
+
+测试吞吐:
+* [benchmark.md](./release-benchmark.md)
