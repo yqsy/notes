@@ -34,40 +34,40 @@ sort  -k 2 -nr < /tmp/1.txt
 
 源码:
 ```bash
-./vendor             548401 
-./swarm              54865 
-./dashboard          41701 
-./p2p                29328 
-./core               27924 
-./cmd                23425 
-./accounts           19071 
-./eth                17674 
-./whisper            12675 
-./les                10343 
-./crypto             7825 
-./metrics            6376 
-./consensus          6183 
-./internal           5325 
-./trie               5114 
-./common             5028 
-./rpc                4749 
-./contracts          4337 
-./signer             4059 
-./rlp                3487 
-./light              3178 
-./mobile             3103 
-./node               2964 
+./vendor             548401 # 其他源码
+./swarm              54865  # 存储
+./dashboard          41701  # 看板
+./p2p                29328  # dht  nat 等
+./core               27924  # 核心 虚拟机 类型系统 数据库 
+./cmd                23425  # 命令行
+./accounts           19071  # 用户系统
+./eth                17674  # p2p相关
+./whisper            12675  # 消息的加解密
+./les                10343  # p2p?
+./crypto             7825   # secp256k1
+./metrics            6376   # 监控用
+./consensus          6183   # 共识 ethhash
+./internal           5325   # 内部?
+./trie               5114   # 字典树
+./common             5028   # 常用组件
+./rpc                4749   # rpc接口
+./contracts          4337   # 合约相关
+./signer             4059   # 签名
+./rlp                3487   # 编码解码
+./light              3178   # ??
+./mobile             3103   # 移动端
+./node               2964   # p2p接口? 
 ./tests              2372 
-./miner              2236 
-./log                1860 
-./event              1726 
-./graphql            1533 
-./build              1492 
-./console            1336 
-./params             1091 
-./ethdb              988 
-./ethclient          738 
-./ethstats           717 
+./miner              2236   # 挖矿
+./log                1860   # 日志
+./event              1726   # 事件器
+./graphql            1533   # 图
+./build              1492   # 持续集成
+./console            1336   # ?
+./params             1091   # 初始参数
+./ethdb              988    # 数据库
+./ethclient          738    # 客户端
+./ethstats           717    # 状态
 ```
 
 
