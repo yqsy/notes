@@ -10,14 +10,46 @@
 <a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
+以太坊的地址生成规则相较于比特币来的更简单一些.其规则如下.注意和比特币不同的是,在对公钥进行hash的时候,比特币有`压缩和未压缩的公钥`,分别为`33bytes和65bytes`,比特币使用sha256对两者进行hash产生公钥hash并通过BASE58生成钱包地址. 而在以太坊中没有压缩与未压缩的概念,只有`64bytes "裸"的公钥`,对其直接使用sha3产生地址.
+
 ```bash
-echo "0267572eaf952d22e131187a9651928df079ad24f7fb08324e70c0f161a3a604" | perl -pe 's/([0-9a-f]{2})/chr hex $1/gie'
+私钥      ->      公钥     ->       地址  
+     secp256k1         Keccak-256       
+```
 
-0xcfaacda3ec2ebac1c7a55a77e907d73a4d2eac1b2c97346fc9e79c347bcb487c
-0x020267572eaf952d22e131187a9651928df079ad24f7fb08324e70c0f161a3a604
-0267572eaf952d22e131187a9651928df079ad24f7fb08324e70c0f161a3a6046f95b74777e42cf6a253eb5eaed9b2f02d87919bda09bbfdafa3ab96672951b0
-0xd2bEB88CFcae4B5732B6F9c092090f7265E49b81
+安装库:
+```bash
+cd /mnt/disk1/linux/reference/refer
 
+git clone https://github.com/maandree/libkeccak
+cd libkeccak
+make
+sudo make install
+
+cd ../sha3sum
+make 
+sudo make install
+```
+
+提供以下shell脚本方便日常使用:
+
+* parse_privkey_eth 解析私钥
+
+指令:
+```bash
+# 私钥 -> 公钥 -> 地址:
+parse_privkey_eth() {
+    PRIKEY=$1
+    PUBKEY=`bx ec-to-public -u $PRIKEY | sed 's/^04//'`
+    ADDRESS=`echo -n $PUBKEY | keccak-256sum -x -l  | tr -d ' -' | tail -c 41`
+
+    echo 私钥: $PRIKEY &&
+    echo 公钥: $PUBKEY &&
+    echo 地址: $ADDRESS
+}
+
+# 创建新私钥
+parse_privkey_eth `bx seed | bx ec-new`
 ```
 
 <a id="markdown-2-助记词与分层钱包" name="2-助记词与分层钱包"></a>
@@ -55,3 +87,8 @@ echo $change_prv | bx hd-private -i 9 | bx hd-to-ec
 * https://ethereum.stackexchange.com/questions/3542/how-are-ethereum-addresses-generated/3619#3619 (原理)
 * https://iancoleman.io/bip39/ (BIP39生成)
 * https://gist.github.com/miguelmota/3793b160992b4ea0b616497b8e5aee2f (指令生成地址)
+
+---
+* http://tomeko.net/online_tools/hex_to_file.php?lang=en (将hex转换为bytes文件(128hex=64bytes))
+* https://emn178.github.io/online-tools/keccak_256_checksum.html (sha3文件)
+* https://emn178.github.io/online-tools/keccak_256.html (sha3 hex)

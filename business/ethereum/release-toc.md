@@ -15,5 +15,6 @@
 * ~~[数据签名.md](./release-数据签名.md)~~
 
 实践: 
+* [便捷脚本all.md](./release-便捷脚本all.md)
 * [源码编译与调试.md](./release-源码编译与调试.md)
 * [私有链.md](./release-私有链.md)

@@ -1,0 +1,10 @@
+# 私钥 -> 公钥 -> 地址:
+parse_privkey_eth() {
+    PRIKEY=$1
+    PUBKEY=`bx ec-to-public -u $PRIKEY | sed 's/^04//'`
+    ADDRESS=`echo -n $PUBKEY | keccak-256sum -x -l  | tr -d ' -' | tail -c 41`
+
+    echo 私钥: $PRIKEY &&
+    echo 公钥: $PUBKEY &&
+    echo 地址: $ADDRESS
+}
