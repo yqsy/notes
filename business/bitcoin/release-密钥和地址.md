@@ -271,6 +271,7 @@ hd_prv=`bx hd-new $seed`
 # hd公钥前缀为xpub
 hd_pub=`bx hd-to-public $hd_prv`
 
+# 60' 是以太坊
 # m/44'/60'/0'/0 的扩展密钥
 
 change_prv=`echo $hd_prv | bx hd-private -d -i 44 | bx hd-private -d -i 60 | bx hd-private -d -i 0 | bx hd-private -i 0`
