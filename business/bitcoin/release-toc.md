@@ -11,11 +11,6 @@
 基础信息:
 * [区块总览.md](./release-区块总览.md)
 * [货币的供应.md](./release-货币的供应.md)
-* [序列化与反序列化.md](./release-序列化与反序列化.md)
-* [区块的存储.md](./release-区块的存储.md)
-* ~~[交易的存储.md](./release-交易的存储.md)~~
-* ~~[钱包的存储.md](./release-钱包的存储.md)~~
-* ~~[手续费.md](./release-手续费.md)~~
 * [共识升级之nVersion.md](./release-共识升级之nVersion.md)
 * ~~[工作量证明之hashPrevBlock.md](./release-工作量证明之hashPrevBlock.md)~~
 * ~~[交易验证之hashMerkleRoot.md](./release-交易验证之hashMerkleRoot.md)~~
@@ -34,30 +29,38 @@
 * [nLockTime单向支付通道.md](./release-nLockTime单向支付通道.md)
 * [nSequence时间锁交易.md](./release-nSequence时间锁交易.md)
 * [nSequence双向支付通道.md](./release-nSequence双向支付通道.md)
+* ~~[手续费.md](./release-手续费.md)~~
 * ~~[哈希时间锁.md](./release-哈希时间锁.md)~~
 * ~~[闪电网络.md](./release-闪电网络.md)~~
 * ~~[侧链.md](./release-侧链)~~
+* ~~[spv.md](./release-spv.md)~~
 
 实践:
-* [便捷脚本all.md](./release-便捷脚本all.md)
 * [源码编译与调试.md](./release-源码编译与调试.md)
 * [搭建比特币节点.md](./release-搭建比特币节点.md)
+* [便捷脚本all.md](./release-便捷脚本all.md)
 * [benchmark.md](./release-benchmark.md)
 * [使用python交易](./release-使用python交易.md)
-
-源码实现:
-* ~~[事件模型.md](./release-事件模型.md)~~
-* ~~[p2p.md](./release-p2p.md)~~
 
 数学原理:
 * ~~[攻击概率论证.md](./release-攻击概率论证.md)~~
 * ~~[sha256.md](./release-sha256.md)~~
 * ~~[椭圆曲线加密.md](./release-椭圆曲线加密.md)~~
 
+底层源码实现:
+* ~~[事件模型.md](./release-事件模型.md)~~
+* ~~[p2p.md](./release-p2p.md)~~
+* [序列化与反序列化.md](./release-序列化与反序列化.md)
+* [区块的存储.md](./release-区块的存储.md)
+* ~~[交易的存储.md](./release-交易的存储.md)~~
+* ~~[钱包的存储.md](./release-钱包的存储.md)~~
+* ~~[区块的同步.md](./release-区块的同步.md)~~
+* ~~[布隆过滤器.md](./release-布隆过滤器.md)~~
+* ~~[区块的遍历之跳表.md](./release-区块的遍历之跳表.md)~~
+* ~~[地址下交易与余额索引.md](./release-地址下交易与余额索引)~~
+
 其他:
 * [图搜索结合hash的pow.md](./release-图搜索结合hash的pow.md)
 * [创世奖励无法被花费.md](./release-创世奖励无法被花费.md)
 * [26笔交易后余额为0.md](./release-26笔交易后余额为0.md)
-* ~~[布隆过滤器.md](./release-布隆过滤器.md)~~
-* ~~[区块的遍历之跳表.md](./release-区块的遍历之跳表.md)~~
-* ~~[地址下交易与余额索引.md](./release-地址下交易与余额索引)~~
+* ~~[矿池.md](./release-矿池.md)~~
