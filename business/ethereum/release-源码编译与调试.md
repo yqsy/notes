@@ -19,6 +19,9 @@ git branch -d master
 git checkout -b master
 
 go install -v ./...
+
+# 调试
+在goland中设置为geth/目录方式调试，因为geth/main.go有依赖到geth/*.go的全局变量，单独运行geth/main.go会产生使用未定义变量的错误.
 ```
 
 <a id="markdown-2-代码组织" name="2-代码组织"></a>

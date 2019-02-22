@@ -2,6 +2,7 @@
 
 - [1. 说明](#1-说明)
 - [2. 参考资料](#2-参考资料)
+- [2. 交易数据](#2-交易数据)
 
 <!-- /TOC -->
 
@@ -10,8 +11,7 @@
 # 1. 说明
 
 ```bash
-mkdir -p /mnt/disk1/linux/env/ethereum/
-cd /mnt/disk1/linux/env/ethereum/
+mkdir -p /mnt/disk1/linux/env/ethereum/ && cd /mnt/disk1/linux/env/ethereum/
 
 # 创建两个帐号
 parse_privkey_eth `bx seed | bx ec-new`
@@ -31,7 +31,7 @@ parse_privkey_eth `bx seed | bx ec-new`
 公钥: e1af61498eccd7706ac307ab4645037f465360f28633831c35b14020cc4481b7648bb054dcf50977c895015078f6b2f45688b20ff379df5f79cd5b9ec65983ac
 地址: 5351b0ead94e9d5cb69798e1cbc2af99e6764eb7
 
-cat > ./genesis.json << EOF
+cat > /mnt/disk1/linux/env/ethereum/genesis.json << EOF
 {
     "config": {
         "chainId": 15,
@@ -39,7 +39,7 @@ cat > ./genesis.json << EOF
         "eip155Block": 0,
         "eip158Block": 0
     },
-    "difficulty": "200000000",
+    "difficulty": "0",
     "gasLimit": "2100000",
     "alloc": {
         "d0ab1fc3648c3bc5838be6dd4efcbeb3a4a50a6d": { "balance": "300000" },
@@ -48,39 +48,37 @@ cat > ./genesis.json << EOF
 }
 EOF
 
-rm -rf /mnt/disk1/linux/env/ethereum/data1
-
-mkdir -p /mnt/disk1/linux/env/ethereum/data1
+rm -rf /mnt/disk1/linux/env/ethereum/data1 && mkdir -p /mnt/disk1/linux/env/ethereum/data1
 
 # 通过创世配置创建初始化数据
-geth --datadir /mnt/disk1/linux/env/ethereum/data1 init ./genesis.json
+geth --datadir /mnt/disk1/linux/env/ethereum/data1 init /mnt/disk1/linux/env/ethereum/genesis.json
 
 # 开启节点
 geth --datadir /mnt/disk1/linux/env/ethereum/data1 --networkid 1108
 
 # 窗口连接
 geth attach ipc:/mnt/disk1/linux/env/ethereum/data1/geth.ipc
-
+    
 # 挖矿
-personal.importRawKey('6c2f62fe367e43a29546ccbea84740be00d42efcde81fe9e96cc80a2039e4e89', '')
+personal.importRawKey('6c2f62fe367e43a29546ccbea84740be00d42efcde81fe9e96cc80a2039e4e89', '123456')
 
 # 列出帐号
 personal.listAccounts
 
 # 设置挖矿帐号
-miner.setEtherbase(eth.accounts[0])
+miner.setEtherbase(web3.eth.accounts[0])
 
 # 查询余额
-eth.getBalance(eth.coinbase).toNumber()
+web3.fromWei(web3.eth.getBalance(web3.eth.coinbase).toNumber(), 'ether')
 
 # 挖矿
 miner.start(1)
 
 # 显示区块数量
-eth.blockNumber
+web3.eth.blockNumber
 
 # 查询余额
-web3.fromWei(eth.getBalance(eth.coinbase).toNumber(), 'ether')
+web3.fromWei(web3.eth.getBalance(web3.eth.coinbase).toNumber(), 'ether')
 ```
 
 <a id="markdown-2-参考资料" name="2-参考资料"></a>
@@ -88,3 +86,8 @@ web3.fromWei(eth.getBalance(eth.coinbase).toNumber(), 'ether')
 
 * https://github.com/ethereum/go-ethereum/wiki/Private-network
 * https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster
+
+<a id="markdown-2-交易数据" name="2-交易数据"></a>
+# 2. 交易数据
+
+![]()

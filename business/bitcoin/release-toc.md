@@ -37,6 +37,7 @@
 
 实践:
 * [源码编译与调试.md](./release-源码编译与调试.md)
+* ~~[修改源码跑本地主网.md](./release-修改源码本地跑主网.md)~~
 * [搭建比特币节点.md](./release-搭建比特币节点.md)
 * [便捷脚本all.md](./release-便捷脚本all.md)
 * [benchmark.md](./release-benchmark.md)
@@ -64,3 +65,4 @@
 * [创世奖励无法被花费.md](./release-创世奖励无法被花费.md)
 * [26笔交易后余额为0.md](./release-26笔交易后余额为0.md)
 * ~~[矿池.md](./release-矿池.md)~~
+* ~~[asic.md](./release-asic.md)~~

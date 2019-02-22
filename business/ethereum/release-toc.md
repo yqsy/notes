@@ -14,9 +14,10 @@
 * ~~[叔区块.md](./release-叔区块.md)~~
 * ~~[账户模型.md](./release-账户模型.md)~~
 * ~~[Gas.md](./release-Gas.md)~~
-* [难度调整之Difficulty.md](./release-难度调整之Difficulty.md)
+* ~~[难度调整之Difficulty.md](./release-难度调整之Difficulty.md)~~
 
 交易:
+* [私有链.md](./release-私有链.md)
 * [密钥与地址.md](./release-密钥与地址.md)
 * [交易.md](./release-交易.md)
 * ~~[数据签名.md](./release-数据签名.md)~~
@@ -25,7 +26,6 @@
 实践: 
 * [便捷脚本all.md](./release-便捷脚本all.md)
 * [源码编译与调试.md](./release-源码编译与调试.md)
-* [私有链.md](./release-私有链.md)
 
 底层源码实现:
 * [挖矿.md](./release-挖矿.md)
