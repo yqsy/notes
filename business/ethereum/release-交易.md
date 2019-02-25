@@ -1,7 +1,9 @@
 <!-- TOC -->
 
 - [1. 说明](#1-说明)
-- [2. 交易数据](#2-交易数据)
+- [2. State Tree (状态树)](#2-state-tree-状态树)
+- [3. Receipt Tree (收据树)](#3-receipt-tree-收据树)
+- [4. 交易数据](#4-交易数据)
 
 <!-- /TOC -->
 
@@ -9,10 +11,7 @@
 <a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
-ethereum的交易的原理和比特币略有不同,相同之处都是使用secp256k1
-
-
-不过比特币运用`unspent transaction output (UTXO)`表示的`余额状态`的方式,在ethereum中变成了 Receipt Tree (收据树), State Tree (状态树). 我们做几笔交易来分析一下:
+ethereum的交易的原理和比特币略有不同,相同之处都是使用secp256k1,不同之处是ethereum没有使用`unspent transaction output (UTXO)`,而是使用了Receipt Tree (收据树), State Tree (状态树).
 
 参照之前的<私有链>在本地搭建一个挖矿环境,我们做一笔交易:
 
@@ -31,7 +30,7 @@ ethereum的交易的原理和比特币略有不同,相同之处都是使用secp2
 geth attach ipc:/mnt/disk1/linux/env/ethereum/data1/geth.ipc
 
 # 导入账号
-personal.importRawKey('5f33b36aadc0f0308a278795767a2df8bd6fed81515e3a232663d0fdef651518', '123456')
+web3.personal.importRawKey('5f33b36aadc0f0308a278795767a2df8bd6fed81515e3a232663d0fdef651518', '123456')
 
 # 打印账号 (2个)
 eth.accounts
@@ -51,5 +50,19 @@ var blockid=eth.getTransaction(txid).blockHash;
 eth.getBlock(blockid);
 ```
 
-<a id="markdown-2-交易数据" name="2-交易数据"></a>
-# 2. 交易数据
+<a id="markdown-2-state-tree-状态树" name="2-state-tree-状态树"></a>
+# 2. State Tree (状态树)
+
+```bash
+
+```
+
+<a id="markdown-3-receipt-tree-收据树" name="3-receipt-tree-收据树"></a>
+# 3. Receipt Tree (收据树)
+
+
+
+<a id="markdown-4-交易数据" name="4-交易数据"></a>
+# 4. 交易数据
+
+* https://raw.githubusercontent.com/yqsy/notes/master/business/ethereum/data/sendeth

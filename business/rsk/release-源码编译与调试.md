@@ -46,7 +46,6 @@ chmod +x ./configure.sh
 # 2. 代码组织
 
 ```bash
-
 cd /mnt/disk1/linux/reference/refer/rskj/rskj-core/src/main/java/co/rsk
 
 # 目录内的源码统计
@@ -60,7 +59,6 @@ sort  -k 2 -nr < /tmp/1.txt
 
 # rsk目录下的源码统计
 find *.java -maxdepth 1  -type f -print0 | xargs -0 wc -l | sort -nr | head -n 1 | awk '{print $1}'
-
 ```
 
 源码:

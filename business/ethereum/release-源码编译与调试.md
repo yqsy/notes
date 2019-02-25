@@ -76,6 +76,8 @@ sort  -k 2 -nr < /tmp/1.txt
 ./ethdb              988    # 数据库
 ./ethclient          738    # 客户端
 ./ethstats           717    # 状态
+
+代码总量大约在
 ```
 
 

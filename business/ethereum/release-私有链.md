@@ -2,7 +2,6 @@
 
 - [1. 说明](#1-说明)
 - [2. 参考资料](#2-参考资料)
-- [2. 交易数据](#2-交易数据)
 
 <!-- /TOC -->
 
@@ -87,7 +86,3 @@ web3.fromWei(web3.eth.getBalance(web3.eth.coinbase).toNumber(), 'ether')
 * https://github.com/ethereum/go-ethereum/wiki/Private-network
 * https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster
 
-<a id="markdown-2-交易数据" name="2-交易数据"></a>
-# 2. 交易数据
-
-![]()
