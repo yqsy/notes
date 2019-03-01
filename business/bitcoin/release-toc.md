@@ -29,8 +29,9 @@
 * [nLockTime单向支付通道.md](./release-nLockTime单向支付通道.md)
 * [nSequence时间锁交易.md](./release-nSequence时间锁交易.md)
 * [nSequence双向支付通道.md](./release-nSequence双向支付通道.md)
-* ~~[交易的打包竞争.md](./release-交易的打包竞争.md)~~
-* ~~[手续费.md](./release-手续费.md)~~
+* [区块的大小.md](./release-区块的大小.md)
+* [交易的打包竞争.md](./release-交易的打包竞争.md)
+* [手续费.md](./release-手续费.md)
 * ~~[哈希时间锁.md](./release-哈希时间锁.md)~~
 * ~~[闪电网络.md](./release-闪电网络.md)~~
 * ~~[侧链.md](./release-侧链)~~
@@ -65,6 +66,11 @@
 * [图搜索结合hash的pow.md](./release-图搜索结合hash的pow.md)
 * [创世奖励无法被花费.md](./release-创世奖励无法被花费.md)
 * [26笔交易后余额为0.md](./release-26笔交易后余额为0.md)
+* [浏览器.md](./release-浏览器.md)
 * ~~[矿池.md](./release-矿池.md)~~
 * ~~[asic.md](./release-asic.md)~~
 * ~~[吞吐量与可扩展.md](./release-吞吐量与可扩展.md)~~
+
+统计:
+* ~~[粉尘攻击.md](./release-粉尘攻击.md)~~
+* ~~[交易金额分布.md](./release-交易金额分布.md)~~
