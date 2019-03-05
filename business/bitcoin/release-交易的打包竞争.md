@@ -10,13 +10,17 @@
 
 ```bash
 # 堆栈:
-AcceptToMemoryPool -> AcceptToMemoryPoolWithTime -> AcceptToMemoryPoolWithTime -> AcceptToMemoryPoolWorker -> pool.addUnchecked
+AcceptToMemoryPool -> AcceptToMemoryPoolWithTime -> AcceptToMemoryPoolWithTime -> AcceptToMemoryPoolWorker -> CTxMemPool::addUnchecked
 
 # 全局变量
 CTxMemPool
 ```
 
+竞争的目的是因为区块的容量是有上限的(4MB weight), 在交易并发量大的时候,为了防止货币系统不能正常使用. 采取谁出价高谁优先被打包的措施, 收费的增高可以有效降低并发量,使货币系统能够正常运行.
+
+
 <a id="markdown-2-参考资料" name="2-参考资料"></a>
 # 2. 参考资料
 
 * https://www.blockchain.com/btc/unconfirmed-transactions
+* https://jochen-hoenicke.de/queue/#0,24h (24小时图)

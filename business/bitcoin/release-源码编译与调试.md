@@ -67,7 +67,7 @@ include_directories(${PROJECT_SOURCE_DIR}/secp256k1/include
         )
 
 
-file(GLOB_RECURSE SRCS *.cpp *,h)
+file(GLOB_RECURSE SRCS *.cpp *.h)
 
 add_executable(src ${SRCS})
 ```
@@ -76,7 +76,7 @@ add_executable(src ${SRCS})
 # 2. arch环境
 
 ```bash
-sudo pacman -S git base-devel boost libevent python
+sudo pacman -S --noconfirm git base-devel boost libevent python
 yaourt -S --noconfirm db4.8
 
 cd /mnt/disk1/linux/reference/refer/bitcoin

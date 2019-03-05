@@ -11,16 +11,10 @@
 #URI: bitcoin:1AWRMrjzueUkYN24Bj3wfxkNdtLsRZhmVQ
 #P2SH-P2WPKH: 33TYWDf91H9tvnVxYwRFpmgo5xPLZJoxVX
 
-bitcoin-cli generatetoaddress 101 1AWRMrjzueUkYN24Bj3wfxkNdtLsRZhmVQ
-
-PRE_TXID=`_bbasehash 1`
-PRE_VOUT=0
-
+bitcoin-cli generatetoaddress 200 1AWRMrjzueUkYN24Bj3wfxkNdtLsRZhmVQ
+bitcoin-cli importprivkey L4xyiVoWxiX2uNYoLqsPAv8RKitc4QWaVXQ7idpThqrju5WBwVkG
 NEWEC=`bx seed | bx ec-new`
 NEWADDRESS_INFO=`parse_privkey $NEWEC`
 NEWP2PkHADDR=`echo $NEWADDRESS_INFO | sed -n 13p | awk '{print $2}'`
-
 bitcoin-cli sendtoaddress $NEWP2PkHADDR 50.0 "" "" true
-
-# 4) 生成打包区块
 bg 1

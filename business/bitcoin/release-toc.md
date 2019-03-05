@@ -30,8 +30,8 @@
 * [nSequence时间锁交易.md](./release-nSequence时间锁交易.md)
 * [nSequence双向支付通道.md](./release-nSequence双向支付通道.md)
 * [区块的大小.md](./release-区块的大小.md)
-* [交易的打包竞争.md](./release-交易的打包竞争.md)
 * [手续费.md](./release-手续费.md)
+* [交易的打包竞争.md](./release-交易的打包竞争.md)
 * ~~[哈希时间锁.md](./release-哈希时间锁.md)~~
 * ~~[闪电网络.md](./release-闪电网络.md)~~
 * ~~[侧链.md](./release-侧链)~~
