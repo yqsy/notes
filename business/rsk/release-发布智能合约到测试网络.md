@@ -2,9 +2,8 @@
 
 - [1. truffle](#1-truffle)
 - [2. console](#2-console)
-- [3. postman](#3-postman)
-- [4. remix](#4-remix)
-- [5. 参考资料](#5-参考资料)
+- [3. remix](#3-remix)
+- [4. 参考资料](#4-参考资料)
 
 <!-- /TOC -->
 
@@ -14,7 +13,7 @@
 
 给`truffle-concig.js`增加部署环境:
 
-* https://iancoleman.io/bip39/ (获取助记词)
+
 
 ```bash
 cat >> /mnt/disk1/linux/reference/test/turffletest/truffle-config.js << EOF
@@ -39,9 +38,7 @@ EOF
 
 部署命令:
 
-* https://faucet.testnet.rsk.co/ (给测试网络rsk地址充值)
-* https://explorer.testnet.rsk.co/ (测试网浏览器)
-* https://explorer.testnet.rsk.co/address/0xc4b5cf245e903ce3d72796951f5380fdfbe57744 (查询余额)
+
 
 ```bash
 npm init
@@ -87,15 +84,16 @@ contract.get()
 <a id="markdown-2-console" name="2-console"></a>
 # 2. console
 
-<a id="markdown-3-postman" name="3-postman"></a>
-# 3. postman
+<a id="markdown-3-remix" name="3-remix"></a>
+# 3. remix
 
-<a id="markdown-4-remix" name="4-remix"></a>
-# 4. remix
-
-<a id="markdown-5-参考资料" name="5-参考资料"></a>
-# 5. 参考资料
+<a id="markdown-4-参考资料" name="4-参考资料"></a>
+# 4. 参考资料
 
 * https://truffleframework.com/docs/truffle/reference/truffle-commands
 * https://github.com/rsksmart/tutorials/wiki/Module-0-%E2%80%93-A-little-about-DApps-and-Smart-Contracts-(10-minutes) (完整流程) 
 * https://github.com/rsksmart/rskj/wiki/rsk-public-nodes (测试网络开放的权限)
+* https://faucet.testnet.rsk.co/ (给测试网络rsk地址充值)
+* https://explorer.testnet.rsk.co/ (测试网浏览器)
+* https://explorer.testnet.rsk.co/address/0xc4b5cf245e903ce3d72796951f5380fdfbe57744 (查询余额)
+* https://iancoleman.io/bip39/ (获取助记词)

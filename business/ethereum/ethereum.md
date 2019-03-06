@@ -38,8 +38,6 @@
 * https://ethplorer.io/ (web合约调用)
 * https://ethgasstation.info/index.php (gas定价)
 * https://etherconverter.online/ (换算)
-* https://faucet.ropsten.be/ (充钱)
-* https://faucet.metamask.io/ (充钱)
 * chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#  (metamask网页)
 
 ---

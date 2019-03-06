@@ -26,9 +26,9 @@ parse_privkey_eth `bx seed | bx ec-new`
 地址: abe0d7e816468f9a4b5b46e515fa4dd02d2418a4
 
 # 挖矿帐号:
-私钥: 6c2f62fe367e43a29546ccbea84740be00d42efcde81fe9e96cc80a2039e4e89
-公钥: e1af61498eccd7706ac307ab4645037f465360f28633831c35b14020cc4481b7648bb054dcf50977c895015078f6b2f45688b20ff379df5f79cd5b9ec65983ac
-地址: 5351b0ead94e9d5cb69798e1cbc2af99e6764eb7
+私钥: 99cb1d7c7d7ee79464e24a564bcf36fbb8e7e8c104f28612e723e6f2453e5f38
+公钥: 9cb23cd80ba24954c49152ca9afc6fe7798eb009dee47064ffd8ebd055a6c1a3403e60665d61a6455c56fdd37ab5d5f8514865bb2f47a79728f227cafa9e7b82
+地址: 1b563a38e5f6c6d9fa9206cca6390912de3f1d7d
 
 cat > /mnt/disk1/linux/env/ethereum/genesis.json << EOF
 {
@@ -59,7 +59,7 @@ geth --datadir /mnt/disk1/linux/env/ethereum/data1 --networkid 1108
 geth attach ipc:/mnt/disk1/linux/env/ethereum/data1/geth.ipc
     
 # 挖矿
-personal.importRawKey('6c2f62fe367e43a29546ccbea84740be00d42efcde81fe9e96cc80a2039e4e89', '123456')
+personal.importRawKey('99cb1d7c7d7ee79464e24a564bcf36fbb8e7e8c104f28612e723e6f2453e5f38', '123456')
 
 # 列出帐号
 personal.listAccounts
