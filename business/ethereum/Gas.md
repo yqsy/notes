@@ -33,3 +33,6 @@ type txdata struct {
 
 * 指令消耗的gas (https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv)
 * https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas (ethereum stackexchange)
+* https://ethgasstation.info/index.php (gas定价)
+* https://etherconverter.online/ (换算)
+* 

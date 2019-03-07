@@ -32,13 +32,8 @@
 * http://www.tryblockchain.org/Solidity-source-mapping.html (solidity 语法说明)
 * https://openzeppelin.org/api/docs/get-started.html (solidity安全合约的使用说明)
 * https://openzeppelin.org/api/docs/learn-about-tokens.html (openzeppelin关于token的说明)
-* https://github.com/comaeio/porosity (反编译)
-* https://ropsten.etherscan.io/ (ROPSTEN网络)
-* https://etherscan.io/ (区块链浏览器)
-* https://ethplorer.io/ (web合约调用)
-* https://ethgasstation.info/index.php (gas定价)
-* https://etherconverter.online/ (换算)
-* chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#  (metamask网页)
+
+
 
 ---
 * https://github.com/ethereum/wiki/wiki/JavaScript-API (js api)
