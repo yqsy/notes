@@ -1,0 +1,663 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "bitcoin",
+      "id": 1,
+      "attr": {
+        "position": [
+          -382,
+          -697,
+          1
+        ]
+      },
+      "ideas": {
+        "2": {
+          "title": "底层技术",
+          "id": "5.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "1": {
+              "title": "ecdsa secp256k1 签名,认证",
+              "id": "2.22b4.8c11817ec-810b.61f250326",
+              "attr": {},
+              "ideas": {}
+            },
+            "2": {
+              "title": "sha256 + ripemd160 地址",
+              "id": "3.22b4.8c11817ec-810b.61f250326",
+              "attr": {}
+            },
+            "3": {
+              "title": " sha256 pow",
+              "id": "6.22b4.8c11817ec-810b.61f250326"
+            }
+          }
+        },
+        "3": {
+          "title": "交易数据",
+          "id": "8.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "3": {
+              "title": "utxo",
+              "id": "75.22b4.8c11817ec-810b.61f250326",
+              "ideas": {
+                "1": {
+                  "title": "CTxIn",
+                  "id": "18.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "hash + n: 来源于哪一笔out",
+                      "id": "71.22b4.8c11817ec-810b.61f250326"
+                    },
+                    "2": {
+                      "title": "scriptSig: 见证",
+                      "id": "72.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                },
+                "2": {
+                  "title": "CTxOut",
+                  "id": "69.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "nValue: 币数量",
+                      "id": "73.22b4.8c11817ec-810b.61f250326"
+                    },
+                    "2": {
+                      "title": "scriptPubKey: 锁定",
+                      "id": "74.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                }
+              }
+            }
+          }
+        },
+        "-1": {
+          "title": "包头",
+          "id": "7.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "1": {
+              "title": "nVersion: 共识版本",
+              "id": "9.22b4.8c11817ec-810b.61f250326"
+            },
+            "2": {
+              "title": "hashPrevBlock: 上一个区块的hash (工作量累计)",
+              "id": "11.22b4.8c11817ec-810b.61f250326"
+            },
+            "3": {
+              "title": "nTime: 时间戳 (时间点的状态)",
+              "id": "13.22b4.8c11817ec-810b.61f250326"
+            },
+            "4": {
+              "title": "nBits: 难度",
+              "id": "15.22b4.8c11817ec-810b.61f250326",
+              "ideas": {}
+            },
+            "5": {
+              "title": "nNonce: 随机值 (工作量证明)",
+              "id": "42.22b4.8c11817ec-810b.61f250326"
+            },
+            "2.5": {
+              "title": "hashMerkleRoot: 交易根 (spv)",
+              "id": "17.22b4.8c11817ec-810b.61f250326"
+            }
+          }
+        },
+        "-2": {
+          "title": "索引",
+          "id": "19.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "5": {
+              "title": "leveldb + 序列化磁盘 + python (leveldb)",
+              "id": "29.22b4.8c11817ec-810b.61f250326",
+              "attr": {},
+              "ideas": {
+                "4": {
+                  "title": "区块hash,高度",
+                  "id": "20.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "放内存中最多几十兆(10年50W区块)",
+                      "id": "21.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                },
+                "5": {
+                  "title": "钱包地址余额",
+                  "id": "24.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "字典 + 数组 + 累积",
+                      "id": "27.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                },
+                "7": {
+                  "title": "钱包地址所有交易",
+                  "id": "25.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "字典+数组",
+                      "id": "26.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                },
+                "8": {
+                  "title": "交易hash",
+                  "id": "23.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "字典",
+                      "id": "28.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "title": "ethereum",
+      "id": "30.22b4.8c11817ec-810b.61f250326",
+      "attr": {
+        "position": [
+          548,
+          -709,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "底层技术",
+          "id": "34.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "1": {
+              "title": "ecdsa secp256k1 签名,认证",
+              "id": "88.22b4.8c11817ec-810b.61f250326"
+            },
+            "2": {
+              "title": "Keccak256 地址",
+              "id": "90.22b4.8c11817ec-810b.61f250326"
+            },
+            "3": {
+              "title": "Ethash pow ",
+              "id": "91.22b4.8c11817ec-810b.61f250326"
+            }
+          }
+        },
+        "2": {
+          "title": "交易数据",
+          "id": "76.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "1": {
+              "title": "AccountNonce: 序号",
+              "id": "77.22b4.8c11817ec-810b.61f250326",
+              "attr": {
+                "style": {
+                  "width": 24
+                }
+              }
+            },
+            "3": {
+              "title": "GAS",
+              "id": "80.22b4.8c11817ec-810b.61f250326",
+              "attr": {
+                "style": {
+                  "width": 50
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Price",
+                  "id": "79.22b4.8c11817ec-810b.61f250326",
+                  "attr": {}
+                },
+                "2": {
+                  "title": "GasLimit",
+                  "id": "81.22b4.8c11817ec-810b.61f250326"
+                }
+              }
+            },
+            "4": {
+              "title": "Recipient: 接受者地址",
+              "id": "83.22b4.8c11817ec-810b.61f250326",
+              "attr": {
+                "position": [
+                  76,
+                  68,
+                  1
+                ]
+              }
+            },
+            "5": {
+              "title": "Amount: 转移的以太币",
+              "id": "85.22b4.8c11817ec-810b.61f250326"
+            },
+            "6": {
+              "title": "PayLoad: 合约",
+              "id": "86.22b4.8c11817ec-810b.61f250326"
+            },
+            "7": {
+              "title": "V R S: 签名+公钥 (推出地址)",
+              "id": "87.22b4.8c11817ec-810b.61f250326"
+            }
+          }
+        },
+        "-1": {
+          "title": "区块头",
+          "id": "48.22b4.8c11817ec-810b.61f250326",
+          "ideas": {
+            "1": {
+              "title": "与比特币相同含义区块头",
+              "id": "35.22b4.8c11817ec-810b.61f250326",
+              "ideas": {
+                "1": {
+                  "title": "Extra (DAO事件,可以表示version)",
+                  "id": "39.22b4.8c11817ec-810b.61f250326"
+                },
+                "2": {
+                  "title": "ParentHash: 上一个快的hash(工作量累积)",
+                  "id": "40.22b4.8c11817ec-810b.61f250326"
+                },
+                "3": {
+                  "title": "TxHash: 交易根 (spv)",
+                  "id": "41.22b4.8c11817ec-810b.61f250326"
+                },
+                "4": {
+                  "title": "Time: 时间戳(时间点的状态)",
+                  "id": "43.22b4.8c11817ec-810b.61f250326"
+                },
+                "5": {
+                  "title": "Difficulty: 难度",
+                  "id": "44.22b4.8c11817ec-810b.61f250326"
+                },
+                "6": {
+                  "title": "Nonce: 随机值 (工作量证明)",
+                  "id": "45.22b4.8c11817ec-810b.61f250326"
+                }
+              }
+            },
+            "2": {
+              "title": "比特币在交易体内的字段",
+              "id": "49.22b4.8c11817ec-810b.61f250326",
+              "ideas": {
+                "1": {
+                  "title": "Coinbase 奖励地址",
+                  "id": "52.22b4.8c11817ec-810b.61f250326"
+                },
+                "2": {
+                  "title": "Number 区块高度",
+                  "id": "55.22b4.8c11817ec-810b.61f250326"
+                }
+              }
+            },
+            "3": {
+              "title": "其他特色",
+              "id": "56.22b4.8c11817ec-810b.61f250326",
+              "ideas": {
+                "1": {
+                  "title": "Ghost",
+                  "id": "57.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "UncleHash 叔块hash",
+                      "id": "58.22b4.8c11817ec-810b.61f250326"
+                    }
+                  },
+                  "attr": {}
+                },
+                "2": {
+                  "title": "状态树 + 收据树",
+                  "id": "59.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "Root",
+                      "id": "60.22b4.8c11817ec-810b.61f250326"
+                    },
+                    "2": {
+                      "title": "ReceiptHash",
+                      "id": "61.22b4.8c11817ec-810b.61f250326"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "布隆过滤器",
+                  "id": "62.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "Bloom",
+                      "id": "63.22b4.8c11817ec-810b.61f250326",
+                      "attr": {}
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Gas",
+                  "id": "64.22b4.8c11817ec-810b.61f250326",
+                  "ideas": {
+                    "1": {
+                      "title": "Gaslimit",
+                      "id": "65.22b4.8c11817ec-810b.61f250326"
+                    },
+                    "2": {
+                      "title": "GasUsed",
+                      "id": "66.22b4.8c11817ec-810b.61f250326"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "MixDigest",
+                  "id": "67.22b4.8c11817ec-810b.61f250326"
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#00FF00"
+                }
+              }
+            }
+          },
+          "attr": {}
+        }
+      }
+    }
+  },
+  "attr": {
+    "theme": "default"
+  },
+  "title": "bitcoin",
+  "links": [],
+  "theme": {
+    "name": "MindMup Default",
+    "node": [
+      {
+        "name": "default",
+        "cornerRadius": 10,
+        "backgroundColor": "#E0E0E0",
+        "border": {
+          "type": "surround",
+          "line": {
+            "color": "#707070",
+            "width": 1,
+            "style": "solid"
+          }
+        },
+        "shadow": [
+          {
+            "color": "#070707",
+            "opacity": 0.4,
+            "offset": {
+              "width": 2,
+              "height": 2
+            },
+            "radius": 2
+          }
+        ],
+        "text": {
+          "margin": 5,
+          "alignment": "center",
+          "maxWidth": 146,
+          "color": "#4F4F4F",
+          "lightColor": "#EEEEEE",
+          "darkColor": "#000000",
+          "font": {
+            "lineSpacing": 4.5,
+            "lineSpacingPx": 6,
+            "size": 9,
+            "sizePx": 12,
+            "weight": "bold"
+          }
+        },
+        "connections": {
+          "default": {
+            "h": "center",
+            "v": "center"
+          },
+          "from": {
+            "horizontal": {
+              "h": "nearest-inset",
+              "v": "center"
+            }
+          },
+          "to": {
+            "h": "nearest",
+            "v": "center"
+          }
+        },
+        "decorations": {
+          "height": 20,
+          "edge": "top",
+          "overlap": true,
+          "position": "end",
+          "margin": 2,
+          "label": {
+            "border": 1,
+            "cornerRadius": 11,
+            "margin": 2,
+            "font": {
+              "lineSpacing": 0,
+              "lineSpacingPx": 0,
+              "size": 9,
+              "sizePx": 12,
+              "weight": "bold"
+            }
+          },
+          "cornerRadius": 12,
+          "backgroundColor": "#22aae0",
+          "opacity": 0.8,
+          "color": "#ffffff"
+        }
+      },
+      {
+        "name": "level_1",
+        "backgroundColor": "#22AAE0"
+      },
+      {
+        "name": "activated",
+        "border": {
+          "type": "surround",
+          "line": {
+            "color": "#22AAE0",
+            "width": 3,
+            "style": "dotted"
+          }
+        }
+      },
+      {
+        "name": "level_1.activated",
+        "border": {
+          "type": "surround",
+          "line": {
+            "color": "#EEEEEE",
+            "width": 3,
+            "style": "dotted"
+          }
+        }
+      },
+      {
+        "name": "selected",
+        "shadow": [
+          {
+            "color": "#000000",
+            "opacity": 0.9,
+            "offset": {
+              "width": 2,
+              "height": 2
+            },
+            "radius": 2
+          }
+        ]
+      },
+      {
+        "name": "collapsed",
+        "shadow": [
+          {
+            "color": "#888888",
+            "offset": {
+              "width": 0,
+              "height": 1
+            },
+            "radius": 0
+          },
+          {
+            "color": "#FFFFFF",
+            "offset": {
+              "width": 0,
+              "height": 3
+            },
+            "radius": 0
+          },
+          {
+            "color": "#888888",
+            "offset": {
+              "width": 0,
+              "height": 4
+            },
+            "radius": 0
+          },
+          {
+            "color": "#FFFFFF",
+            "offset": {
+              "width": 0,
+              "height": 6
+            },
+            "radius": 0
+          },
+          {
+            "color": "#888888",
+            "offset": {
+              "width": 0,
+              "height": 7
+            },
+            "radius": 0
+          }
+        ]
+      },
+      {
+        "name": "collapsed.selected",
+        "shadow": [
+          {
+            "color": "#FFFFFF",
+            "offset": {
+              "width": 0,
+              "height": 1
+            },
+            "radius": 0
+          },
+          {
+            "color": "#888888",
+            "offset": {
+              "width": 0,
+              "height": 3
+            },
+            "radius": 0
+          },
+          {
+            "color": "#FFFFFF",
+            "offset": {
+              "width": 0,
+              "height": 6
+            },
+            "radius": 0
+          },
+          {
+            "color": "#555555",
+            "offset": {
+              "width": 0,
+              "height": 7
+            },
+            "radius": 0
+          },
+          {
+            "color": "#FFFFFF",
+            "offset": {
+              "width": 0,
+              "height": 10
+            },
+            "radius": 0
+          },
+          {
+            "color": "#333333",
+            "offset": {
+              "width": 0,
+              "height": 11
+            },
+            "radius": 0
+          }
+        ]
+      }
+    ],
+    "connector": {
+      "default": {
+        "type": "quadratic",
+        "controlPoint": {
+          "above": {
+            "width": 0,
+            "height": 0.75
+          },
+          "below": {
+            "width": 0,
+            "height": 0.75
+          },
+          "horizontal": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        "label": {
+          "position": {
+            "ratio": 0.5
+          },
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "text": {
+            "color": "#4F4F4F",
+            "font": {
+              "size": 9,
+              "sizePx": 12,
+              "weight": "normal"
+            }
+          }
+        },
+        "line": {
+          "color": "#707070",
+          "width": 1
+        }
+      }
+    },
+    "link": {
+      "default": {
+        "line": {
+          "color": "red",
+          "lineStyle": "dashed",
+          "width": 1
+        },
+        "label": {
+          "position": {
+            "ratio": 0.5
+          },
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#FFFFFF",
+          "text": {
+            "color": "#4F4F4F",
+            "font": {
+              "size": 9,
+              "sizePx": 12,
+              "weight": "normal"
+            }
+          }
+        }
+      }
+    }
+  }
+}

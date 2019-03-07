@@ -25,9 +25,15 @@ class BlockHeader:
 
 
 class Block:
-    def __init__(self, stream):
-        self.magicno = uint4(stream)
-        self.blockSize = uint4(stream)
+    def __init__(self, stream, disablePrefix):
+
+        if not disablePrefix:
+            self.magicno = uint4(stream)
+            self.blockSize = uint4(stream)
+        else:
+            self.magicno = None
+            self.blockSize = None  # TODO
+
         self.blockHeader = BlockHeader(stream)
 
         self.txcount = compactSize(stream)
