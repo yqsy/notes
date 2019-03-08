@@ -15,7 +15,7 @@ def main():
             if stream.tell() == os.fstat(stream.fileno()).st_size:
                 break
 
-            block = Block(stream, False)
+            block = Block(stream, False, False)
 
             if block.isMagicZero():
                 break

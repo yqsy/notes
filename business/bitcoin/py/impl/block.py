@@ -25,7 +25,7 @@ class BlockHeader:
 
 
 class Block:
-    def __init__(self, stream, disablePrefix):
+    def __init__(self, stream, disablePrefix, rskFlag):
 
         if not disablePrefix:
             self.magicno = uint4(stream)
@@ -40,7 +40,11 @@ class Block:
         self.vtx = []
 
         for i in range(0, self.txcount):
-            self.vtx.append(Tx(stream))
+            if rskFlag and i == 0:
+                # coinbase rsk second out lock script is RSKBLOCK:hash
+                self.vtx.append(Tx(stream, True))
+            else:
+                self.vtx.append(Tx(stream, False))
 
     def isMagicNoValid(self):
         return self.magicno == 0xD9B4BEF9
@@ -55,7 +59,7 @@ class Block:
 
 
 class Tx:
-    def __init__(self, stream):
+    def __init__(self, stream, rskFlag):
         self.witness = False
 
         self.nVersion = uint4(stream)
@@ -67,9 +71,9 @@ class Tx:
 
             if self.flags != 0:
                 self.readVin(stream)
-                self.readVout(stream)
+                self.readVout(stream, rskFlag)
         else:
-            self.readVout(stream)
+            self.readVout(stream, rskFlag)
 
         if self.flags & 1:
             self.flags ^= 1
@@ -93,11 +97,19 @@ class Tx:
         for i in range(0, self.vinCount):
             self.vin.append(In(stream))
 
-    def readVout(self, stream):
+    def readVout(self, stream, rskFlag):
         self.voutCount = compactSize(stream)
         self.vout = []
-        for i in range(0, self.voutCount):
-            self.vout.append(Out(stream))
+
+        if rskFlag:
+            # coinbase 0 out
+            self.vout.append(Out(stream, False))
+
+            # coinbase 1 out -> RSKBLOCK:
+            self.vout.append(Out(stream, True))
+        else:
+            for i in range(0, self.voutCount):
+                self.vout.append(Out(stream, rskFlag))
 
     def isWitness(self):
         return self.witness
@@ -141,10 +153,12 @@ class In:
 
 
 class Out:
-    def __init__(self, stream):
+    def __init__(self, stream, rskFlag):
         self.nValue = uint8(stream)
         self.scriptPubkeylen = compactSize(stream)
         self.scriptPubkey = stream.read(self.scriptPubkeylen)
+
+        self.rskFlag = rskFlag
 
     def valueFromAmount(self, amount):
         COIN = 100000000
@@ -157,5 +171,12 @@ class Out:
     def __str__(self):
         str = "nValue {0}\n".format(self.valueFromAmount(self.nValue))
         str = str + "scriptPubkeylen: {0}\n".format(self.scriptPubkeylen)
-        str = str + "scriptPubkey: {0}".format(scriptToAsmStr(self.scriptPubkey))
+
+        if self.rskFlag:
+            rskBlock = self.scriptPubkey[:9]
+            hashHex = self.scriptPubkey[9:]
+
+            str = str + "scriptPubkey: {0} {1}".format(rskBlock.decode("utf-8") , hashHex.hex())
+        else:
+            str = str + "scriptPubkey: {0}".format(scriptToAsmStr(self.scriptPubkey))
         return str

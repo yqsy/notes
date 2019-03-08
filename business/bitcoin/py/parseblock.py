@@ -13,7 +13,7 @@ def main():
 
     f = io.BytesIO(bytearray.fromhex(sys.argv[1]))
 
-    block = Block(f, True)
+    block = Block(f, True, True)
 
     print("\n===block===")
     print(block)
