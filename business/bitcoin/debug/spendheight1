@@ -30,9 +30,15 @@ RAWTX=`bitcoin-cli createrawtransaction '''
     }
 ]
 ''' '''
-{
+[
+    {
     "'$NEWP2PkHADDR'": 49.9999
-}
+    }
+    ,
+    {
+        "data": "68656C6C6F20776F726C64"
+    }
+]
 ''' `
 
 

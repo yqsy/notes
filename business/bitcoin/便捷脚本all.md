@@ -33,4 +33,12 @@ wget -O ~/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/notes/master/bus
 cat >> ~/.zshrc << EOF
 source ~/.bitcoincmd.rc
 EOF
+
+# 锁定脚本 => sha256 =>反转 => script hash
+wget -O ~/.bitcoinscripthash.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoinscripthash.rc
+
+cat >> ~/.zshrc << EOF
+source ~/.bitcoinscripthash.rc
+EOF
+
 ```
