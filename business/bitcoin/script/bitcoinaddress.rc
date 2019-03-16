@@ -1,3 +1,10 @@
+get_script_hash() {
+	script_hex=$1
+	sha256=`bx sha256 $script_hex`
+	reverseSha256=`echo -n "$sha256" | fold -w2 | tac | tr -d "\n" `
+	echo script_hash_reverse: $reverseSha256
+}
+
 # 私钥 -> 公钥 -> 公钥哈系 -> 钱包地址:
 parse_privkey() {
     PRIKEY=$1
@@ -27,7 +34,8 @@ parse_privkey() {
     P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode --version 5`
     P2WPKH=`getsegwitaddr $PUBKEYHASH_COMPRESSED`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH_COMPRESSED] equalverify checksig" | bx script-encode `
-    
+    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+
     echo "[压缩]" &&
     echo 私钥: $PRIKEY &&
     echo 私钥WIF: $PRIKEY_WIF_COMPRESSED &&
@@ -37,7 +45,7 @@ parse_privkey() {
     echo URI: $URI_COMPRESSED &&
     echo P2SH-P2WPKH: $P2SH_P2WPKH
     echo P2WPKH: $P2WPKH &&
-    echo P2PKH_SCRIPTHASH: $P2PKH_SCRIPTHASH
+    echo $P2PKH_SCRIPTHASH
 
     echo $QRCODE_COMPRESSED > /tmp/compressed.png
 } 
@@ -70,6 +78,7 @@ parse_pubkey_compressed() {
     P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode --version 5`
     P2WPKH=`getsegwitaddr $PUBKEYHASH_COMPRESSED`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH_COMPRESSED] equalverify checksig" | bx script-encode `
+    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
     echo "[压缩]" &&
     echo 公钥: $PUBKEY_COMPRESSED &&
     echo 公钥hash: $PUBKEYHASH_COMPRESSED &&
@@ -77,7 +86,7 @@ parse_pubkey_compressed() {
     echo URI: $URI_COMPRESSED  &&
     echo P2SH-P2WPKH: $P2SH_P2WPKH
     echo P2WPKH: $P2WPKH && 
-    echo P2PKH_SCRIPTHASH: $P2PKH_SCRIPTHASH
+    echo $P2PKH_SCRIPTHASH
 }
 
 # 公钥哈系 -> 钱包地址
@@ -88,13 +97,14 @@ parse_pubkeyhash() {
     P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode --version 5`
     P2WPKH=`getsegwitaddr $PUBKEYHASH`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH] equalverify checksig" | bx script-encode `
-
+    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    
     echo 公钥hash: $PUBKEYHASH &&
     echo P2PKH地址: $P2PKHADDRESS &&
     echo URI: $URI &&
     echo P2SH-P2WPKH: $P2SH_P2WPKH
     echo P2WPKH: $P2WPKH && 
-    echo P2PKH_SCRIPTHASH: $P2PKH_SCRIPTHASH
+    echo $P2PKH_SCRIPTHASH
 }
 
 # 钱包地址 -> 公钥哈系
@@ -105,11 +115,12 @@ parse_address() {
     P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode --version 5`
     P2WPKH=`getsegwitaddr $PUBKEYHASH`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH] equalverify checksig" | bx script-encode `
-
+    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    
     echo 公钥hash: $PUBKEYHASH &&
     echo P2PKH地址: $P2PKHADDRESS &&
     echo URI: $URI &&
     echo P2SH-P2WPKH: $P2SH_P2WPKH
     echo P2WPKH: $P2WPKH && 
-    echo P2PKH_SCRIPTHASH: $P2PKH_SCRIPTHASH
+    echo $P2PKH_SCRIPTHASH
 }

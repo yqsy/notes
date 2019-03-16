@@ -1,6 +1,0 @@
-get_script_hash() {
-	script_hex=$1
-	sha256=`bx sha256 $script_hex`
-	reverseSha256=`echo -n "$sha256" | fold -w2 | tac | tr -d "\n" `
-	echo script_hash_reverse: $reverseSha256
-}
