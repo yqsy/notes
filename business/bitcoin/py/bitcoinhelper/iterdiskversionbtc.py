@@ -1,11 +1,17 @@
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
+import os
 import sys
 
-from impl.index import *
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
+
+from bitcoinhelper.impl.index import *
 
 
 def main():
     if len(sys.argv) < 3:
-        print("usage: iterversion.py {basedirectory} {indexdirectory}")
+        print("usage: iterdiskversionbtc.py {basedirectory} {indexdirectory}")
         exit(0)
 
     versionHeightsMap = {}

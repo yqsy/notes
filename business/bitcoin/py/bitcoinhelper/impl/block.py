@@ -1,8 +1,11 @@
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
 from datetime import datetime
-from impl.script import *
+from bitcoinhelper.impl.script import *
 
 class BlockHeader:
-    def __init__(self, stream):
+    def __init__(self, stream, **kwargs):
         self.nVersion = uint4(stream)
         self.hashPrevBlock = hash32(stream)
         self.hashMerkleRoot = hash32(stream)
@@ -10,14 +13,33 @@ class BlockHeader:
         self.nBits = uint4(stream)
         self.nNonce = uint4(stream)
 
+        self.pkcFlag = False
+        for k in kwargs.keys():
+            if k == "pkcFlag":
+                self.pkcFlag = kwargs["pkcFlag"]
+
+
+        if self.pkcFlag:
+            self.cuckooNoncesCount = compactSize(stream)
+            self.cuckooNonces = []
+            for i in range(0, self.cuckooNoncesCount):
+                self.cuckooNonces.append(uint4(stream))
+
+
     def __str__(self):
-        str = "nVersion: 0x{0:x}\n".format(self.nVersion)
-        str = str + "hashPrevBlock: 0x{0}\n".format(hashStr(self.hashPrevBlock))
-        str = str + "hashMerkleRoot: 0x{0}\n".format(hashStr(self.hashMerkleRoot))
-        str = str + "nTime: {0}\n".format(self.decodeTime(self.nTime))
-        str = str + "nBits: 0x{0:x}\n".format(self.nBits)
-        str = str + "nNonce: {0}".format(self.nNonce)
-        return str
+        rtn = "nVersion: 0x{0:x}\n".format(self.nVersion)
+        rtn = rtn + "hashPrevBlock: 0x{0}\n".format(hashStr(self.hashPrevBlock))
+        rtn = rtn + "hashMerkleRoot: 0x{0}\n".format(hashStr(self.hashMerkleRoot))
+        rtn = rtn + "nTime: {0}\n".format(self.decodeTime(self.nTime))
+        rtn = rtn + "nBits: 0x{0:x}\n".format(self.nBits)
+        rtn = rtn + "nNonce: {0}".format(self.nNonce)
+
+        if self.pkcFlag:
+            rtn = rtn + "\ncuckooNonces: {"
+            for i in range(0, self.cuckooNoncesCount):
+                rtn = rtn + str(self.cuckooNonces[i]) + ","
+            rtn = rtn + "}\n"
+        return rtn
 
     def decodeTime(self, time):
         utcTime = datetime.utcfromtimestamp(time)
@@ -25,22 +47,33 @@ class BlockHeader:
 
 
 class Block:
-    def __init__(self, stream, disablePrefix, rskFlag):
+    def __init__(self, stream, **kwargs):
+        self.disablePrefix = False
+        self.rskFlag = False
+        self.pkcFlag = False
 
-        if not disablePrefix:
+        for k in kwargs.keys():
+            if k == "disablePrefix":
+                self.disablePrefix = kwargs["disablePrefix"]
+            elif k == "rskFlag":
+                self.rskFlag = kwargs["rskFlag"]
+            elif k == "pkcFlag":
+                self.pkcFlag = kwargs["pkcFlag"]
+
+        if not self.disablePrefix:
             self.magicno = uint4(stream)
             self.blockSize = uint4(stream)
         else:
             self.magicno = None
             self.blockSize = None  # TODO
 
-        self.blockHeader = BlockHeader(stream)
+        self.blockHeader = BlockHeader(stream, pkcFlag=self.pkcFlag)
 
         self.txcount = compactSize(stream)
         self.vtx = []
 
         for i in range(0, self.txcount):
-            if rskFlag and i == 0:
+            if self.rskFlag and i == 0:
                 # coinbase rsk second out lock script is RSKBLOCK:hash
                 self.vtx.append(Tx(stream, True))
             else:

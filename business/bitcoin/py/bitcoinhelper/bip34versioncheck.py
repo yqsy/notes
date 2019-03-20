@@ -1,6 +1,12 @@
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
+import os
 import sys
 
-from impl.index import *
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
+
+from bitcoinhelper.impl.index import *
 
 
 def main():

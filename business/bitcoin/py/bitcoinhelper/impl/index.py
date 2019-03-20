@@ -1,10 +1,11 @@
-from io import BytesIO
-import struct
+from __future__ import absolute_import, division, print_function, \
+    with_statement
 
+from io import BytesIO
 
 import plyvel
 
-from impl.serialize import *
+from bitcoinhelper.impl.serialize import *
 
 BLOCK_HAVE_DATA = 8
 BLOCK_HAVE_UNDO = 16

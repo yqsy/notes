@@ -1,19 +1,25 @@
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
 import io
 import sys
+import os
 
-from impl.block import *
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
+
+from bitcoinhelper.impl.block import *
 
 
 def main():
     if len(sys.argv) < 2:
-        print("usage: parseblock.py blockHex")
+        print("usage: parseblockbtc.py blockHex")
         exit(0)
 
     print("block hex: {}".format(sys.argv[1]))
 
     f = io.BytesIO(bytearray.fromhex(sys.argv[1]))
 
-    block = Block(f, True, True)
+    block = Block(f, disablePrefix=True, pkcFlag=True)
 
     print("\n===block===")
     print(block)

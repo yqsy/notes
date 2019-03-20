@@ -1,4 +1,7 @@
-from impl.serialize import *
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
+from bitcoinhelper.impl.serialize import *
 
 # push value
 OP_0 = 0x00

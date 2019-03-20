@@ -1,12 +1,17 @@
+from __future__ import absolute_import, division, print_function, \
+    with_statement
+
 import os
 import sys
 
-from impl.block import *
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
+
+from bitcoinhelper.impl.block import *
 
 
 def main():
     if len(sys.argv) < 2:
-        print("usage: loadblock.py *.blk")
+        print("usage: loaddiskblockbtc.py *.blk")
         exit(0)
 
     with open(sys.argv[1], 'rb') as stream:
@@ -15,7 +20,7 @@ def main():
             if stream.tell() == os.fstat(stream.fileno()).st_size:
                 break
 
-            block = Block(stream, False, False)
+            block = Block(stream)
 
             if block.isMagicZero():
                 break
