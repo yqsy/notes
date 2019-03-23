@@ -1,6 +1,7 @@
 <!-- TOC -->
 
 - [1. 证书](#1-证书)
+- [2. zshrc](#2-zshrc)
 
 <!-- /TOC -->
 
@@ -21,4 +22,15 @@ rm id_rsa.pub -f
 # sudo sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication no/g" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
+```
+
+
+<a id="markdown-2-zshrc" name="2-zshrc"></a>
+# 2. zshrc
+
+```bash
+# sudo yum install zsh -y
+sudo apt-get install zsh -y
+sudo chsh $(whoami) -s /bin/zsh
+curl -L https://raw.githubusercontent.com/yqsy/vim/master/etc/zshrc.zsh > ~/.zshrc
 ```
