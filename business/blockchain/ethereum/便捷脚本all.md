@@ -22,11 +22,11 @@ make
 sudo make install
 
 # 地址
-wget -O ~/.ethereumaddress.rc https://raw.githubusercontent.com/yqsy/notes/master/business/ethereum/script/ethereumaddress.rc
+wget -O $HOME/.ethereumaddress.rc https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/ethereum/script/ethereumaddress.rc
 
 
-cat >> ~/.zshrc << EOF
-source ~/.ethereumaddress.rc
+cat >> $HOME/.zshrc << EOF
+source $HOME/.ethereumaddress.rc
 EOF
 
 ```

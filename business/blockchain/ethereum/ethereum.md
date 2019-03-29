@@ -380,9 +380,9 @@ Gas Limit:
 
 ```bash
 go get github.com/ethereum/go-ethereum
-cd ~/go/src/github.com/ethereum/go-ethereum
+cd $HOME/go/src/github.com/ethereum/go-ethereum
 make geth
-mv ./build/bin/geth ~/go/bin/
+mv ./build/bin/geth $HOME/go/bin/
 
 mkdir -p /home/yq/resource/test/testeth
 cd /home/yq/resource/test/testeth

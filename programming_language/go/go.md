@@ -30,7 +30,7 @@ go install  -gcflags "-N -l"
 环境变量
 ```bash
 
-cat >> ~/.profile << EOF
+cat >> $HOME/.profile << EOF
 # go godoc gofmt
 export PATH=/usr/local/go/bin:\$PATH
 

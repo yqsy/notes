@@ -54,7 +54,7 @@ raw ==== local socks5 === 加密 === remote shadowsocks自定义协议 ==== othe
 
 ```bash
 # 树莓派
-chmod 700 ~/.ssh/id_rsa
+chmod 700 $HOME/.ssh/id_rsa
 eval `ssh-agent -s`
 ssh-add
 

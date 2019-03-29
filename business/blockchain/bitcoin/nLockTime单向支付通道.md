@@ -237,9 +237,9 @@ bhtx 292 1
 <a id="markdown-4-交易数据" name="4-交易数据"></a>
 # 4. 交易数据
 
-* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/cltv_singlepayment1 (场景一 - 用户在时间到后花费)
-* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/cltv_singlepayment2 (场景二 - 用户和商家同时签名花费)
-* https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/cltv_singlepayment3 (场景三 - 链下交易,链上结算)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment1 (场景一 - 用户在时间到后花费)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment2 (场景二 - 用户和商家同时签名花费)
+* https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment3 (场景三 - 链下交易,链上结算)
 
 <a id="markdown-5-参考资料" name="5-参考资料"></a>
 # 5. 参考资料

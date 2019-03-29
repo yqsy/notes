@@ -29,7 +29,7 @@
 
 shell意思为`命令行界面`,是UNIX操作系统中最为重要的部分之一,Unix的shell有很多中,他们都是基于Bourne shell(/bin/sh)这个贝尔实验室开发的标准shell.Linux使用了一个增强版本的Bourne shell,我们称之为bash或者"Bourne-again" shell,大部分Linux系统的默认shell是bash,可用`chsh`命令来修改默认shell
 
-* history可查看输入历史,`~/.bash_history`
+* history可查看输入历史,`$HOME/.bash_history`
 * tab命令补全
 * 命令别名设置(alias),例如` alias lm='ls -al'`
 * 工作控制,前景背景控制 (job control, foreground, background)
@@ -357,7 +357,7 @@ mkdir -p $HOME/.local/bin
 curl -L git.io/antigen > $HOME/.local/bin/antigen.zsh
 
 # 直接用韦易笑的脚本
-curl -L https://raw.githubusercontent.com/yqsy/vim/master/etc/zshrc.zsh > ~/.zshrc
+curl -L https://raw.githubusercontent.com/yqsy/vim/master/etc/zshrc.zsh > $HOME/.zshrc
 ```
 
 oh-my-zsh
@@ -365,6 +365,6 @@ oh-my-zsh
 # oh-my-zsh
 echo $SHELL
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-source ~/.zshrc
+cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
+source $HOME/.zshrc
 ```

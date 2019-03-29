@@ -115,16 +115,16 @@ stress --cpu 2 --timeout 60
 ```bash
 docker network create influxdb-network
 
-mkdir -p ~/env/influxdb
-cd ~/env/influxdb
+mkdir -p $HOME/env/influxdb
+cd $HOME/env/influxdb
 docker run -d --name influxdb \
     -p 8086:8086 \
     --network influxdb-network \
     -v $PWD:/var/lib/influxdb \
     influxdb
 
-mkdir -p ~/env/chronograf
-cd ~/env/chronograf
+mkdir -p $HOME/env/chronograf
+cd $HOME/env/chronograf
 docker run -d --name chronograf \
     -p 8888:8888 \
     --network influxdb-network \

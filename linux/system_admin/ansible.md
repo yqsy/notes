@@ -108,12 +108,12 @@ web服务example
     yum: pkg=zsh state=latest
 
   - name: config zsh | remove
-    file: path=~/.zshrc state=absent
+    file: path=$HOME/.zshrc state=absent
 
   - name: config zsh | download
     get_url:
       url: https://raw.githubusercontent.com/yqsy/vim/master/etc/zshrc.zsh
-      dest: ~/.zshrc
+      dest: $HOME/.zshrc
 
   - name: config zsh | set as default
     user: name=root shell=/bin/zsh

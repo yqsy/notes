@@ -590,7 +590,7 @@ https://github.com/ipfs-shipyard/git-remote-ipld  简单实践
 ```bash
 # 安装git-remote-ipld
 go get github.com/magik6k/git-remote-ipld
-cd ~/go/src/github.com/magik6k/git-remote-ipld
+cd $HOME/go/src/github.com/magik6k/git-remote-ipld
 make install
 
 # 安装插件
@@ -599,9 +599,9 @@ make build_plugins
 ls plugin/plugins/*.so
 
 # 复制插件 (启动ipfs有问题吗?)
-mkdir -p ~/.ipfs/plugins/
-cp plugin/plugins/git.so ~/.ipfs/plugins/
-chmod +x ~/.ipfs/plugins/git.so
+mkdir -p $HOME/.ipfs/plugins/
+cp plugin/plugins/git.so $HOME/.ipfs/plugins/
+chmod +x $HOME/.ipfs/plugins/git.so
 
 
 cd /home/yq/resource/test

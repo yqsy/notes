@@ -113,7 +113,7 @@ openssl x509 -inform DER -in fd.der -outform PEM -out fd.pem
 内网NAT是不可以的,必须要公网IP(电信不开放80 443)
 
 ```bash
-mkdir -p ~/cert && cd ~/cert
+mkdir -p $HOME/cert && cd $HOME/cert
 
 docker run -it --name nginx1 \
     -v `pwd`/:/cert \
@@ -144,7 +144,7 @@ certbot renew
 # docker proxy  https -> http
 
 ```bash
-mkdir -p ~/env/testhttps && cd ~/env/testhttps
+mkdir -p $HOME/env/testhttps && cd $HOME/env/testhttps
 
 echo \
 "[req]
@@ -186,7 +186,7 @@ docker pull braingamer/nginx-proxy-arm
 
 docker run -d --name nginx1 -e VIRTUAL_HOST=test.top,www.test.top nginx
 
-mkdir -p ~/env/testhttps && cd ~/env/testhttps
+mkdir -p $HOME/env/testhttps && cd $HOME/env/testhttps
 
 #... 证书
 

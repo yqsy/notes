@@ -30,7 +30,7 @@ cd ./cuckoo/src/
 export LD_LIBRARY_PATH=$PWD/crypto:$LD_LIBRARY_PATH
 
 # 添加到配置 (服务器测试)
-cat >> ~/.bashrc << EOF
+cat >> $HOME/.bashrc << EOF
 export LD_LIBRARY_PATH=$PWD/crypto:\$LD_LIBRARY_PATH
 EOF
 

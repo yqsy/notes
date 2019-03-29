@@ -17,21 +17,22 @@ sudo mv bx-linux-x64-qrcode /usr/local/bin/bx
 chmod +x /usr/local/bin/bx
 
 # 隔离见证地址
-sudo wget https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/getsegwitaddr -O /usr/local/bin/getsegwitaddr
+sudo wget -O /usr/local/bin/getsegwitaddr https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/getsegwitaddr
+
 sudo chmod +x /usr/local/bin/getsegwitaddr
 
 # 地址
-wget -O ~/.bitcoinaddress.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoinaddress.rc
-
-cat >> ~/.zshrc << EOF
-source ~/.bitcoinaddress.rc
-EOF
+wget -O $HOME/.bitcoinaddress.rc https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/bitcoinaddress.rc
 
 # 快捷指令
-wget -O ~/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/notes/master/business/bitcoin/script/bitcoincmd.rc
+wget -O $HOME/.bitcoincmd.rc https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/bitcoincmd.rc
 
-cat >> ~/.zshrc << EOF
-source ~/.bitcoincmd.rc
+cat >> $HOME/.zshrc << EOF
+source $HOME/.bitcoinaddress.rc
+EOF
+
+cat >> $HOME/.zshrc << EOF
+source $HOME/.bitcoincmd.rc
 EOF
 
 ```

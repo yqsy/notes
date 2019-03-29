@@ -222,7 +222,7 @@ ipfs 配置
 
 Graphing Objects 画图哦
 ```
-yq@yq-PC:~/resource/test% tree shit
+yq@yq-PC:$HOME/resource/test% tree shit
 shit
 ├── cat.jpg
 └── test

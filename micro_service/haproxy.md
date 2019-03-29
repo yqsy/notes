@@ -11,7 +11,7 @@
 # 实践
 
 ```bash
-mkdir -p ~/reference/haproxy_test cd ~/reference/haproxy_test
+mkdir -p $HOME/reference/haproxy_test cd $HOME/reference/haproxy_test
 
 mkdir nginx1 nginx2
 
