@@ -1,6 +1,6 @@
 # 测试模式
 btctestinit() {
-    alias bitcoind="bitcoind -rpcuser=ubuntu -rpcpassword=ubuntu -txindex"
+    alias bitcoind="bitcoind -rpcuser=ubuntu -rpcpassword=ubuntu -txindex -fallbackfee=0.0002"
     alias bitcoin-cli="bitcoin-cli -rpcuser=ubuntu -rpcpassword=ubuntu"
 }
 
