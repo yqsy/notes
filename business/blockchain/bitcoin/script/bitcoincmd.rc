@@ -1,6 +1,8 @@
-#alias bitcoind="bitcoind -rpcuser=ubuntu -rpcpassword=ubuntu -txindex"
-
-#alias bitcoin-cli="bitcoin-cli -rpcuser=ubuntu -rpcpassword=ubuntu"
+# 测试模式
+btctestinit() {
+    alias bitcoind="bitcoind -rpcuser=ubuntu -rpcpassword=ubuntu -txindex"
+    alias bitcoin-cli="bitcoin-cli -rpcuser=ubuntu -rpcpassword=ubuntu"
+}
 
 # 出块
 bg() {bitcoin-cli generate $1}
