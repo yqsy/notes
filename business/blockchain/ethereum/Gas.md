@@ -1,7 +1,8 @@
 <!-- TOC -->
 
 - [1. 说明](#1-说明)
-- [2. 参考资料](#2-参考资料)
+- [2. 价格换算](#2-价格换算)
+- [3. 参考资料](#3-参考资料)
 
 <!-- /TOC -->
 
@@ -28,11 +29,38 @@ type txdata struct {
 在一个交易数据结构中包含`gasPrice,gas(Limit)`两个字段.  
 
 
-<a id="markdown-2-参考资料" name="2-参考资料"></a>
-# 2. 参考资料
+<a id="markdown-2-价格换算" name="2-价格换算"></a>
+# 2. 价格换算
+
+价格表:
+
+单位|维值
+-|-
+wei|1 wei
+Kwei|1e3 wei
+Mwei|1e6 wei
+Gwei|1e9 wei
+microether|1e12 wei
+milliether|1e15 wei
+ether|1e18 wei
+
+Gas(汽油) 是用来衡量一笔交易锁消耗的计算资源的基本单位,当以太坊节点执行一笔交易所需的计算步骤越多,那么这笔交易消耗的Gas越多
+
+一笔普通的转账交易会消耗21,000Gas,而一个创建智能合约的交易可能会消耗几万,甚至几百万Gas
+
+目前以太坊客户端默认的GasPrice是0.000000001 Ether/Gas
+
+Gas Limit:  
+
+保护用户免收错误代码影响以致消耗过多的交易费, 如果Gas Used小于Gas Limit,那么矿工执行过程中会发现`Gas已被耗尽`而`交易没有执行完成`,此时矿工会`回滚到程序执行前的状态`
+
+换句话说 `GasPrice * GasLimit` 表示用户愿意为一笔交易支付的`最高金额`, 因为如果没有Gas Limit限制,那么某些恶意的用户可能会发送一个`数十亿步骤的交易`并且没有人能够处理它,所以会导致拒绝服务攻击.
+
+
+<a id="markdown-3-参考资料" name="3-参考资料"></a>
+# 3. 参考资料
 
 * 指令消耗的gas (https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv)
 * https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas (ethereum stackexchange)
 * https://ethgasstation.info/index.php (gas定价)
 * https://etherconverter.online/ (换算)
-* 

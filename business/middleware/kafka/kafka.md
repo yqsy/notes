@@ -13,6 +13,9 @@
 <a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
+* 有序 - 同一个分区同一个客户端写入是按顺序来的
+* 可靠 - acks=all + 集群可以保证把消息投递到brocker. (可以不存储到磁盘). at least once
+* 去重 - 业务幂等就可以
 
 <a id="markdown-2-安装" name="2-安装"></a>
 # 2. 安装
