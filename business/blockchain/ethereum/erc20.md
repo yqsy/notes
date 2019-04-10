@@ -12,7 +12,25 @@
 <a id="markdown-1-truffle" name="1-truffle"></a>
 # 1. truffle
 
+```bash
+cd /mnt/disk1/linux/reference/test
+mkdir -p erc20test
+cd erc20test
 
+truffle init
+npm init -y
+npm install --save --save-exact openzeppelin-solidity
+
+# 添加智能合约到./contracts, 添加部署脚本到./migrations, 注意文件名称和
+# https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/examples/SimpleToken.sol
+
+truffle create contract erc20
+truffle create migration erc20
+
+truffle develop
+compile
+migrate --reset
+```
 
 <a id="markdown-2-remix--metamask" name="2-remix--metamask"></a>
 # 2. remix + metamask
@@ -23,11 +41,10 @@
 
 ```bash
 # 修改账户
-web3.eth.defaultAccount = web3.eth.accounts[1]
+# web3.eth.defaultAccount = web3.eth.accounts[1]
 
+Erc20_SB.deployed().then(instance => contract = instance)
 
-# 所属者
-contract.owner()
 
 # ERC20Detailed
 contract.name()
@@ -74,5 +91,6 @@ contract.burnFrom(web3.eth.coinbase, 100)
 <a id="markdown-4-参考资料" name="4-参考资料"></a>
 # 4. 参考资料
 
-* https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/ERC20.sol
-* https://github.com/ConsenSys/Tokens
+* https://github.com/OpenZeppelin/openzeppelin-solidity(安装说明)
+* https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/examples/SimpleToken.sol (引用OpenZeppelin发简单的币)
+* https://github.com/ConsenSys/Tokens (3个文件,还是不够简单啊)
