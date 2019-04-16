@@ -1,4 +1,4 @@
-get_script_hash() {
+get_script_hashpkc() {
 	script_hex=$1
 	sha256=`bx sha256 $script_hex`
 	reverseSha256=`echo -n "$sha256" | fold -w2 | tac | tr -d "\n" `
@@ -6,12 +6,12 @@ get_script_hash() {
 }
 
 # 私钥 -> 公钥 -> 公钥哈系 -> 钱包地址:
-parse_privkey() {
+parse_privkeypkc() {
     PRIKEY=$1
     PRIKEY_WIF_UNCOMPRESSED=`bx ec-to-wif -u $PRIKEY`
     PUBKEY_UNCOMPRESSED=`bx wif-to-public $PRIKEY_WIF_UNCOMPRESSED`
     PUBKEYHASH_UNCOMPRESSED=`bx sha256 $PUBKEY_UNCOMPRESSED | bx ripemd160`
-    P2PKHADDRESS_UNCOMPRESSED=`bx address-encode -v 0 $PUBKEYHASH_UNCOMPRESSED`
+    P2PKHADDRESS_UNCOMPRESSED=`bx address-encode -v 55 $PUBKEYHASH_UNCOMPRESSED`
     URI_UNCOMPRESSED=`bx uri-encode $P2PKHADDRESS_UNCOMPRESSED`
     QRCODE_UNCOMPRESSED=`bx qrcode -p $P2PKHADDRESS_UNCOMPRESSED`
 
@@ -28,13 +28,13 @@ parse_privkey() {
     PRIKEY_WIF_COMPRESSED=`bx ec-to-wif $PRIKEY`
     PUBKEY_COMPRESSED=`bx wif-to-public $PRIKEY_WIF_COMPRESSED`
     PUBKEYHASH_COMPRESSED=`bx sha256 $PUBKEY_COMPRESSED | bx ripemd160`
-    P2PKHADDRESS_COMPRESSED=`bx address-encode -v 0 $PUBKEYHASH_COMPRESSED`
+    P2PKHADDRESS_COMPRESSED=`bx address-encode -v 55 $PUBKEYHASH_COMPRESSED`
     URI_COMPRESSED=`bx uri-encode $P2PKHADDRESS_COMPRESSED`
     QRCODE_COMPRESSED=`bx qrcode -p $P2PKHADDRESS_COMPRESSED`
-    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 5`
+    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 28`
     P2WPKH=`getsegwitaddr $PUBKEYHASH_COMPRESSED`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH_COMPRESSED] equalverify checksig" | bx script-encode `
-    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    P2PKH_SCRIPTHASH=`get_script_hashpkc $P2PKH_SCRIPTHASH`
 
     echo "[压缩]" &&
     echo 私钥: $PRIKEY &&
@@ -51,16 +51,16 @@ parse_privkey() {
 } 
 
 # 私钥wif -> 私钥 -> 公钥 -> 公钥哈系 -> 钱包地址:
-parse_privkeywif() {
+parse_privkeywifpkc() {
     PRIKEYWIF=$1
-    parse_privkey `bx wif-to-ec $PRIKEYWIF`
+    parse_privkeypkc `bx wif-to-ec $PRIKEYWIF`
 }
 
 # 公钥[未压缩] -> 公钥哈系 -> 钱包地址
-parse_pubkey_uncompressed() {
+parse_pubkey_uncompressedpkc() {
     PUBKEY_UNCOMPRESSED=$1
     PUBKEYHASH_UNCOMPRESSED=`bx sha256 $PUBKEY_UNCOMPRESSED | bx ripemd160`
-    P2PKHADDRESS_UNCOMPRESSED=`bx address-encode -v 0 $PUBKEYHASH_UNCOMPRESSED`
+    P2PKHADDRESS_UNCOMPRESSED=`bx address-encode -v 55 $PUBKEYHASH_UNCOMPRESSED`
     URI_UNCOMPRESSED=`bx uri-encode $P2PKHADDRESS_UNCOMPRESSED`
     echo "[未压缩]" &&
     echo 公钥: $PUBKEY_UNCOMPRESSED &&
@@ -70,15 +70,15 @@ parse_pubkey_uncompressed() {
 }
 
 # 公钥[压缩] -> 公钥哈系 -> 钱包地址
-parse_pubkey_compressed() {
+parse_pubkey_compressedpkc() {
     PUBKEY_COMPRESSED=$1
     PUBKEYHASH_COMPRESSED=`bx sha256 $PUBKEY_COMPRESSED | bx ripemd160`
-    P2PKHADDRESS_COMPRESSED=`bx address-encode -v 0 $PUBKEYHASH_COMPRESSED`
+    P2PKHADDRESS_COMPRESSED=`bx address-encode -v 55 $PUBKEYHASH_COMPRESSED`
     URI_COMPRESSED=`bx uri-encode $P2PKHADDRESS_COMPRESSED`
-    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 5`
+    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH_COMPRESSED]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 28`
     P2WPKH=`getsegwitaddr $PUBKEYHASH_COMPRESSED`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH_COMPRESSED] equalverify checksig" | bx script-encode `
-    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    P2PKH_SCRIPTHASH=`get_script_hashpkc $P2PKH_SCRIPTHASH`
     echo "[压缩]" &&
     echo 公钥: $PUBKEY_COMPRESSED &&
     echo 公钥hash: $PUBKEYHASH_COMPRESSED &&
@@ -90,14 +90,14 @@ parse_pubkey_compressed() {
 }
 
 # 公钥哈系 -> 钱包地址
-parse_pubkeyhash() {
+parse_pubkeyhashpkc() {
     PUBKEYHASH=$1
-    P2PKHADDRESS=`bx address-encode -v 0 $PUBKEYHASH`
+    P2PKHADDRESS=`bx address-encode -v 55 $PUBKEYHASH`
     URI=`bx uri-encode $P2PKHADDRESS`
-    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 5`
+    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 28`
     P2WPKH=`getsegwitaddr $PUBKEYHASH`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH] equalverify checksig" | bx script-encode `
-    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    P2PKH_SCRIPTHASH=`get_script_hashpkc $P2PKH_SCRIPTHASH`
     
     echo 公钥hash: $PUBKEYHASH &&
     echo P2PKH地址: $P2PKHADDRESS &&
@@ -108,14 +108,14 @@ parse_pubkeyhash() {
 }
 
 # 钱包地址 -> 公钥哈系
-parse_address() {
+parse_addresspkc() {
     P2PKHADDRESS=$1
     PUBKEYHASH=`bx address-decode  $P2PKHADDRESS | sed -n 4p | awk '{print $2}' `
     URI=`bx uri-encode $P2PKHADDRESS`
-    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 5`
+    P2SH_P2WPKH=`echo "0 [$PUBKEYHASH]" | bx script-encode | bx sha256 | bx ripemd160 | bx base58check-encode -v 28`
     P2WPKH=`getsegwitaddr $PUBKEYHASH`
     P2PKH_SCRIPTHASH=`echo "dup hash160 [$PUBKEYHASH] equalverify checksig" | bx script-encode `
-    P2PKH_SCRIPTHASH=`get_script_hash $P2PKH_SCRIPTHASH`
+    P2PKH_SCRIPTHASH=`get_script_hashpkc $P2PKH_SCRIPTHASH`
     
     echo 公钥hash: $PUBKEYHASH &&
     echo P2PKH地址: $P2PKHADDRESS &&
