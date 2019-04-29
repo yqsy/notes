@@ -7,10 +7,8 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
-<a id="markdown-2-安装" name="2-安装"></a>
 # 2. 安装
 
 ```bash
@@ -21,7 +19,6 @@ go get github.com/nats-io/go-nats
 go get github.com/nats-io/gnatsd
 ```
 
-<a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 

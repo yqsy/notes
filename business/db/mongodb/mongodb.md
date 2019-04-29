@@ -6,7 +6,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```bash
@@ -19,7 +18,6 @@ git checkout -b master
 ```
 
 
-<a id="markdown-2-安装" name="2-安装"></a>
 # 2. 安装
 
 ```bash

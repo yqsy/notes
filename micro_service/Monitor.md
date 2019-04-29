@@ -15,7 +15,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://www.zhihu.com/question/19636141/answer/13154248 (常用的运维,管理工具)
@@ -35,7 +34,6 @@
 * http://liubin.org/blog/2016/02/25/tsdb-list-part-1/ (时序数据库)
 * https://oss.oetiker.ch/rrdtool/ (rrdtool)
 
-<a id="markdown-11-开源方案" name="11-开源方案"></a>
 ## 1.1. 开源方案
 
 * influxdb 时序数据库 https://en.wikipedia.org/wiki/InfluxDB https://hub.docker.com/_/influxdb/
@@ -44,7 +42,6 @@
 * chronograf 展示 https://github.com/influxdata/chronograf https://hub.docker.com/_/chronograf/
 * https://docs.influxdata.com/telegraf/v0.13/introduction/installation/ (telegraf安装手册)
 
-<a id="markdown-12-前端展示" name="12-前端展示"></a>
 ## 1.2. 前端展示
 
 * https://www.highcharts.com/stock/demo (控件)
@@ -52,13 +49,11 @@
 * http://zhuanlan.zhihu.com/p/28570033 (10 分钟内快速构建能够承载海量数据的 NG<em>I</em>NX 日志分析与报警平台 - 七牛云的文章 - 知乎)
 
 
-<a id="markdown-2-核心问题" name="2-核心问题"></a>
 # 2. 核心问题
 
 * 数据如何采集?应用程序提供查询接口?写入文件?还是直接提供web接口?
 * 采集多台机器是否需要agent?
 
-<a id="markdown-3-时序数据库实践" name="3-时序数据库实践"></a>
 # 3. 时序数据库实践
 
 * https://github.com/pldimitrov/Rrd/issues/1  (安装)
@@ -69,7 +64,6 @@ sudo yum install python34-devel -y
 sudo pip3 install rrdtool
 ```
 
-<a id="markdown-4-glances调试环境搭建" name="4-glances调试环境搭建"></a>
 # 4. glances调试环境搭建
 
 ```bash
@@ -84,7 +78,6 @@ sudo pip3 install glances
 python3 -m glances -w
 ```
 
-<a id="markdown-5-使用flask模拟glances小计" name="5-使用flask模拟glances小计"></a>
 # 5. 使用flask模拟glances小计
 
 ```bash
@@ -109,7 +102,6 @@ sudo yum install stress -y
 stress --cpu 2 --timeout 60
 ```
 
-<a id="markdown-tick-stack方案搭建小计" name="tick-stack方案搭建小计"></a>
 # tick stack方案搭建小计
 
 ```bash
@@ -155,7 +147,6 @@ sudo systemctl enable telegraf
 ```
 
 
-<a id="markdown-6-分析小计" name="6-分析小计"></a>
 # 6. 分析小计
 
 ```

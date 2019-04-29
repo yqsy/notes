@@ -6,7 +6,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 存储:
@@ -81,7 +80,6 @@
 * view: 告诉编译器这个函数进行的是只读操作
 * fallback: 当一个合约收到`无法匹配任何函数名的函数`调用或者仅仅用于转账的交易时,fallback函数将被自动执行
 
-<a id="markdown-2-注意点" name="2-注意点"></a>
 # 2. 注意点
 
 * 区块链上智能合约的`所有信息`都是`公开可见`的,即使被private标记的私有变量
@@ -99,7 +97,6 @@
 * 限制合约中数字资产的数量,= =  为了安全起见,`最好不要在智能合约中存储大量的数字资产`
 
 
-<a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 * http://wiki.jikexueyuan.com/project/solidity-zh/introduction-smart-contracts.html (简单学习)

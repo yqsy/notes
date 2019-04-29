@@ -16,7 +16,6 @@
 
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 RSA的过程:
@@ -41,7 +40,6 @@ c^d ≡ (m^ed) (mod N)
 m^ed = m ^ (1 + h*φ(N)) = m * (m^φ(N))^h ≡ m(1)^h (mod N) ≡ m (mod N)  
 m^ed ≡ m (mod N)  
 
-<a id="markdown-2-质数" name="2-质数"></a>
 # 2. 质数
 
 > 指在大于1的自然数中,除了1和该数自身外,无法被其他自然数整除的数.大于1的自然数若不是质数,即称之为合数.
@@ -65,7 +63,6 @@ for i in range(2, 1000):
         print(i)
 ```
 
-<a id="markdown-3-互质" name="3-互质"></a>
 # 3. 互质
 
 > 在数论中,如果两个或两个以上的`整数`的最大公约数是1,则称它们为互质.
@@ -84,14 +81,12 @@ def gcd(a, b):
 gcd(8,10)
 ```
 
-<a id="markdown-4-积性函数" name="4-积性函数"></a>
 # 4. 积性函数
 
 > 在数论中,积性函数是指一个定义域为正整数n的算数函数f(n).有如下性质: f(1) = 1, 且当a与b互质时,f(ab)=f(a)(b)
 
 所以 pq互质时,N = pq, `φ(N) = φ(p)φ(q)`
 
-<a id="markdown-5-欧拉函数" name="5-欧拉函数"></a>
 # 5. 欧拉函数
 
 > 在数论中,对正整数n,欧拉函数φ(n)是小于或等于n的正整数与n互质的数的数目.
@@ -101,22 +96,18 @@ gcd(8,10)
 所以: `φ(p)φ(q) = (p - 1)(q - 1).`
 
 
-<a id="markdown-6-同余" name="6-同余"></a>
 # 6. 同余
 
 > 在数论中.同余是一种等价关系.当两个整数处以同一个正整数,获得相同余数,则二整数同余.
 
-<a id="markdown-7-欧拉定理" name="7-欧拉定理"></a>
 # 7. 欧拉定理
 
 > 若n,a为正整数,且n,a互质数(即gcd(a,n)=1),则 a ^ φ(n) ≡ 1 (mod n)
 
-<a id="markdown-8-模逆元" name="8-模逆元"></a>
 # 8. 模逆元
 
 > 一整数a对同余n之模逆元是指满足以下公式的整数b:  a^-1 ≡ b (mod n) 也可写作 ab ≡ 1 (mod n)
 
-<a id="markdown-9-参考资料" name="9-参考资料"></a>
 # 9. 参考资料
 
 * http://code.activestate.com/recipes/578838-rsa-a-simple-and-easy-to-read-implementation/ (python example)

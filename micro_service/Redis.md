@@ -6,7 +6,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://www.qcloud.com/community/article/164816001481011841?fromSource=gwzcw.93414.93414.93414 (redis和memcached的比较)

@@ -9,18 +9,15 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://zxtechart.com/2017/07/16/use-two-remote-repos-of-svn-and-git-at-the-same-time-for-the-same-project/ 
 * https://superuser.com/questions/486683/setting-up-local-repository-with-tortoisesvn-in-windows
 
 
-<a id="markdown-2-实践" name="2-实践"></a>
 # 2. 实践
 由于公司比较保守,不愿意使用分布式版本管理工具,而我一直使用git来管理版本,所以离职时要将git的提交历史回归到svn上
 
-<a id="markdown-3-创建git历史" name="3-创建git历史"></a>
 # 3. 创建git历史
 ```
 mkdir local-git-repos
@@ -35,7 +32,6 @@ echo bbbb >> test.txt
 git commit -am "Added bbbb."
 ```
 
-<a id="markdown-4-创建一个svn仓库以及checkout" name="4-创建一个svn仓库以及checkout"></a>
 # 4. 创建一个svn仓库以及checkout
 ```
 cd C:\work\testrepo
@@ -47,7 +43,6 @@ svn add *
 svn ci -m "Added trunk, branches and tags."
 ```
 
-<a id="markdown-5-将git的历史回归到svn" name="5-将git的历史回归到svn"></a>
 # 5. 将git的历史回归到svn
 
 我还是觉得git svn是将svn的历史转到git,而不是git的历史转到svn,(或者可以,但是我这边尝试下来各种报错,这种很傻的事情没必要投入大量的精力尝试)

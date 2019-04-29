@@ -8,13 +8,11 @@
 
 
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 
 * http://liangshaocong.me/tool/unix-draw-tool-pic/
 
 
-<a id="markdown-2-使用" name="2-使用"></a>
 # 2. 使用
 
 ```bash

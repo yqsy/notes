@@ -16,7 +16,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 
 * https://en.wikipedia.org/wiki/HTTPS (wiki)
@@ -33,7 +32,6 @@
 * https://www.v2ex.com/t/365967 (简单的实践)
 * https://www.zhihu.com/question/21518760/answer/19698894 (消耗的服务器资源)
 
-<a id="markdown-2-docker示例" name="2-docker示例"></a>
 # 2. docker示例
 
 * https://github.com/jwilder/nginx-proxy (默认只EXPOSE80端口,需要反向443)
@@ -42,13 +40,11 @@
 * https://github.com/SteveLTN/https-portal
 * https://hub.docker.com/r/steveltn/https-portal/
 
-<a id="markdown-3-免费签名" name="3-免费签名"></a>
 # 3. 免费签名
 
 * https://letsencrypt.org/
 * https://bruceking.site/2017/07/12/how-letsencrypt-works/ (letsencrypt原理)
 
-<a id="markdown-4-https梳理" name="4-https梳理"></a>
 # 4. https梳理
 
 * http://blog.csdn.net/is0501xql/article/details/8158327 (SSL协议详解)
@@ -71,12 +67,10 @@ CA会给网站颁发一个证书,包括
 * 浏览器把http报文用hash key生成一个MAC,放在http报文后,然后用session-key加密所有数据,发送
 * 服务器用session-key解密数据,然后用相同的算法计算MAC,如果MAC==MAC,则数据没有篡改
 
-<a id="markdown-5-中间人攻击" name="5-中间人攻击"></a>
 # 5. 中间人攻击
 
 * https://www.zhihu.com/question/20744215 (什么是TLS中间人攻击,如何防范这类攻击)
 
-<a id="markdown-6-所有文件后缀的含义" name="6-所有文件后缀的含义"></a>
 # 6. 所有文件后缀的含义
 
 * https://www.zhihu.com/question/29620953 
@@ -99,7 +93,6 @@ openssl x509 -inform DER -in fd.der -outform PEM -out fd.pem
 ```
 
 
-<a id="markdown-7-使用certbot获取证书" name="7-使用certbot获取证书"></a>
 # 7. 使用certbot获取证书
 
 参考:
@@ -140,7 +133,6 @@ certbot renew
 ```
 
 
-<a id="markdown-docker-proxy--https---http" name="docker-proxy--https---http"></a>
 # docker proxy  https -> http
 
 ```bash

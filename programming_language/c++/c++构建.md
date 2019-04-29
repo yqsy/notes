@@ -6,7 +6,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://cmake.org/Wiki/CMake_Useful_Variables (变量)
@@ -19,7 +18,6 @@
 
 
 
-<a id="markdown-2-怎么搜索" name="2-怎么搜索"></a>
 # 2. 怎么搜索
 
 clang site:https://cmake.org/cmake/help

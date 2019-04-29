@@ -22,7 +22,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-我的问题" name="1-我的问题"></a>
 # 1. 我的问题
 
 * ssh如何做到安全？身份认证?  
@@ -31,7 +30,6 @@
   证书 + 数字签名
 
 
-<a id="markdown-2-层次" name="2-层次"></a>
 # 2. 层次
 
 所有连接到互联网的设备都有一个共同点，他们依赖安全套接字层(secure soccket layer, ssl) 和传输层安全(transport layer security,tls)
@@ -49,7 +47,6 @@ x|x|x|x
 1|物理层|直接物理数据连接|cat5
 
 
-<a id="markdown-3-ssl-tls版本" name="3-ssl-tls版本"></a>
 # 3. ssl tls版本
 
 * ssl1没有发布过
@@ -59,7 +56,6 @@ x|x|x|x
 * tls1.1仅仅修复了一些关键的安全问题
 * tls1.2增加了对已验证加密的支持
 
-<a id="markdown-4-对称加密算法列表" name="4-对称加密算法列表"></a>
 # 4. 对称加密算法列表
 
 对称加密又称私钥加密，是一种混淆算法，能够让数据在非安全通道上进行安全通信。
@@ -131,7 +127,6 @@ digital signature
 
 在密码学中,所有的安全性都依赖于生成随机数的质量.真正的随机数只能通过观测待定的物理处理器才能得到,没有的话,计算机将关注于收集少量的熵.(按键状态,鼠标移动)
 
-<a id="markdown-5-中间人攻击" name="5-中间人攻击"></a>
 # 5. 中间人攻击
 
 * 如果只是监听，称之为被动网络攻击
@@ -145,7 +140,6 @@ digital signature
 * DNS缓存中毒  
 * BGP路由劫持  
 
-<a id="markdown-6-tls" name="6-tls"></a>
 # 6. TLS
 秘钥交换使用的rsa秘钥用于解密过去所有的会话。其他秘钥不存在这个问题。被称为支持前向保密。
 
@@ -252,7 +246,6 @@ https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml
 
 对于身份认证,强度主要依靠证书.更确切地说是证书中的密钥长度和签名算法.RSA密钥交换的强度也依靠证书.
 
-<a id="markdown-61-抓包分析" name="61-抓包分析"></a>
 ## 6.1. 抓包分析
 
 1. tcp握手
@@ -262,7 +255,6 @@ https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml
 5. Client Key Exchange, Change Cipher Spec, Encrypted Handshake Message (公钥加密得到session-key)
 6. New Session Ticket, Change Cipher Spec, Encrypted Handshake Message
 
-<a id="markdown-7-公钥基础设施" name="7-公钥基础设施"></a>
 # 7. 公钥基础设施
 
 如何与从未谋面的人进行沟通?如何存储和吊销密钥?如何让现实世界数以百万计的服务器,几十亿人和设备之间安全通信?
@@ -302,7 +294,6 @@ PEM是DER使用Base64编码后的ASCII编码格式,ASN.1比较复杂,一般不�
 * 使用者密钥标识符
 * 授权密钥标识符
 
-<a id="markdown-8-pki攻击" name="8-pki攻击"></a>
 # 8. PKI攻击
 
 * 天生缺陷: 所有的CA都可以在不经域名所有者同一的情况下去给任意域名签发证书.中间人攻击??
@@ -312,7 +303,6 @@ PEM是DER使用Base64编码后的ASCII编码格式,ASN.1比较复杂,一般不�
 * https怎么代理?代理难道不是安全的吗?我觉得代理只能获得主机名!
 
 
-<a id="markdown-9-http和浏览器问题" name="9-http和浏览器问题"></a>
 # 9. HTTP和浏览器问题
 
 HTTP Cookie是一种用来在客户端保存少量数据的扩展机制.对于要设置的每个Cookie,服务器必须制定一对名称和值,以及描述其作用范围和生命周期的元数据.
@@ -333,7 +323,6 @@ HTTP Cookie是一种用来在客户端保存少量数据的扩展机制.对于�
 * 过期的证书
 * 错误的配置
 
-<a id="markdown-10-部署" name="10-部署"></a>
 # 10. 部署
 
 TLS支持3种算法:
@@ -388,7 +377,6 @@ AES有优势,现在处理器的特殊指令集可以支持AES加速,因此AES在
 
 
 
-<a id="markdown-11-性能优化" name="11-性能优化"></a>
 # 11. 性能优化
 
 会话缓存
@@ -418,7 +406,6 @@ TLS优化:
 
 
 
-<a id="markdown-12-http严格传输安全" name="12-http严格传输安全"></a>
 # 12. http严格传输安全
 
 http请求重定向至https还有问题:会被截获http明文信息.解决方法是配置HSTS.通过在加密的HTTP响应中包含Strict-Transport-Security头实现网站TSTS
@@ -435,7 +422,6 @@ http请求重定向至https还有问题:会被截获http明文信息.解决方�
 * 修改你的网站使每个主机名向根域名提交一个请求
 * 如果在你的网站面前有一个反向代理,在代理级别集中配置HSTS策略时一个加分项
 
-<a id="markdown-13-openssl" name="13-openssl"></a>
 # 13. OpenSSL
 
 OpenSSL项目时安全套接字层(secure sockets layer, SSL)和传输层安全(transport layer security,TLS)协议的一个实现,是大家共同努力开发出的代码可靠,功能齐全,商业级别的开源工具集.
@@ -449,7 +435,6 @@ OpenSSL项目时安全套接字层(secure sockets layer, SSL)和传输层安全(
 3. 在你的Web服务器上安装CA提供的证书
 
 
-<a id="markdown-14-指令" name="14-指令"></a>
 # 14. 指令
 
 ```bash
@@ -471,7 +456,6 @@ openssl s_client -connect www.feistyduck.com:443 -tlsextdebug
 ```
 
 
-<a id="markdown-15-配置apache" name="15-配置apache"></a>
 # 15. 配置apache
 
 ```bash
@@ -485,7 +469,6 @@ SSLCertificateFile conf/server.crt
 SSLCertificateChainFile conf/chain.pem
 ```
 
-<a id="markdown-16-配置nginx" name="16-配置nginx"></a>
 # 16. 配置nginx
 
 ```bash

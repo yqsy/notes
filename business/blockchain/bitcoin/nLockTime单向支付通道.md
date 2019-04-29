@@ -12,7 +12,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 设想一种支付方式: 用户把钱抵押给商家时,1. 商家可以看到钱但是不可以私自挪动钱,商家想要花费任意一点钱都需要征得用户的同意.  2. 用户在指定时间后可以退款.  
@@ -28,7 +27,6 @@ ENDIF
 <user pubkey> CHECKSIG
 ```
 
-<a id="markdown-2-实践" name="2-实践"></a>
 # 2. 实践
 
 * https://github.com/yqsy/bitcointest/blob/master/cltv_singlepayment.py
@@ -103,7 +101,6 @@ echo $UTXOID
 bhtx 102 1
 ```
 
-<a id="markdown-21-场景一用户在时间到后花费" name="21-场景一用户在时间到后花费"></a>
 ## 2.1. 场景一:用户在时间到后花费
 
 请注意,这是其中一个场景,执行完后删除数据,再去执行其他场景
@@ -144,7 +141,6 @@ bg 1
 bhtx 301 1
 ```
 
-<a id="markdown-22-场景二用户和商家同时签名花费" name="22-场景二用户和商家同时签名花费"></a>
 ## 2.2. 场景二:用户和商家同时签名花费
 
 请注意,这是其中一个场景,执行完后删除数据,再去执行其他场景
@@ -185,7 +181,6 @@ bg 1
 bhtx 103 1
 ```
 
-<a id="markdown-23-场景三链下交易链上结算" name="23-场景三链下交易链上结算"></a>
 ## 2.3. 场景三:链下交易,链上结算
 
 我们按照<精通比特币>书中的简单支付通道示例的案例,来做一个关于`共享单车`的实践,用户将`存款`打到用户与商家多重签名的p2sh脚本内. 
@@ -228,20 +223,17 @@ bg 1
 bhtx 292 1
 ```
 
-<a id="markdown-3-缺陷" name="3-缺陷"></a>
 # 3. 缺陷
 
 * 在通道首次打开时建立最大时间锁,限制了通道使用的寿命. 如果商家退出(不签名),那么用户只能等到到锁定时间后才能得到退款.
 * 因为通道寿命的有限,双方承诺交易数量也是有限的.商家必须时刻保持警惕,发送正确承诺的交易,防止用户有作恶的可能. (可以规避)
 
-<a id="markdown-4-交易数据" name="4-交易数据"></a>
 # 4. 交易数据
 
 * https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment1 (场景一 - 用户在时间到后花费)
 * https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment2 (场景二 - 用户和商家同时签名花费)
 * https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_singlepayment3 (场景三 - 链下交易,链上结算)
 
-<a id="markdown-5-参考资料" name="5-参考资料"></a>
 # 5. 参考资料
 
 * https://github.com/petertodd/checklocktimeverify-demos (BIP65 demo - python 单向支付通道)

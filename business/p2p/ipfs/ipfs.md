@@ -10,7 +10,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * http://www.btcjiucai.com/jiucai/1839.html (要给去中心化存储打上问号)
@@ -56,7 +55,6 @@ ipld:
 ![](http://ouxarji35.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180725094636.png)
 
 
-<a id="markdown-2-自己的梳理" name="2-自己的梳理"></a>
 # 2. 自己的梳理
 
 * Identities 身份层, `S/Kademlia DHT网络,` 由Kademlia发展而来,做出两点提升 1. 防止Sybill attacks 2. 容错15%
@@ -74,7 +72,6 @@ ipld:
 1. 客户端支付费用存储和检索数据
 2. 矿工提供存储/检索服务
 
-<a id="markdown-3-filecoin" name="3-filecoin"></a>
 # 3. filecoin
 
 
@@ -99,7 +96,6 @@ ipld:
 
 
 
-<a id="markdown-4-实践" name="4-实践"></a>
 # 4. 实践
 
 安装ipfs
@@ -274,7 +270,6 @@ http://127.0.0.1:8080/ipfs/QmZfycqAQViYGJ4eH2e63cgAD7J57VRcPeD3NkHfkxdbT8/
 ```
 
 
-<a id="markdown-5-常用指令" name="5-常用指令"></a>
 # 5. 常用指令
 
 ```bash

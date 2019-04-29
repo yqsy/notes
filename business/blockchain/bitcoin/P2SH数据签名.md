@@ -9,7 +9,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 上一文 <数据签名>中我们介绍了P2PK,P2PKH,P2WPKH交易对什么数据进行签名以及见证脚本的生成的问题.这一文我们继续研究在P2SH,P2WSH交易中这两个问题的答案. 只有对这个问题理解了,才可以进行下一步编写更复杂的脚本.
@@ -24,7 +23,6 @@
 ![](./pic/p2pkh_sign.png)
 
 
-<a id="markdown-2-p2sh交易的签名数据" name="2-p2sh交易的签名数据"></a>
 # 2. P2SH交易的签名数据
 
 我们动手做一笔P2SH-P2PK的实验,然后再来对着代码梳理问题
@@ -135,12 +133,10 @@ SIGNED_RAWTX_JSON=`bitcoin-cli signrawtransactionwithkey $RAWTX '''
 ![](./pic/p2sh_sign.png)
 
 
-<a id="markdown-3-p2wsh隔离见证交易的签名数据" name="3-p2wsh隔离见证交易的签名数据"></a>
 # 3. P2WSH(隔离见证)交易的签名数据
 
 ![](./pic/p2wsh_sign.png)
 
-<a id="markdown-4-见证脚本的生成" name="4-见证脚本的生成"></a>
 # 4. 见证脚本的生成
 
 
@@ -155,7 +151,6 @@ ProduceSignature
 * P2SH: 见证脚本放入赎回脚本与对应赎回脚本的签名(如P2PK就放入签名,P2PKH放入公钥+签名)
 * P2WSH: 见证脚本为空,隔离见证(交易后面的数据块)放入赎回脚本与对应赎回脚本的签名(如P2PK就放入签名,P2PKH放入公钥+签名)
 
-<a id="markdown-5-总结" name="5-总结"></a>
 # 5. 总结
 
 通过对源码的阅读,我们对了上述的两个问题有了不同的解答:

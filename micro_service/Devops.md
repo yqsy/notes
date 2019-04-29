@@ -7,7 +7,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://en.wikipedia.org/wiki/DevOps (wiki)

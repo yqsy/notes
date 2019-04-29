@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * https://yq.aliyun.com/articles/563053
@@ -32,7 +31,6 @@ Cuckoo Hash Table:
 用了两个hash函数来解决冲突.查询操作的理论复杂度为最差O(1)
 
 
-<a id="markdown-2-cuckoo-hash" name="2-cuckoo-hash"></a>
 # 2. cuckoo hash
 
 * https://github.com/salviati/cuckoo (go实现)

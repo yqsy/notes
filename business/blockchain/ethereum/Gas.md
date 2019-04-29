@@ -7,7 +7,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 在接触Gas前我一直有一个问题: 为什么要有gas,智能合约消耗的资源直接用eth来衡量不行吗?
@@ -29,7 +28,6 @@ type txdata struct {
 在一个交易数据结构中包含`gasPrice,gas(Limit)`两个字段.  
 
 
-<a id="markdown-2-价格换算" name="2-价格换算"></a>
 # 2. 价格换算
 
 价格表:
@@ -57,7 +55,6 @@ Gas Limit:
 换句话说 `GasPrice * GasLimit` 表示用户愿意为一笔交易支付的`最高金额`, 因为如果没有Gas Limit限制,那么某些恶意的用户可能会发送一个`数十亿步骤的交易`并且没有人能够处理它,所以会导致拒绝服务攻击.
 
 
-<a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 * 指令消耗的gas (https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv)

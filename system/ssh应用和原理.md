@@ -8,7 +8,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 
@@ -33,7 +32,6 @@
 ```
 
 
-<a id="markdown-2-ssh梳理" name="2-ssh梳理"></a>
 # 2. ssh梳理
 
 加密
@@ -84,7 +82,6 @@ Key Exchange Methods
 
 
 
-<a id="markdown-3-中间人攻击" name="3-中间人攻击"></a>
 # 3. 中间人攻击
 
 貌似没有办法防御,主机的hostkey存放于`/etc/ssh`

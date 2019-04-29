@@ -13,7 +13,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-常用" name="1-常用"></a>
 # 1. 常用
 
 ```bash
@@ -49,7 +48,6 @@ http://www.fixedbyvonnie.com/2013/12/how-to-open-full-screen-remote-desktop-sess
 "%ConEmuDrive%\Program Files (x86)\Git\bin\sh.exe" --login -i -new_console:a
 ```
 
-<a id="markdown-2-穿墙应用或国内源" name="2-穿墙应用或国内源"></a>
 # 2. 穿墙应用或国内源
 
 ```bash
@@ -75,10 +73,8 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 
 ```
 
-<a id="markdown-3-freecommander技巧" name="3-freecommander技巧"></a>
 # 3. Freecommander技巧
 
-<a id="markdown-31-git" name="31-git"></a>
 ## 3.1. git
 定义快捷键:
 * Ctrl + Alt + P -> git push
@@ -93,7 +89,6 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 * 参数: /command:push /path:%ActivSel%
 
 
-<a id="markdown-32-比较" name="32-比较"></a>
 ## 3.2. 比较
 
 设置:
@@ -101,7 +96,6 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 * 安装文件夹: C:\Program Files\Beyond Compare 4
 * 参数: %LeftSel% %RightSel%
 
-<a id="markdown-33-everything" name="33-everything"></a>
 ## 3.3. everything
 定义快捷键:
 * Ctrl + Alt + F -> 搜索active 目录
@@ -111,7 +105,6 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 * 安装文件夹: C:\Program Files\Everything
 * 参数: -filename %ActivDir%
 
-<a id="markdown-4-visual-code-积累" name="4-visual-code-积累"></a>
 # 4. visual code 积累
 
 * https://code.visualstudio.com/insiders (多个目录)
@@ -138,7 +131,6 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 数学公式:
 * https://marketplace.visualstudio.com/items?itemName=goessner.mdmath
 
-<a id="markdown-5-putty配置" name="5-putty配置"></a>
 # 5. putty配置
 0.70版本
 

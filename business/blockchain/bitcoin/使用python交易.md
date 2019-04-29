@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 
@@ -28,7 +27,6 @@ ln -s lib/python-bitcoinlib/bitcoin/ bitcoin
 git init .
 ```
 
-<a id="markdown-2-参考资料" name="2-参考资料"></a>
 # 2. 参考资料
 
 * https://github.com/petertodd/python-bitcoinlib

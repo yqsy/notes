@@ -12,7 +12,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```c++
@@ -25,7 +24,6 @@ uint32_t nLockTime;
 
 设想一种功能: 锁定某一笔钱直到若干年后才能被消费. 这样的功能在传统中心化软件中无法真正做到,因为中心化系统的规则并不是真正的规则.在区块链软件中,规则一旦制定,随着时间的推移其修改的成本会变的越来越高.这里做一下时间锁相关的交易,并跟踪到相关代码来分析.
 
-<a id="markdown-2-nlocktime" name="2-nlocktime"></a>
 # 2. nLockTime 
 
 代码:
@@ -115,7 +113,6 @@ bg 1
 bhtx 2001 1
 ```
 
-<a id="markdown-3-checklocktimeverify常用场景" name="3-checklocktimeverify常用场景"></a>
 # 3. CheckLockTimeVerify常用场景
 
 (BIP65, CLTV)
@@ -197,7 +194,6 @@ bool GenericTransactionSignatureChecker<T>::CheckLockTime
 
 ```
 
-<a id="markdown-4-场景四-冻结资金实践-失败的尝试" name="4-场景四-冻结资金实践-失败的尝试"></a>
 # 4. 场景四 冻结资金实践 (失败的尝试)
 
 通过挖矿奖励得资金源:
@@ -308,7 +304,6 @@ SIGNED_RAWTX_JSON=`bitcoin-cli signrawtransactionwithkey $RAWTX '''
 # 其根本的原因是自定制的脚本对于比特币来说无法识别出应该push到见证脚本内什么数据(比如多个签名+公钥)
 ```
 
-<a id="markdown-5-场景四-冻结资金实践-使用python脚本做签名" name="5-场景四-冻结资金实践-使用python脚本做签名"></a>
 # 5. 场景四 冻结资金实践 (使用python脚本做签名)
 
 加锁与解锁的堆栈:
@@ -416,13 +411,11 @@ python脚本:
 
 * https://github.com/yqsy/bitcointest/blob/master/cltv_freezefund.py
 
-<a id="markdown-6-交易数据" name="6-交易数据"></a>
 # 6. 交易数据
 
 * https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/nLockTime (nLockTime)
 * https://raw.githubusercontent.com/yqsy/notes/master/business/blockchain/bitcoin/script/cltv_freezefund  (场景四 冻结资金实践)
 
-<a id="markdown-7-参考资料" name="7-参考资料"></a>
 # 7. 参考资料
 
 * https://en.bitcoin.it/wiki/Timelock (百科)

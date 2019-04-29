@@ -6,7 +6,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * https://www.zhihu.com/question/266743901/answer/422497253 (韦易笑)

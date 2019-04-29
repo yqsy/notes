@@ -16,15 +16,12 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-其他" name="1-其他"></a>
 # 1. 其他 
 
 * http://www.gingerbill.org/article/defer-in-cpp.html (defer)
 
-<a id="markdown-2-split" name="2-split"></a>
 # 2. split
 
-<a id="markdown-21-字符分割c11" name="21-字符分割c11"></a>
 ## 2.1. 字符分割(c++11)
 ```c++
 std::vector<std::string> split(const std::string &str, char c) {
@@ -44,7 +41,6 @@ std::vector<std::string> split(const std::string &str, char c) {
 }
 ```
 
-<a id="markdown-22-字符分割c98" name="22-字符分割c98"></a>
 ## 2.2. 字符分割(c++98)
 ```c++
 const std::vector<std::string> split(const std::string &str, char c) {
@@ -65,7 +61,6 @@ const std::vector<std::string> split(const std::string &str, char c) {
 }
 ```
 
-<a id="markdown-23-字符串分割c11" name="23-字符串分割c11"></a>
 ## 2.3. 字符串分割(c++11)
 
 ```c++
@@ -94,7 +89,6 @@ std::vector<std::string> split(const std::string &str,
 }
 ```
 
-<a id="markdown-3-指定位置寻找有分割符号的字符串" name="3-指定位置寻找有分割符号的字符串"></a>
 # 3. 指定位置寻找有分割符号的字符串
 ```c++
 bool GetSplitStringPosition(const std::string &str, const std::string &separate,
@@ -139,7 +133,6 @@ bool GetSplitStringPosition(const std::string &str, const std::string &separate,
 }
 ```
 
-<a id="markdown-4-trim中文有问题把" name="4-trim中文有问题把"></a>
 # 4. Trim(中文有问题把?)
 * http://www.cplusplus.com/reference/cctype/isspace/
 ```c++
@@ -153,7 +146,6 @@ std::string trim(const std::string &str) {
 }
 ```
 
-<a id="markdown-5-替换一个字符串" name="5-替换一个字符串"></a>
 # 5. 替换一个字符串
 
 ```c++
@@ -166,7 +158,6 @@ bool replace(std::string *str, const std::string &from, const std::string &to) {
 }
 ```
 
-<a id="markdown-6-替换所有字符串" name="6-替换所有字符串"></a>
 # 6. 替换所有字符串
 
 ```c++
@@ -181,7 +172,6 @@ std::string ReplaceAll(std::string str, const std::string &from,
 }
 ```
 
-<a id="markdown-7-判断double是否相等" name="7-判断double是否相等"></a>
 # 7. 判断double是否相等
 
 ```c++

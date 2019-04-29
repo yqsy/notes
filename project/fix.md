@@ -10,7 +10,6 @@
 
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * http://www.quickfixengine.org/quickfix/doc/html/ (官方主页)
@@ -20,7 +19,6 @@
 * https://github.com/quickfixgo (go版本)
 
 
-<a id="markdown-2-协议" name="2-协议"></a>
 # 2. 协议
 
 * http://www.onixs.biz/fix-dictionary/4.2/fields_by_tag.html

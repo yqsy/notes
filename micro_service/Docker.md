@@ -9,7 +9,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://hujb2000.gitbooks.io/docker-flow-evolution/content/cn/index.html (Docker入门与实战)
@@ -20,7 +19,6 @@
 * https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image (各大base镜像大小)
 
 
-<a id="markdown-2-安装" name="2-安装"></a>
 # 2. 安装
 
 * https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/ (到这里安装?清华源?不对)
@@ -50,7 +48,6 @@ pip install requests urllib3 pyOpenSSL --force --upgrade
 
 ```
 
-<a id="markdown-3-指令" name="3-指令"></a>
 # 3. 指令
 
 ```bash

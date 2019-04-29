@@ -9,7 +9,6 @@
 
 
 
-<a id="markdown-1-证书登录" name="1-证书登录"></a>
 # 1. 证书登录
 
 * https://jasonschaefer.com/public-key-authentication-in-openwrt-using-dropbear-sshd/

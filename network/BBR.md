@@ -5,7 +5,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-相关资料" name="1-相关资料"></a>
 # 1. 相关资料
 
 * https://www.zhihu.com/question/53559433

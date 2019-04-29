@@ -6,7 +6,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 
 * http://www.abbyy.cn/ (收费软件)

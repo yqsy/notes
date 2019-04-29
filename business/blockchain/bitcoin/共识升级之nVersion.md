@@ -17,7 +17,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```c++
@@ -37,7 +36,6 @@ uint32_t nNonce;
 
 本文介绍一下比特币的升级方式,以及过去的升级版本所对应修改的源码.
 
-<a id="markdown-2-旧升级方式bip-34" name="2-旧升级方式bip-34"></a>
 # 2. 旧升级方式BIP-34
 
 通过之前的<区块的存储>文章介绍的知识,下载一份比特币的全量数据,编写脚本来得知区块版本的迁移,数据如下:
@@ -65,7 +63,6 @@ UniValue SoftForkMajorityDesc
 
 
 
-<a id="markdown-21-bip34" name="21-bip34"></a>
 ## 2.1. BIP34
 
 
@@ -94,7 +91,6 @@ if (nHeight >= consensusParams.BIP34Height)
 
 
 
-<a id="markdown-22-bip66" name="22-bip66"></a>
 ## 2.2. BIP66
 
 升级的目的,关键代码:
@@ -118,7 +114,6 @@ BIP66沿用BIP34的升级规则.
 分析以上代码得知,在达到BIP66的版本的高度的时候,会检查签名是否符合DER编码的规则.
 
 
-<a id="markdown-23-bip65" name="23-bip65"></a>
 ## 2.3. BIP65
 
 升级的目的,关键代码:
@@ -145,7 +140,6 @@ BIP65沿用BIP34的升级规则.
 
 分析以上代码得知,在达到BIP65版本的高度的时候,使得`SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY`生效,支持`OP_CHECKLOCKTIMEVERIFY`指令. 简称`CLTV`.
 
-<a id="markdown-24-总结" name="24-总结"></a>
 ## 2.4. 总结
 
 区块链的本意是`尊重用户的利益`.因为共识软件的升级可能会损失部分用户的利益,所以当部分用户认为升级的利益的损失或升级带来的风险不能在接受范围之内时,用户可以选择不升级.
@@ -184,7 +178,6 @@ BIP34,66,65的升级方式可以概括为3个阶段:
 * nVersion为有符号数,负数不能被利用 (代码中以 >= 2来判断).
 * 版本共存,产生混乱
 
-<a id="markdown-3-新升级方式bip-9" name="3-新升级方式bip-9"></a>
 # 3. 新升级方式BIP-9
 
 旧式升级方式在升级了3个版本(nVersion=2,3,4)之后就被BIP-9替换了. 传统的升级方式的特点是生成区块的区块头部的`nVersion`代表了该区块的所处版本.但是在BIP-9中,我们在区块链浏览器中观察最新出的区块很有可能是`0x20000000`,`0x20000000`的含义是BIP-9的初始值,不包含任何`已有`的版本的信息,这和以往的认知观念不同.BIP-9方式下的当前区块版本是由历史区块数据进行遍历决定的 --- 在某一个时间范围内,以2016区块(两周)作为跨度,并用状态机的方式遍历每一个区间来切换状态,当赞成比例到达95%时就视为升级成功.
@@ -248,7 +241,6 @@ VersionBitsState(pindexPrev, params, Consensus::DEPLOYMENT_SEGWIT, versionbitsca
 ![](./pic/bip9_extra.png)
 
 
-<a id="markdown-31-bip68-112-113" name="31-bip68-112-113"></a>
 ## 3.1. BIP68 112 113
 
 升级的目的 & 关键代码:
@@ -297,7 +289,6 @@ if (VersionBitsState(pindexPrev, consensusParams, Consensus::DEPLOYMENT_CSV, ver
 # 把原始取时间的方式换成区过去11个区块的中位数
 ```
 
-<a id="markdown-32-bip141-143-147" name="32-bip141-143-147"></a>
 ## 3.2. BIP141 143 147
 
 升级的目的 & 关键代码:
@@ -356,7 +347,6 @@ if ((flags & SCRIPT_VERIFY_NULLDUMMY) && stacktop(-1).size())
     return set_error(serror, SCRIPT_ERR_SIG_NULLDUMMY);
 ```
 
-<a id="markdown-33-总结" name="33-总结"></a>
 ## 3.3. 总结
 
 BIP9是BIP34的升级版本.对比上文BIP34升级方式的问题我们发现在BIP9中都解决了:
@@ -386,12 +376,10 @@ BIP9是BIP34的升级版本.对比上文BIP34升级方式的问题我们发现�
 
 唯一的解决方法是spv钱包可以识别出`隔离见证数据不符合隔离见证验证行为`的交易,强制用户们认识到这个问题的风险,并升级钱包.这样就可以使得作恶者虽然分叉了无视隔离见证规则版本,并且花费大量电力变成了最长链,但是大家都不认可交易,作恶者的最长链上的比特币无法换成其他有价值的物品,作恶者自然会停止作恶.
 
-<a id="markdown-4-nversion-总结" name="4-nversion-总结"></a>
 # 4. nVersion 总结
 
 在比特币中,nVersion主要作为软分叉(soft fork)升级的版本号.软分叉是比特币的升级手段,其主要目的是防止升级产生`前向不兼容`的问题,而导致分叉成两条互不兼容的链(例如修改共识,pow数据在另一条链上无法验证)最终一个币分裂成两个币(在经过上述的种种升级之后,最新版本节点产生的数据同样可以被老版本节点接受).
 
-<a id="markdown-5-参考资料" name="5-参考资料"></a>
 # 5. 参考资料
 
 * https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki (BIP34)

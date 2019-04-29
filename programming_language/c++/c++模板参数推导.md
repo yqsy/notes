@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * https://zh.wikipedia.org/wiki/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8 (右值)
@@ -64,7 +63,6 @@ const int* d = nullptr;
 
 ```
 
-<a id="markdown-结果" name="结果"></a>
 # 结果
 
 

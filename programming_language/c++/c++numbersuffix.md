@@ -8,7 +8,6 @@
 
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * http://www.cplusplus.com/forum/general/48920/

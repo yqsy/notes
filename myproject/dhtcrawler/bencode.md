@@ -9,7 +9,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 把json拿来对比
@@ -24,7 +23,6 @@ array|[]|[开头|[]interface{}| l开头e末尾 (l4:spami42ee) | [spam,42]
 object|{...}|{开头|map[string]interface{}| d开头e末尾 (d3:bar4:spam3:fooi42ee) | {"bar":"spam","foo":42}
 
 
-<a id="markdown-2-实现方法选择" name="2-实现方法选择"></a>
 # 2. 实现方法选择
 
 参考几种语言的实现: python,js,java,go的json解析的方法. 我们主要关注异常情况:
@@ -158,7 +156,6 @@ func main() {
 }
 ```
 
-<a id="markdown-21-列表" name="21-列表"></a>
 ## 2.1. 列表
 
 语言|处理方式|类型不匹配|key不存在
@@ -169,14 +166,12 @@ java|反射解析到静态类|不严谨|null
 go|反射解析到静态类|返回err|默认空值
 
 
-<a id="markdown-22-选择" name="22-选择"></a>
 ## 2.2. 选择
 
 
 综上,我们选择的方案还是go标准库的方案,其准确性强以及编码量更少.  
 
 
-<a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 * https://en.wikipedia.org/wiki/Bencode

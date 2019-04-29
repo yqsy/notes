@@ -13,13 +13,11 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://raw.githubusercontent.com/nginx/nginx/master/conf/nginx.conf  (默认配置)
 * https://github.com/nginx/nginx/blob/master/conf/fastcgi.conf (fastcgi配置)
 
-<a id="markdown-2-简要记录" name="2-简要记录"></a>
 # 2. 简要记录
 ```bash
 负载均衡方法: 轮询,加权轮询,ip hash(避免前端用户的session在后端多个节点上共享的问题,问题是不能高可用)
@@ -77,10 +75,8 @@ http{
 }
 ```
 
-<a id="markdown-3-负载均衡配置" name="3-负载均衡配置"></a>
 # 3. 负载均衡配置
 
-<a id="markdown-31-一般轮询规则" name="31-一般轮询规则"></a>
 ## 3.1. 一般轮询规则
 
 ```
@@ -105,7 +101,6 @@ server
 ```
 
 
-<a id="markdown-32-加权轮询" name="32-加权轮询"></a>
 ## 3.2. 加权轮询
 ```
 基于上面
@@ -120,7 +115,6 @@ upstream backend
 
 
 
-<a id="markdown-4-细节" name="4-细节"></a>
 # 4. 细节
 
 ```

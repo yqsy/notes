@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * http://www.tryblockchain.org/Solidity-source-mapping.html (solidity 语法说明)

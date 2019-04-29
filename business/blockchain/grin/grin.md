@@ -8,7 +8,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * https://github.com/mimblewimble/grin/blob/master/doc/build.md (构建说明)
@@ -62,7 +61,6 @@ match io::stdin().read_line(&mut input) {
 ```
 
 
-<a id="markdown-2-源码详细" name="2-源码详细"></a>
 # 2. 源码详细
 
 

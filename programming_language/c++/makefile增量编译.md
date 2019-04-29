@@ -11,7 +11,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-makefile-常用变量记录" name="1-makefile-常用变量记录"></a>
 # 1. makefile 常用变量记录
 
 变量|含义
@@ -31,7 +30,6 @@ LDFLAGS	|Extra flags to give to compilers when they are supposed to invoke the l
 * @ 不输出make的信息 
 
 
-<a id="markdown-2-d文件" name="2-d文件"></a>
 # 2. d文件
 
 ```
@@ -43,7 +41,6 @@ bdefine.o: bdefine.cpp ../buinc/stdafx.h ../buinc/bdefine.h \
  ../buinc/MsgQueue.h
 ```
 
-<a id="markdown-3-依赖关系" name="3-依赖关系"></a>
 # 3. 依赖关系
 
 ![](./pic/snipaste_20171125_214801.png)
@@ -132,7 +129,6 @@ cleandep:
 
 
 
-<a id="markdown-4-sqc-文件" name="4-sqc-文件"></a>
 # 4. sqc 文件
 ![](./pic//snipaste_20171125_223706.png)
 
@@ -208,7 +204,6 @@ cleandep:
 	rm -f $(dep)
 ```
 
-<a id="markdown-问题是预编译的include不能推算出头文件" name="问题是预编译的include不能推算出头文件"></a>
 # 问题是预编译的include不能推算出头文件
 
 这样的include生成不了依赖关系

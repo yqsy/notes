@@ -13,7 +13,6 @@
 
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://conan.io/
@@ -25,7 +24,6 @@
 * https://jfrog.com/
 
 
-<a id="markdown-2-实践" name="2-实践"></a>
 # 2. 实践
 
 
@@ -39,7 +37,6 @@ conan search Boost* -r=community
 
 ```
 
-<a id="markdown-3-配置文件" name="3-配置文件"></a>
 # 3. 配置文件
 ```
 vim /root/.conan/profiles/default
@@ -62,7 +59,6 @@ build_type=Release
 
 
 
-<a id="markdown-4-boost" name="4-boost"></a>
 # 4. Boost
 
 * http://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html
@@ -127,7 +123,6 @@ The following libraries require building:
 sudo yum install boost-devel -y
 ```
 
-<a id="markdown-5-muduo" name="5-muduo"></a>
 # 5. muduo
 
 * https://github.com/chenshuo/muduo-tutorial
@@ -159,7 +154,6 @@ BUILD_TYPE=release ./build.sh -j2
 BUILD_TYPE=release ./build.sh install
 ```
 
-<a id="markdown-6-glibc" name="6-glibc"></a>
 # 6. glibc
 可以让visual code 找到头文件
 ```

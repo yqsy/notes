@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
@@ -35,7 +34,6 @@
 
 
 
-<a id="markdown-我认为常用的" name="我认为常用的"></a>
 # 我认为常用的
 
 

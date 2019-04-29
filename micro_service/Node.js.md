@@ -9,7 +9,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-简介" name="1-简介"></a>
 # 1. 简介
 
 * https://nodejs.org/en/ (官网)
@@ -19,7 +18,6 @@
 
 Node.js是一个基于Chrome V8引擎的JavaScript运行环境,它使用了一个`事件驱动`且`异步非阻塞I/O`的模型使其轻量且高效,Node.js的包管理器NPM使全球最大的开源库生态系统
 
-<a id="markdown-2-应用场景" name="2-应用场景"></a>
 # 2. 应用场景
 
 * I/O密集型Web应用  
@@ -31,7 +29,6 @@ Node.js是一个基于Chrome V8引擎的JavaScript运行环境,它使用了一�
 * HTTP代理服务器  
   类似于`Nginx`,`Apache`
 
-<a id="markdown-3-使用nodejs实现反向代理" name="3-使用nodejs实现反向代理"></a>
 # 3. 使用Node.js实现反向代理
 
 反向代理通常有以下几种应用场景:
@@ -39,7 +36,6 @@ Node.js是一个基于Chrome V8引擎的JavaScript运行环境,它使用了一�
 * 实现AJAX跨域访问
 * 搭建统一服务网关接口
 
-<a id="markdown-4-实践" name="4-实践"></a>
 # 4. 实践
 
 ```

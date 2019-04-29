@@ -10,7 +10,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * http://www.ctolib.com/cheatsheets-go-project.html (开源项目速查)
@@ -18,7 +17,6 @@
 * https://github.com/golang/go/wiki/GoGetProxyConfig (go get 使用代理)
 * https://www.zhihu.com/question/20862617 (routine 实现)
 
-<a id="markdown-2-其他" name="2-其他"></a>
 # 2. 其他
 
 关优化编译
@@ -40,7 +38,6 @@ export PATH=\$GOPATH/bin:\$PATH
 EOF
 ```
 
-<a id="markdown-3-错误处理" name="3-错误处理"></a>
 # 3. 错误处理
 
 
@@ -53,7 +50,6 @@ https://blog.golang.org/defer-panic-and-recover
 * 重要错误,无法挽救 panic
 
 
-<a id="markdown-4-对于jsonbencode如何处理" name="4-对于jsonbencode如何处理"></a>
 # 4. 对于json,bencode如何处理
 
 三种方案
@@ -66,7 +62,6 @@ https://blog.golang.org/defer-panic-and-recover
 2. object key 判断
 
 
-<a id="markdown-5-interface使用场景" name="5-interface使用场景"></a>
 # 5. interface使用场景
 
 * json,bencode (上面地第三种方案,将动态的外部类型转换到内部的`原生的动态类型上`)

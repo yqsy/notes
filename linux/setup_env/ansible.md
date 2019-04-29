@@ -6,7 +6,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```bash
@@ -34,7 +33,6 @@ ansible all -m shell -a "sudo w"
 ansible all -m shell -a "sudo last -n 20"
 ```
 
-<a id="markdown-2-参考资料" name="2-参考资料"></a>
 # 2. 参考资料
 
 * http://www.ansible.com.cn/docs/intro_getting_started.html#a-note-about-host-key-checking

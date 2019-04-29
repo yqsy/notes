@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-ccjavajavascriptobjective-cprotobuf" name="1-ccjavajavascriptobjective-cprotobuf"></a>
 # 1. C/C++/Java/JavaScript/Objective-C/Protobuf
 
 * https://clang.llvm.org/docs/ClangFormat.html
@@ -30,7 +29,6 @@ find . -name '*.h' -type f -print0 | xargs -0 clang-format -i
 ```
 
 
-<a id="markdown-2-python" name="2-python"></a>
 # 2. python
 
 暂时使用的是pycharm的自带的Code Format工具 + pylint 

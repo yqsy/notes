@@ -6,7 +6,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 制作一个DHT爬虫工具,需要用到bittorrent,kademlia,数据库,前端nodejs+后端go jsonrpc接口等等. 底层全部从零实现.
@@ -25,7 +24,6 @@
     - [ ] nodejs调用层
     - [ ] 前端
 
-<a id="markdown-2-anacrolixtorrent项目观察" name="2-anacrolixtorrent项目观察"></a>
 # 2. anacrolix/torrent项目观察
 
 ```bash
@@ -37,7 +35,6 @@ go get github.com/anacrolix/torrent
 * log 230 - 自己写的
 * torrent 15200 - bencode, metainfo, p2p协议, 存储, tracker ...
 
-<a id="markdown-3-参考资料" name="3-参考资料"></a>
 # 3. 参考资料
 
 * https://github.com/libp2p/go-libp2p (libp2p)

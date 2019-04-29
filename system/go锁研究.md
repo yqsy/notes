@@ -8,7 +8,6 @@
 
 
 
-<a id="markdown-1-fdmutex" name="1-fdmutex"></a>
 # 1. fdMutex
 
 一个uint64表示多种状态

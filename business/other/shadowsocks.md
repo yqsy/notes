@@ -8,7 +8,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-分析" name="1-分析"></a>
 # 1. 分析
 
 ```
@@ -31,13 +30,11 @@ local提供socks5的接口,local和server的通讯是自制协议
 * 吞吐量? 本机 100MB /s.(aes-256-cfb) 我的有700MB/s
 
 
-<a id="markdown-2-检测文献" name="2-检测文献"></a>
 # 2. 检测文献
 
 * https://docs.google.com/viewer?url=patentimages.storage.googleapis.com/pdfs/c4655bdfd3bcee64d0a3/CN105281973A.pdf 
 
 
-<a id="markdown-3-流量混淆" name="3-流量混淆"></a>
 # 3. 流量混淆
 
 * https://github.com/shadowsocks/simple-obfs

@@ -18,7 +18,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 
 * https://memcached.org/
@@ -31,14 +30,12 @@
 * https://www.zhihu.com/question/19719997/answer/81930332 (作为mysql缓存)
 * https://www.zhihu.com/question/27738066/answer/45475986 (作为mysql缓存)
 
-<a id="markdown-2-搭建" name="2-搭建"></a>
 # 2. 搭建
 
 ```bash
 docker run --name my-memcache -p 11211:11211 -d memcached
 ```
 
-<a id="markdown-3-搭建调试版本" name="3-搭建调试版本"></a>
 # 3. 搭建调试版本
 
 ```bash
@@ -71,7 +68,6 @@ gdbgui --host 0.0.0.0 --args "memcached -u root"
 ```
 
 
-<a id="markdown-4-代码阅读整理" name="4-代码阅读整理"></a>
 # 4. 代码阅读整理
 
 ```
@@ -200,7 +196,6 @@ setsockopt
 ```
 
 
-<a id="markdown-5-接口使用" name="5-接口使用"></a>
 # 5. 接口/使用
 
 存储
@@ -225,10 +220,8 @@ setsockopt
 * flush_all
 
 
-<a id="markdown-6-数据结构选择" name="6-数据结构选择"></a>
 # 6. 数据结构选择
 
-<a id="markdown-61-naive-key-value-天真的" name="61-naive-key-value-天真的"></a>
 ## 6.1. Naive key-value (天真的)
 * hash_map<string, value*> (临界区保护整个读写过程)
 * hash_map<string, unique_ptr<value>> (不需要删除)
@@ -256,7 +249,6 @@ unlock();
 send(val);
 ```
 
-<a id="markdown-62-minimalize-critical-section" name="62-minimalize-critical-section"></a>
 ## 6.2. Minimalize critical section
 * hash_map<string, shared_ptr<value>>
 
@@ -273,7 +265,6 @@ unlock();
 send(*val);
 ```
 
-<a id="markdown-63-condensedsave-memory" name="63-condensedsave-memory"></a>
 ## 6.3. Condensed,save memory
 * hash_map<shared_ptr<item>> (key value放一起 节省空间) (自己实现比较函数)
 
@@ -281,7 +272,6 @@ send(*val);
 unordered_set<shared_ptr<const Item>, Hash, Equal>
 ```
 
-<a id="markdown-64-sharded-further-reduce-contention" name="64-sharded-further-reduce-contention"></a>
 ## 6.4. Sharded, further reduce contention
 * 上千个hash_map,每个hash_map都有自己的锁,避免全局锁争用(多线程)
 
@@ -308,7 +298,6 @@ Shard shards[1024];
 
 基本开销是120N,memcached是48N
 
-<a id="markdown-7-实际数据结构" name="7-实际数据结构"></a>
 # 7. 实际数据结构
 
 muduo-memcached
@@ -338,7 +327,6 @@ END\r\n
 ```
 
 
-<a id="markdown-8-内存分配器选择" name="8-内存分配器选择"></a>
 # 8. 内存分配器选择
 
 * ptmalloc glibc
@@ -351,14 +339,12 @@ END\r\n
 * gperftools (内存profile,旧版本)
 
 
-<a id="markdown-9-单元测试" name="9-单元测试"></a>
 # 9. 单元测试
 
 ```bash
 prove t/getset.t
 ```
 
-<a id="markdown-10-性能bench" name="10-性能bench"></a>
 # 10. 性能bench
 
 muduo bench.cc代码分析

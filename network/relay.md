@@ -8,14 +8,12 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot (tcp relay)
 * http://blog.csdn.net/chenjh213/article/details/49795521 (中文介绍)
 * switchysharp (chrome代理插件)
 
-<a id="markdown-2-实践" name="2-实践"></a>
 # 2. 实践
 
 ```bash
@@ -41,7 +39,6 @@ ssh -ND 1080 root@gg
 ```
 
 
-<a id="markdown-3-socks5研究" name="3-socks5研究"></a>
 # 3. socks5研究
 
 sshd  

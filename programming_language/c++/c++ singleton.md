@@ -6,7 +6,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-example" name="example"></a>
 # example
 
 * http://stackoverflow.com/questions/1008019/c-singleton-design-pattern

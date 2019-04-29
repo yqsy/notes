@@ -5,7 +5,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 ```bash
 # 下载编译器
@@ -93,7 +92,6 @@ contractInstance.get();
 // TODO 调用不成功
 ```
 
-<a id="markdown-2-参考资料" name="2-参考资料"></a>
 # 2. 参考资料
 
 * https://github.com/ethereum/wiki/wiki/JavaScript-API#web3-javascript-app-api-for-02xx (web3js 0.2说明)

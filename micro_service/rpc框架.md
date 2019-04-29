@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://github.com/brpc/brpc/blob/master/README_cn.md
@@ -15,7 +14,6 @@
 * https://www.zhihu.com/question/41609070 (既然有了http请求为什么还需要rpc框架?)
 * http://p.primeton.com/articles/59030eeda6f2a40690f03629 (选择)
 
-<a id="markdown-2-维度" name="2-维度"></a>
 # 2. 维度
 
 连接方式

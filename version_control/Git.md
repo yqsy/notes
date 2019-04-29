@@ -28,7 +28,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 
 * https://git-scm.com/book/zh/v2 (git book)
@@ -37,7 +36,6 @@
 * https://github.com/xirong/my-git (学习资料)
 * http://www.cnblogs.com/ShaYeBlog/p/5712839.html (托管商)
 
-<a id="markdown-2-删除本地以及remote的分支" name="2-删除本地以及remote的分支"></a>
 # 2. 删除本地以及remote的分支
 * https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-remotely
 
@@ -47,39 +45,33 @@ git branch -D branch1
 git push origin --delete branch1
 ```
 
-<a id="markdown-3-push-所有分支" name="3-push-所有分支"></a>
 # 3. push 所有分支
 ```
 git push --all origin
 ```
 
-<a id="markdown-4-文本文件行尾lf" name="4-文本文件行尾lf"></a>
 # 4. 文本文件行尾LF
 .gitattributes
 ```
 *.sqc text eol=lf
 ```
 
-<a id="markdown-5-切换到最新的master" name="5-切换到最新的master"></a>
 # 5. 切换到最新的master
 ```
 git fetch && git reset --hard origin/master
 ```
 
-<a id="markdown-6-clone-windows目录" name="6-clone-windows目录"></a>
 # 6. clone windows目录
 ```bash
 git clone file:////10.243.141.8/git/cache
 ```
 
-<a id="markdown-7-设置用户名和邮箱" name="7-设置用户名和邮箱"></a>
 # 7. 设置用户名和邮箱
 ```
 git config --global user.email "yqsy021@126.com"
 git config --global user.name "yqsy"
 ```
 
-<a id="markdown-8-清理文件夹" name="8-清理文件夹"></a>
 # 8. 清理文件夹
 
 ```bash
@@ -97,7 +89,6 @@ git ls-files -ci --exclude-standard
 
 git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 ```
-<a id="markdown-9-windows-lf" name="9-windows-lf"></a>
 # 9. windows lf
 
 ```bash
@@ -111,7 +102,6 @@ git config --global core.autocrlf false
 忽视+未被忽视	|-fx
 文件夹	|-d
 
-<a id="markdown-10-其他" name="10-其他"></a>
 # 10. 其他
 
 ```bash
@@ -120,7 +110,6 @@ git push -u privatekeychain pkc
 
 ```
 
-<a id="markdown-11-底层" name="11-底层"></a>
 # 11. 底层
 
 * https://www.cnblogs.com/gscienty/p/7904518.html (csdn的)
@@ -191,7 +180,6 @@ git cat-file -p SHA1
 ```
 
 
-<a id="markdown-12-继续整理" name="12-继续整理"></a>
 # 12. 继续整理
 
 * https://www.youtube.com/watch?v=P6jD966jzlk
@@ -245,7 +233,6 @@ watch -n 1 -d find .
 * 作了修改并已放入暂存区域，就属于已暂存状态
 * 自上次取出后,作了修改但还没有放到暂存区域,就是已修改状态
 
-<a id="markdown-121-一个blob对象的实验" name="121-一个blob对象的实验"></a>
 ## 12.1. 一个blob对象的实验
 ```bash
 mkdir test
@@ -270,7 +257,6 @@ git hash-object -w test.txt
 find .git/objects -type f
 ```
 
-<a id="markdown-122-tree对象" name="122-tree对象"></a>
 ## 12.2. tree对象
 
 在tree中,所有内容以tree或blob对象存储,类似于递归向下
@@ -286,7 +272,6 @@ git cat-file -p master^{tree}
 * 120000 符号链接
 
 
-<a id="markdown-123-继续实验" name="123-继续实验"></a>
 ## 12.3. 继续实验
 ```bash
 # 把文件写到暂存区
@@ -313,7 +298,6 @@ echo 'first commit' | git commit-tree 52210aa7448b8f6ead6141789d3cace4581cd126
 
 ```
 
-<a id="markdown-124-references" name="124-references"></a>
 ## 12.4. references
 
 ```bash
@@ -338,7 +322,6 @@ ls .git/refs/tags
 ls .git/refs/remotes
 ```
 
-<a id="markdown-125-packfiles" name="125-packfiles"></a>
 ## 12.5. packfiles
 
 
@@ -371,7 +354,6 @@ git 往磁盘保存对象时默认使用的格式叫松散对象(loose object)�
 
 
 
-<a id="markdown-126-refspec远程映射" name="126-refspec远程映射"></a>
 ## 12.6. refspec(远程映射？)
 
 ```bash
@@ -434,7 +416,6 @@ yq@yq-PC:/media/yq/ST1000DM003/linux/reference/test/testgit/.git% cat config
 	merge = refs/heads/master
 ```
 
-<a id="markdown-127-协议" name="127-协议"></a>
 ## 12.7. 协议
 
 * https://
@@ -444,7 +425,6 @@ yq@yq-PC:/media/yq/ST1000DM003/linux/reference/test/testgit/.git% cat config
 
 
 
-<a id="markdown-128-http流程" name="128-http流程"></a>
 ## 12.8. http流程 
 ```
 git clone http://github.com/schacon/simplegit-progit.git
@@ -464,7 +444,6 @@ git clone http://github.com/schacon/simplegit-progit.git
 
 
 
-<a id="markdown-129-上传数据智能" name="129-上传数据智能"></a>
 ## 12.9. 上传数据(智能)
 至远端,git使用 `send-pack` 和 `receive-pack` . 这个`send-pack`进程运行在客户端上,连接至远端运行的`receive-pack`进程
 
@@ -477,14 +456,12 @@ send-pack进程会判断那些commit是它所拥有但服务端没有的,针对�
 
 ```
 
-<a id="markdown-1210-下载数据智能" name="1210-下载数据智能"></a>
 ## 12.10. 下载数据(智能)
 
 当你下载数据时,`fetch-pack`和`upload-pack`进程就起作用了,客户端启动`fetch-pack`进程,连接至远端的`upload-pack`进程,以协商后续数据传输过程
 
 
 
-<a id="markdown-13-gitremotehelp" name="13-gitremotehelp"></a>
 # 13. gitremotehelp
 
 * https://github.com/git/git/blob/master/git-remote-testgit.sh (shell的example)

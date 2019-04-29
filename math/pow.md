@@ -7,7 +7,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-基础" name="1-基础"></a>
 # 1. 基础
 
 * https://www.zhihu.com/question/26762707/answer/40119521
@@ -23,7 +22,6 @@
 * 消息摘要,签名 (完整性校验)
 
 
-<a id="markdown-2-cuckoo-cycle" name="2-cuckoo-cycle"></a>
 # 2. cuckoo cycle
 * https://github.com/tromp/cuckoo (源码)
 * https://bc-2.jp/cuckoo-profile.pdf (评测)
@@ -33,7 +31,6 @@
 * https://github.com/bitcoin/bips/blob/master/bip-0154.mediawiki (bitcoin的提案)
 
 
-<a id="markdown-3-sha256" name="3-sha256"></a>
 # 3. sha256 
 
 * https://zh.wikipedia.org/wiki/SHA-2

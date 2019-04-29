@@ -57,7 +57,6 @@
 配套源代码:
   * https://github.com/turnbullpress/dockerbook-code
 
-<a id="markdown-1-p1-简介" name="1-p1-简介"></a>
 # 1. p1-简介
 在计算世界中，容器拥有一段漫长且传奇的历史。容器与管理程序虚拟化（hypervisor
 vitualization, HV ) 有所不同，管理程序虚拟化通过中间层将一台或多台独立的机器虚拟运行
@@ -90,12 +89,10 @@ reference:
 layer)，** 而是使用操作系统的系统调用接口。这降低了运行单个容器所需的开销，也使得宿
 主机中可以运行更多的容器。
 
-<a id="markdown-2-p2-容器提供了什么" name="2-p2-容器提供了什么"></a>
 # 2. p2-容器提供了什么
 
 Docker 在虚拟化的容器执行环境中增加了一个应用程序部署引擎。该引擎的目标就是提供一个轻量、快速的环境，能够运行开发者的程序，并方便高效地将程序从开发者的笔记本部署到测试环境，然后再部署到生产环境Docker 极其简洁，它所需的全部环境只是一台仅仅安装了兼容版本的Linux 内核和二进制文件最小限的宿主机。
 
-<a id="markdown-21-提供一个简单轻量的建模方式" name="21-提供一个简单轻量的建模方式"></a>
 ## 2.1. 提供一个简单、轻量的建模方式
 Docker 上手非常快，用户只需要几分钟，就可以把自己的程序“Docker 化"（Dockerize )。
 Docker 依赖于“写时复制”（copy-on-write ) 模型，使修改应用程序也非常迅速，可以说达
@@ -105,19 +102,16 @@ Docker 依赖于“写时复制”（copy-on-write ) 模型，使修改应用程
 动。由于去除了管理程序的开销，**Docker 容器拥有很高的性能**，同时同一台宿主机中也可
 以运行更多的容器，使用户可以尽可能充分地利用系统资源。
 
-<a id="markdown-22-职责的逻辑分离" name="22-职责的逻辑分离"></a>
 ## 2.2. 职责的逻辑分离
 便用Docker, **开发人员只需要关心容器中运行的应用程序**，而运**维人员只需要关心如
 何管理容器**。Docker 设计的目的就是要加强开发人员写代码的开发环境与应用程序要部署
 的生产环境的一致性，从而降低那种“开发时一切都正常，肯定是运维的问题”的风险。
 
-<a id="markdown-23-快速高效的开发生命周期" name="23-快速高效的开发生命周期"></a>
 ## 2.3. 快速、高效的开发生命周期
 Docker 的目标之一就是缩短代码从开发、测试到部署、上线运行的周期，让你的应用
 程序具备**可移植性，易于构建，并易于协作。**
 
 
-<a id="markdown-24-鼓励使用面向服务的架构" name="24-鼓励使用面向服务的架构"></a>
 ## 2.4. 鼓励使用面向服务的架构
 。Docker **推荐单个容器只运行一个应用程
 序或进程**，这样就形成了一个分布式的应用程序模型，在这种模型下**，应用程序或服务都可
@@ -125,7 +119,6 @@ Docker 的目标之一就是缩短代码从开发、测试到部署、上线运�
 非常简单**，同时也提高了程序的内省性。
 
 
-<a id="markdown-3-p3-docker组件" name="3-p3-docker组件"></a>
 # 3. p3-Docker组件
 
 Docker 客户端和服务器  
@@ -173,7 +166,6 @@ Docker 借鉴了标准集装箱的概念。标准集装箱将货物运往世界�
 我们可以在本地构建一个完整的测试环境， 也可以为生产或开发快速复制一套复杂的应用程
 序栈。可以说，Docker 的应用场景相当广泛。
 
-<a id="markdown-4-p8-docker的技术组件" name="4-p8-docker的技术组件"></a>
 # 4. p8-Docker的技术组件
 Docker 可以运行于任何安装了现代Linux 内核的x64 主机上。我们**推荐的内核版本是3.8**
 或者更高。Docker 的开销比较低，可以用于服务器、台式机或笔记本。它包括以下几个部分。
@@ -192,7 +184,6 @@ Linux 内核的命名空间（namespace) ® ，用于隔离文件系统、进程
   * 交互式shell: 用户可以创建一个伪tty 终端，将其连接到STDIN, 为容器提供一个交互式的shell。
 
 
-<a id="markdown-5-p9-docker社区资源" name="5-p9-docker社区资源"></a>
 # 5. p9-Docker社区/资源
 
   * Docker 官方主页（http://www.docker.com/ )
@@ -209,7 +200,6 @@ Linux 内核的命名空间（namespace) ® ，用于隔离文件系统、进程
   * Docker 官网（http://www.docker.com/ )
 
 
-<a id="markdown-6-p16-centos安装docker" name="6-p16-centos安装docker"></a>
 # 6. p16-Centos安装Docker
 
 内核  
@@ -251,7 +241,6 @@ systemctl start docker
 systemctl enable docker
 ```
 
-<a id="markdown-7-p28-docker守护进程" name="7-p28-docker守护进程"></a>
 # 7. p28-Docker守护进程
 当Docker 软件包安装完毕后，默认会立即启动Docker 守护进程。**守护进程监听
 /var/run/docker.sock 这个Unix 套接字文件**，来获取来自客户端的Docker 请求。如
@@ -288,7 +277,6 @@ service docker start
 ```
 
 
-<a id="markdown-8-p31-docker图形用户界面" name="8-p31-docker图形用户界面"></a>
 # 8. p31-Docker图形用户界面
 
  * Shipyard: 提供了通过管理界面来管理各种Docker 资源（包括容器、镜像、宿主机等）的功能
@@ -296,13 +284,11 @@ service docker start
  * maDocker: maDocker 是釆用NodeJS 和Backbone 编写的一个Web UI，还处于早期幵发阶段
 
 
-<a id="markdown-9-p33-查看docker程序是否存在" name="9-p33-查看docker程序是否存在"></a>
 # 9. p33-查看Docker程序是否存在
 ```
 sudo docker info
 ```
 
-<a id="markdown-10-p35-运行第一个容器" name="10-p35-运行第一个容器"></a>
 # 10. p35-运行第一个容器
 ```
 docker run -i -t ubuntu /bin/bash
@@ -329,7 +315,6 @@ docker run -t -i jamtur01/static_web:v1
   -u, --user           Username or UID (format: <name|uid>[:<group|gid>])
 ```
 
-<a id="markdown-11-p41-获取容器内部的日志" name="11-p41-获取容器内部的日志"></a>
 # 11. p41-获取容器内部的日志
 
 获取全部的日志  
@@ -342,13 +327,11 @@ docker logs dokuwiki
 docker logs --tail 10 dokuwiki
 ```
 
-<a id="markdown-12-p42-查看容器内的进程" name="12-p42-查看容器内的进程"></a>
 # 12. p42-查看容器内的进程
 ```
 docekr top dokuwiki
 ```
 
-<a id="markdown-13-p43-在容器内部运行进程" name="13-p43-在容器内部运行进程"></a>
 # 13. p43-在容器内部运行进程
 ```
 docker exec -d dokuwiki touch /etc/new_config_file
@@ -363,13 +346,11 @@ docker exec -d dokuwiki touch /etc/new_config_file
 docker exec -t -i dokuwiki /bin/bash
 ```
 
-<a id="markdown-14-p44-自动重启容器" name="14-p44-自动重启容器"></a>
 # 14. p44-自动重启容器
 ```
 docker run --restart=always
 ```
 
-<a id="markdown-15-p45-获取容器的更多信息" name="15-p45-获取容器的更多信息"></a>
 # 15. p45-获取容器的更多信息
 ```
 docker inspect dokuwiki
@@ -396,19 +377,16 @@ docker inspect --format '{{.Name}} {{.State.Running}}' dokuwiki my-proxy
 ```
 
 
-<a id="markdown-16-p46-解密docker工作原理的目录" name="16-p46-解密docker工作原理的目录"></a>
 # 16. p46-解密docker工作原理的目录
 ```
 /var/lib/docker
 ```
 
-<a id="markdown-17-p47-一次删除所有容器" name="17-p47-一次删除所有容器"></a>
 # 17. p47-一次删除所有容器=
 ```
 docker rm `docker ps -a -q`
 ```
 
-<a id="markdown-18-p51-列出镜像" name="18-p51-列出镜像"></a>
 # 18. p51-列出镜像
 ```
 docker images
@@ -433,7 +411,6 @@ docker search puppet
 ```
 
 
-<a id="markdown-19-p58-使用dockerfile" name="19-p58-使用dockerfile"></a>
 # 19. p58-使用Dockerfile
 reference: 
   * https://docs.docker.com/engine/reference/builder/
@@ -476,7 +453,6 @@ git@github.com:jamtur01/docker-static_web
 
 这里Docker假设在这个Git 仓库的根目录下存在Dockerfile 文件。
 
-<a id="markdown-20-p67-dockerfile和构建缓存" name="20-p67-dockerfile和构建缓存"></a>
 # 20. p67-Dockerfile和构建缓存
 然而，有些时候需要确保构建过程不会使用缓存。比如，**如果己经缓存了前面的第3步，
 即apt-getupdate,那么Docker将不会再次刷新APT包的缓存。这时你可能需要取得
@@ -485,7 +461,6 @@ git@github.com:jamtur01/docker-static_web
 docker build --no-cache -t="jamtur01/static_web"
 ```
 
-<a id="markdown-21-p68-基于缓存构建的模板" name="21-p68-基于缓存构建的模板"></a>
 # 21. p68-基于缓存构建的模板
 ```
 FROM ubuntu:14.04
@@ -501,7 +476,6 @@ RUN apt-get -qq update
 
 就是包的时间戳必须在REFRESHED_AT时间之后,不然就检查一下是否是最新,然后更新到最新
 
-<a id="markdown-22-p68-查看新镜像" name="22-p68-查看新镜像"></a>
 # 22. p68-查看新镜像
 ```
 docker images jamtur01/static_web
@@ -512,7 +486,6 @@ docker images jamtur01/static_web
 docker history jamtur01/static_web
 ```
 
-<a id="markdown-23-p69-从新镜像启动容器" name="23-p69-从新镜像启动容器"></a>
 # 23. p69-从新镜像启动容器
 ```
 docker run -d -p 80 --name static_web jamtur01/static_web nginx -g "daemon off;"
@@ -535,7 +508,6 @@ docker run -d -p 80:80 --name static_web jamtur01/static_web nginx -g "daemon of
 ```
 
 
-<a id="markdown-24-p72-dockerfile指令" name="24-p72-dockerfile指令"></a>
 # 24. p72-Dockerfile指令
 
 使用CMD指令  
@@ -708,7 +680,6 @@ CMD ["-D", "FOREGOUND"]
 
 
 
-<a id="markdown-25-p84-将镜像推送到docker-hub" name="25-p84-将镜像推送到docker-hub"></a>
 # 25. p84-将镜像推送到Docker Hub
 ```
 docker push static_web
@@ -737,7 +708,6 @@ docker rmi jamtur01/static_web
 docker rmi `docker images -a -q`
 ```
 
-<a id="markdown-26-p90-运行自己的docker-registry" name="26-p90-运行自己的docker-registry"></a>
 # 26. p90-运行自己的Docker Registry
 有时候我们可能希望构建和存储包含不想被公开的信息或数据的镜像。这时候我们有以下两种选择。
 
@@ -776,7 +746,6 @@ le.com:5000/jamtur01/
 S Registry 等详细信息，可以在Docker Registry 文档查看完整的配置和部署说明。
 
 
-<a id="markdown-27-p92-其他可选的registry服务" name="27-p92-其他可选的registry服务"></a>
 # 27. p92-其他可选的Registry服务
 
 Quary  
@@ -785,7 +754,6 @@ Quay服务提供了私有的Registry 托管服务，允许你上传公共的或�
 伸缩计划。Quay 最近被CoreOS® 收购了，并会被整合到他们的产品中去。
 
 
-<a id="markdown-28-p96-搭建静态测试网站" name="28-p96-搭建静态测试网站"></a>
 # 28. p96-搭建静态测试网站
 ```
 FROM ubuntu:16.04
@@ -801,7 +769,6 @@ ADD nginx/nginx.conf /etc/nginx/
 EXPOSE 80
 ```
 
-<a id="markdown-29-p98-使用宿主机的目录作为卷" name="29-p98-使用宿主机的目录作为卷"></a>
 # 29. p98-使用宿主机的目录作为卷
 ```
 docker run -d -p 80 --name website \
@@ -809,7 +776,6 @@ docker run -d -p 80 --name website \
 jamtur01/nginx nginx
 ```
 
-<a id="markdown-30-p102-执行宿主机上的程序" name="30-p102-执行宿主机上的程序"></a>
 # 30. p102-执行宿主机上的程序
 ```
 FROM ubuntu:14.04
@@ -838,7 +804,6 @@ docker run -d -p 4576 --name webapp \
 -v $PWD/webapp:/opt/webapp jamtur01/sinatra
 ```
 
-<a id="markdown-31-p104-构建redis镜像和容器" name="31-p104-构建redis镜像和容器"></a>
 # 31. p104-构建Redis镜像和容器
 ```
 FROM ubuntu:14.04
@@ -872,7 +837,6 @@ apt-get -y install redis-tools
 redis-cli -h 127.0.0.1 -p 49161
 ```
 
-<a id="markdown-32-p106-docker自己的网络栈" name="32-p106-docker自己的网络栈"></a>
 # 32. p106-Docker自己的网络栈
 在安装Docker 时，会创建一个新的网络接口， 名字是docker0。每个Docker 容器都
 会在这个接口上分配一个IP 地址。
@@ -1040,7 +1004,6 @@ Chain PRE_public_log (1 references)
 target     prot opt source               destination         
 ```
 
-<a id="markdown-33-p110-ip地址硬编码的问题" name="33-p110-ip地址硬编码的问题"></a>
 # 33. p110-ip地址硬编码的问题
 ```
 redis-cli -h 172.17.0.18
@@ -1138,7 +1101,6 @@ web服务器与redis数据库的简单框架
   * Play ! 
   * 你喜欢的其他框架
 
-<a id="markdown-34-p116-docker用于持续集成" name="34-p116-docker用于持续集成"></a>
 # 34. p116-Docker用于持续集成
 Dockei很擅长快速创建和处理一个或多个容器。这个能力显然可以为持续集成测试这
 个概念提供帮助。在测试场景里，你需要频繁安装软件，或者部署到多台宿主机上，运行测
@@ -1153,7 +1115,6 @@ Docker 让部署以及这些步骤和宿主机的清理变得开销很低。为�
 更有意思些，我们会让Docker 递归地运行在Docker 内部。这就和套娃一样！**
 
 
-<a id="markdown-35-p126-jenkins作业自动执行" name="35-p126-jenkins作业自动执行"></a>
 # 35. p126-Jenkins作业自动执行
 **可以通过启用SCM轮询，让Jenkins作业自动执行。**它会在有新的改动签入Git仓库后，
 触发自动构建。类似的自动化还可以通过提交后的钩子或者GitHub或者Bitbucket仓库的钩
@@ -1164,7 +1125,6 @@ Docker 让部署以及这些步骤和宿主机的清理变得开销很低。为�
 理想情况下,就是向仓库push一个提交之后,构建服务器的jenkins轮询到了修改,然后将其pull下来打包了一个docker容器,再推送到测试服务器
 
 
-<a id="markdown-36-p132-其他选择" name="36-p132-其他选择"></a>
 # 36. p132-其他选择
 在Docker 的生态环境中， 持续集成和持续部署（CI/CD) 是很有意思的一部分。除了与
 现有的Jenkins 这种工具集成，也有很多人直接使用Docker 来构建这类工具。
@@ -1179,7 +1139,6 @@ Shippable 是免费的持续集成和部署服务，基于GitHub 和Bitbucket。
 量，原生支持Docker.
 
 
-<a id="markdown-37-p138-什么是卷" name="37-p138-什么是卷"></a>
 # 37. p138-什么是卷
 卷是在一个或多个容器中特殊指定的目录，卷会绕过联合文件系统，为持久化数据和共享数据提供几个有用的特性。
 
@@ -1256,7 +1215,6 @@ VOLUME ["/dokuwiki/data/","/dokuwiki/lib/plugins/","/dokuwiki/conf/","/dokuwiki/
 ENTRYPOINT ["/usr/sbin/lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
 ```
 
-<a id="markdown-38-备份我的dokuwiki" name="38-备份我的dokuwiki"></a>
 # 38. 备份我的dokuwiki
 reference:
 https://hub.docker.com/r/mprasil/dokuwiki/
@@ -1268,7 +1226,6 @@ docker run --rm --volumes-from dokuwiki \
 tar zcvf /backup/dokuwiki-backup.tar.gz /dokuwiki/data/ /dokuwiki/lib/plugins/ /dokuwiki/conf/ /dokuwiki/lib/tpl/ /var/log/
 ```
 
-<a id="markdown-39-p142-简易的负载均衡" name="39-p142-简易的负载均衡"></a>
 # 39. p142-简易的负载均衡
 
   * 运行多个Apache 容器，这些容器都使用来自james_blog 容器的卷。在这些Apache容器前面加一个负载均衡器，我们就拥有了一个Web 集群。
@@ -1278,7 +1235,6 @@ tar zcvf /backup/dokuwiki-backup.tar.gz /dokuwiki/data/ /dokuwiki/lib/plugins/ /
   * 在上一个扩展基础上可以很容易为我们的服务构建一个Web 前端，这个服务用于从指定的源自动构建和部署网站。这样你就有一个完全属于自己的GitHub Pages 了。
 
 
-<a id="markdown-40-p150-多容器的应用栈nodejsrediselk示范" name="40-p150-多容器的应用栈nodejsrediselk示范"></a>
 # 40. p150-多容器的应用栈(nodejs,redis,elk示范)
 在这个例子中，我们会构建一系列的镜像来支持部署多容器的应用。
 
@@ -1294,14 +1250,12 @@ git clone https://github.com/turnbullpress/dockerbook-code
 ```
 
 
-<a id="markdown-41-p167-使用fig编配docker" name="41-p167-使用fig编配docker"></a>
 # 41. p167-使用Fig编配Docker
 reference: 
 
 http://www.fig.sh/
 
 
-<a id="markdown-42-p193-配合consul在docker里运行分布式服务" name="42-p193-配合consul在docker里运行分布式服务"></a>
 # 42. p193-配合Consul,在Docker里运行分布式服务
 
 reference:
@@ -1309,7 +1263,6 @@ reference:
 https://github.com/turnbullpress/dockerbook-code/tree/master/code/7/consul
 
 
-<a id="markdown-43-p202-其他编配工具和组件" name="43-p202-其他编配工具和组件"></a>
 # 43. p202-其他编配工具和组件
 
 Fleet和etcd  

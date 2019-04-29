@@ -11,7 +11,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-基础信息" name="1-基础信息"></a>
 # 1. 基础信息
 
 Kademlia是点对点计算的分布式哈希表,时间复杂度为`O(log(n))`.  是BitTorrent,I2P,IPFS,区块链运用的p2p技术的底层原理.
@@ -68,7 +67,6 @@ RoutingTable [][]*Node // 160x20
 
 由上可见,`距离范围越小,最长公共祖先长度越大`.可以推出公式,最长公共祖先长度为`(bit len - i) - 1`. 不同距离范围的k-bucket,容纳的节点数量的公式为`2^i`
 
-<a id="markdown-2-辅助代码" name="2-辅助代码"></a>
 # 2. 辅助代码
 
 ```python
@@ -78,7 +76,6 @@ def dis(x1, x2):
 dis('11111', '0011')
 ```
 
-<a id="markdown-3-论文示例说明" name="3-论文示例说明"></a>
 # 3. 论文示例说明
 
 ![](./pic/paperdemo.png)
@@ -117,14 +114,12 @@ dis('11111', '0011')
 
 ```
 
-<a id="markdown-31-寻址" name="31-寻址"></a>
 ## 3.1. 寻址
 
 Kademlia寻址的核心思想是`中间人路由`,如果在node本地的路由表中无法直接路由到目的位置,那么可以在本地路由表中找到和目的位置`最近公共祖先`相同的节点,向距离目的位置更近的节点去查询. 对于每一个节点来说,存储近距离节点的数量(上限常量k个)会更多, 这是由于存储不同距离范围的节点数量是有限的. 当与本地节点的最近公共祖先长度为0时(也即是i=159), 存储的节点的上限是2^159个,而物理内存是存不下那么多节点的. 综上,寻址的核心思想是`中间人路由`,向中间人询问离最终目的更近的节点,不断地切换中间人,直到找到最终目的节点.
 
 ![](./pic/paperdemo2.png)
 
-<a id="markdown-4-协议" name="4-协议"></a>
 # 4. 协议
 
 * PING
@@ -132,7 +127,6 @@ Kademlia寻址的核心思想是`中间人路由`,如果在node本地的路由�
 * FIND_NODE
 * FIND_VALUE
 
-<a id="markdown-5-参考项目" name="5-参考项目"></a>
 # 5. 参考项目
 
 prettymuchbryce/kademlia(基于表): 
@@ -157,7 +151,6 @@ go get github.com/nictuku/dht
 /mnt/disk1/go/src/github.com/nictuku/dht
 ```
 
-<a id="markdown-6-参考资料" name="6-参考资料"></a>
 # 6. 参考资料
 
 * https://en.wikipedia.org/wiki/Kademlia (维基百科)

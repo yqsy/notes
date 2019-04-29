@@ -9,7 +9,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 * https://zh.wikipedia.org/wiki/BitTorrent_(%E5%8D%8F%E8%AE%AE) (wiki)
@@ -52,7 +51,6 @@ DHT网络:
 全称分布式哈希表(`Distributed Hash Table`),一种分布式存储方法.在不需要服务器的情况下,每个客户端都负责一个`小范围的路由`,并存储一小部分数据,从而实现整个DHT网络的寻址和存储.从而实现整个DHT网络的寻址和存储,使用支持该技术的BT下载软件,`用户无需连上Tracker就可以下载`,因为软件会在DHT网络中寻找下载同一个文件的其他用户并与之通讯,开始下载任务.
 
 
-<a id="markdown-2-torrent实践" name="2-torrent实践"></a>
 # 2. torrent实践
 
 ```bash
@@ -64,7 +62,6 @@ parse-torrent ./1.torrent
 
 ```
 
-<a id="markdown-33-bittorrent" name="33-bittorrent"></a>
 # 3.3. bittorrent
 
 

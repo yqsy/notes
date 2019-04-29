@@ -23,7 +23,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-特性" name="1-特性"></a>
 # 1. 特性
 `/bin/bash`时Linux默认的shell,时GNU计划中重要的工具软件之一
 
@@ -36,7 +35,6 @@ shell意思为`命令行界面`,是UNIX操作系统中最为重要的部分之�
 * 程序化脚本(shell script)
 * 万用字符: (Wildcard)
 
-<a id="markdown-11-快捷键" name="11-快捷键"></a>
 ## 1.1. 快捷键
 
 * ctrl+u 向前删除字符串
@@ -49,7 +47,6 @@ shell意思为`命令行界面`,是UNIX操作系统中最为重要的部分之�
 * ctrl+m enter
 * ctrl+z 暂停目前的命令
 
-<a id="markdown-2-使用场景" name="2-使用场景"></a>
 # 2. 使用场景
 
 请记住shell脚本的强项: 强控简单的文件和命令,当你发现你的脚本写得有点繁琐,特别时涉及复杂的字符串或数学处理时,或许你就该实时Python,Perl或awk之类的脚本语言
@@ -57,14 +54,12 @@ shell意思为`命令行界面`,是UNIX操作系统中最为重要的部分之�
 * https://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement (使用python替代shell)
 * http://plumbum.readthedocs.io/en/latest/ (库)
 
-<a id="markdown-3-竖杠的含义" name="3-竖杠的含义"></a>
 # 3. 竖杠的含义
 
 * http://www.linfo.org/vertical_bar_character.html
 * http://www.linfo.org/pipe.html
 
 
-<a id="markdown-4-各种符号含义" name="4-各种符号含义"></a>
 # 4. 各种符号含义
 
 符号|含义
@@ -101,10 +96,8 @@ $|美元符号|变量符号,行尾
 _|下划线|空格的简易替代
 
 
-<a id="markdown-5-运算符号" name="5-运算符号"></a>
 # 5. 运算符号
 
-<a id="markdown-51-文件类型运算符" name="51-文件类型运算符"></a>
 ## 5.1. 文件类型运算符
 
 运算符|用于测试
@@ -118,7 +111,6 @@ _|下划线|空格的简易替代
 -S|套接字
 
 
-<a id="markdown-52-文件权限运算符" name="52-文件权限运算符"></a>
 ## 5.2. 文件权限运算符
 
 运算符|用于测试
@@ -130,7 +122,6 @@ _|下划线|空格的简易替代
 -g|Setgid
 -k|Sticky
 
-<a id="markdown-53-比较数字" name="53-比较数字"></a>
 ## 5.3. 比较数字
 
 运算符|当参数一与参数二相比,....时,返回true
@@ -142,7 +133,6 @@ _|下划线|空格的简易替代
 -le|更小或相等
 -ge|更大或相等
  
-<a id="markdown-6-常用语句" name="6-常用语句"></a>
 # 6. 常用语句
 
 ```bash
@@ -210,7 +200,6 @@ rm -f $FILE
 ```
 
 
-<a id="markdown-7-标注输入输出" name="7-标注输入输出"></a>
 # 7. 标注输入输出
 
 按`ctrl-d`终止当前终端的标准输入并终止命令.`ctrl-c`终止当前进程的运行.
@@ -234,7 +223,6 @@ ls /ffffffff > f 2>&1
 head < /proc/cpuinfo
 ```
 
-<a id="markdown-8-sed的常见语法" name="8-sed的常见语法"></a>
 # 8. sed的常见语法
 
 ```bash
@@ -252,11 +240,9 @@ sed 's/:/%/g' /etc/passwd
 sed 3,6d /etc/passwd
 ```
 
-<a id="markdown-9-xargsexprexec" name="9-xargsexprexec"></a>
 # 9. xargs/expr/exec
 当把海量的文件当作一个命令的参数时,该命令或者shell可能会告诉你缓冲不足以容纳这些参数,解决这个问题,可用`xargs`,它能对自身输入流的每个文件名逐个地执行命令
 
-<a id="markdown-91-xargs和exec在使用中的不同" name="91-xargs和exec在使用中的不同"></a>
 ## 9.1. xargs和exec在使用中的不同
 
 * https://en.wikipedia.org/wiki/Xargs
@@ -287,7 +273,6 @@ find . -name '*.gif' -exec file {} \;
 
 exec命令时shell内置的,他会用其后的程序的进程来取代你当前的shell进程,当在shell窗口中运行exec cat时,按下ctrl-d或ctrl-c时,shell窗口就会小时,因为没有任何子进程了
 
-<a id="markdown-10-sortwcuniq" name="10-sortwcuniq"></a>
 # 10. sort,wc,uniq
 
 ```bash
@@ -311,7 +296,6 @@ cat /etc/man_db.conf | wc
 ```
 
 
-<a id="markdown-11-转义符" name="11-转义符"></a>
 # 11. 转义符
 
 我差点天真地以为http协议或者是memcached协议的\r\n是4个字节的了  
@@ -329,7 +313,6 @@ cat /etc/man_db.conf | wc
 实在不行的话用tcpdump搞清楚
 
 
-<a id="markdown-12-高级bash" name="12-高级bash"></a>
 # 12. 高级bash
 
 * https://www.zhihu.com/question/21418449 (zsh韦易笑)

@@ -9,7 +9,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-实践" name="1-实践"></a>
 # 1. 实践
 
 wsgi_server.py
@@ -109,7 +108,6 @@ python3 wsgi_server.py
 
 ```
 
-<a id="markdown-2-https实践" name="2-https实践"></a>
 # 2. https实践
 
 书上看到的,貌似有点问题?浏览器不识别?

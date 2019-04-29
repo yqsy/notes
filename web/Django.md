@@ -9,7 +9,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 * https://docs.djangoproject.com/en/2.0/contents/ (初始教学)
 * https://docs.djangoproject.com/en/2.0/ref/models/expressions/#avoiding-race-conditions-using-f (解决web服务器的race condition)
@@ -18,7 +17,6 @@
 * https://docs.djangoproject.com/en/2.0/topics/ (全部文档)
 * https://code.ziqiangxuetang.com/django/django-tutorial.html (中文文档)
 
-<a id="markdown-2-实践" name="2-实践"></a>
 # 2. 实践
 
 ```bash
@@ -70,7 +68,6 @@ pip install --user dist/django-xxx-0.1.tar.gz
 pip uninstall dist/django-xxx-0.1.tar.gz
 ```
 
-<a id="markdown-3-with-docker" name="3-with-docker"></a>
 # 3. with docker
 
 ```

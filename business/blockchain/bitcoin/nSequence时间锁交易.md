@@ -9,7 +9,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```c++
@@ -22,7 +21,6 @@ uint32_t nSequence;
 nSequence的功能与nLockTime一样,只不过将绝`对的高度,时间`转换成了`相对的高度,时间`.这里做一下nSequence以及CHECKSEQUENCEVERIFY相关的交易,并跟踪到相关代码来分析.
 
 
-<a id="markdown-2-nsequence" name="2-nsequence"></a>
 # 2. nSequence
 
 (BIP68)
@@ -126,7 +124,6 @@ bg 1
 bhtx 301 1
 ```
 
-<a id="markdown-3-checksequenceverify-常用场景" name="3-checksequenceverify-常用场景"></a>
 # 3. CHECKSEQUENCEVERIFY 常用场景
 
 (BIP112)
@@ -212,7 +209,6 @@ ELSE
 ENDIF
 ```
 
-<a id="markdown-4-参考资料" name="4-参考资料"></a>
 # 4. 参考资料
 
 * https://en.bitcoin.it/wiki/Timelock (百科)

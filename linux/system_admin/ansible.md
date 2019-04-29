@@ -7,7 +7,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资源" name="1-资源"></a>
 # 1. 资源
 
 * https://www.ansible.com/ (官网)
@@ -15,7 +14,6 @@
 * http://ansible-tran.readthedocs.io/en/latest/docs/ (中文文档)
 * https://www.ansible.com/resources/get-started (视频教学)
 
-<a id="markdown-2-安装实践" name="2-安装实践"></a>
 # 2. 安装实践
 
 * epel

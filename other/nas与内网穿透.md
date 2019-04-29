@@ -7,7 +7,6 @@
 <!-- /TOC -->
 
 
-<a id="markdown-1-资料" name="1-资料"></a>
 # 1. 资料
 * https://www.zhihu.com/question/21359049/answer/69671935 (组装nas)
 * https://www.zhihu.com/question/49629610/answer/126092240 (内网穿透)
