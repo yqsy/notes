@@ -178,7 +178,7 @@ bool GenericTransactionSignatureChecker<T>::CheckLockTime
 # 交易nLockTime < 50 亿 && 脚本锁定时间 < 50亿 (高度)
 # 交易nLockTime >= 50亿 && 脚本锁定时间 > 50亿 (时间)
 
-# 2. 必须符合规则: 脚本锁定时间 <= 交易nLockTime (脚本锁定时间是链上已确定,无法修改的,)
+# 2. 必须符合规则: 脚本锁定时间 <= 交易nLockTime (脚本锁定时间是链上已确定,无法修改的, 当前广播的交易到达了花费锁定脚本的时间)
 
 # 3. 必须符合规则: 所有见证脚本的nSequence不为0xFFFFFFFF(不能禁用nLockTime)
 

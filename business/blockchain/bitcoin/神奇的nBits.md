@@ -19,7 +19,6 @@
 
 <!-- /TOC -->
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```c++
@@ -46,7 +45,6 @@ uint32_t nNonce;
 
 * https://btc.chaintools.io/ (浏览器)
 
-<a id="markdown-2-nbits与target的转换" name="2-nbits与target的转换"></a>
 # 2. nBits与target的转换
 
 源码:
@@ -59,7 +57,6 @@ arith_uint256::GetCompact
 ```
 
 
-<a id="markdown-21-setcompact" name="21-setcompact"></a>
 ## 2.1. SetCompact
 
 ![](./pic/nbits2target.png)
@@ -150,7 +147,6 @@ nbits2target_str(0x1d00ffff)
 ```
 
 
-<a id="markdown-22-getcompact" name="22-getcompact"></a>
 ## 2.2. GetCompact
 
 含义:
@@ -212,7 +208,6 @@ target2bits_str(0x00000000FFFF00000000000000000000000000000000000000000000000000
 
 
 
-<a id="markdown-3-difficulty" name="3-difficulty"></a>
 # 3. difficulty
 
 源码:
@@ -304,7 +299,6 @@ getdiffculty_str(0x1d00ffff)
 
 
 
-<a id="markdown-4-hash-rate" name="4-hash-rate"></a>
 # 4. hash rate
 
 难度1的偏移:
@@ -322,10 +316,10 @@ getdiffculty_str(0x1d00ffff)
 
 要找到难度D的预期哈系数:
 ```python
-D * 2 ** 256 /（0xffff * 2 ** 208）
+D * 2 ** 256 / (0xffff * 2 ** 208)
 
 # 也就是:
-D / （0xffff * 2 ** 208） * 2 ** 256
+D / (0xffff * 2 ** 208) * 2 ** 256
 
 # 含义是:
 # 找到D偏移难度中的一个的概率 * 32字节数字的穷举数.
@@ -403,7 +397,6 @@ calcdiff_str(600.0, 7158278.0)
 ```
 
 
-<a id="markdown-5-难度调整" name="5-难度调整"></a>
 # 5. 难度调整
 
 源码:
@@ -424,7 +417,6 @@ consensus.nPowTargetSpacing = 10 * 60;
 int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
 ```
     
-<a id="markdown-51-cmainparams-主网" name="51-cmainparams-主网"></a>
 ## 5.1. CMainParams (主网)
 ![](./pic/difficulity.png)
 
@@ -514,7 +506,6 @@ def getnextworkrequired_str(oldbits, begintime, endtime):
 getnextworkrequired_str(388648495, 1542412284, 1543837587)
 ```
 
-<a id="markdown-52-ctestnetparams测试网络" name="52-ctestnetparams测试网络"></a>
 ## 5.2. CTestNetParams(测试网络)
 
 ![](./pic/diffculity2.png)
@@ -528,7 +519,6 @@ getnextworkrequired_str(388648495, 1542412284, 1543837587)
 
 
 
-<a id="markdown-53-cregtestparams本地测试网络" name="53-cregtestparams本地测试网络"></a>
 ## 5.3. CRegTestParams(本地测试网络)
 ![](./pic/diffculity3.png)
 
@@ -537,7 +527,6 @@ getnextworkrequired_str(388648495, 1542412284, 1543837587)
 
 
 
-<a id="markdown-6-主网难度取值" name="6-主网难度取值"></a>
 # 6. 主网难度取值
 
 
@@ -549,7 +538,6 @@ target: "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
 target: "00000000FFFF0000000000000000000000000000000000000000000000000000"  
 nBits: 0x1d00ffff
 
-<a id="markdown-7-常见挖矿设备参数" name="7-常见挖矿设备参数"></a>
 # 7. 常见挖矿设备参数
 
 * Mhash/s 每秒多少兆哈系计算次数
@@ -558,7 +546,6 @@ nBits: 0x1d00ffff
 * Watts 功率
 * Price 价格
 
-<a id="markdown-8-参考资料" name="8-参考资料"></a>
 # 8. 参考资料
 
 * https://en.bitcoin.it/wiki/Difficulty (包含上面所有的信息)

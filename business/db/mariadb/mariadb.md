@@ -2,12 +2,12 @@
 
 - [1. 说明](#1-说明)
 - [2. 安装](#2-安装)
+- [3. 参考资料](#3-参考资料)
 
 <!-- /TOC -->
 
 
 
-<a id="markdown-1-说明" name="1-说明"></a>
 # 1. 说明
 
 ```bash
@@ -19,48 +19,35 @@ git checkout -b master
 
 ```
 
-<a id="markdown-2-安装" name="2-安装"></a>
 # 2. 安装
 
 ```bash
+# arch安装mariadb
 sudo pacman -S --noconfirm mariadb
+
+# ubuntu安装mariadb
+sudo apt install mariadb-server -y
 
 # 创建数据库
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-```
 
-启动:
-```bash
-sudo systemctl start mariadb.service
-sudo systemctl stop mariadb.service
-sudo systemctl status mariadb.service
-```
-
-设置密码:
-```bash
-# 设置root密码
-# mysqladmin -u root password 'new-password'
-# mysqladmin -u root -h yq-pc password 'new-password'
-
-# 初始化设置　（包括密码）
-mysql_secure_installation
-
-# 修改密码
-use mysql;
-update user set password=password("123456") where user="root";
-flush privileges;
-quit;
-
-# 记住datagrip 密码存储方式设置为 inkeepass
-```
-
-重置数据库:
-```bash
+# 重置数据库
 sudo mv /var/lib/mysql /var/lib/mysql.bak
-```
 
-操作:
-```bash
+# 修改root密码
+sudo systemctl stop mysql
+sudo mysqld_safe --skip-grant-tables &
+mysql
+UPDATE mysql.user SET Password=PASSWORD('mysql123456') WHERE User='root';
+FLUSH PRIVILEGES;
+exit
+sudo mysqladmin -u root -p shutdown
+sudo systemctl start mysql
+
 # 登录
 mysql -u root -p
 ```
+
+# 3. 参考资料
+
+* https://www.ostechnix.com/how-to-reset-mysql-or-mariadb-root-password/ (修改mariadb的密码)
