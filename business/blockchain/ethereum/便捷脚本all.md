@@ -12,6 +12,7 @@
 cd /mnt/disk1/linux/reference/refer
 
 git clone https://github.com/maandree/libkeccak
+git clone https://github.com/maandree/sha3sum
 cd libkeccak
 make
 sudo make install
