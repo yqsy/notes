@@ -4,6 +4,9 @@ from __future__ import absolute_import, division, print_function, \
 from datetime import datetime
 from bitcoinhelper.impl.script import *
 
+import io
+import struct
+
 class BlockHeader:
     def __init__(self, stream, **kwargs):
         self.nVersion = uint4(stream)
@@ -18,13 +21,11 @@ class BlockHeader:
             if k == "pkcFlag":
                 self.pkcFlag = kwargs["pkcFlag"]
 
-
         if self.pkcFlag:
             self.cuckooNoncesCount = compactSize(stream)
             self.cuckooNonces = []
             for i in range(0, self.cuckooNoncesCount):
                 self.cuckooNonces.append(uint4(stream))
-
 
     def __str__(self):
         rtn = "nVersion: 0x{0:x}\n".format(self.nVersion)
@@ -128,7 +129,10 @@ class Tx:
         self.vinCount = compactSize(stream)
         self.vin = []
         for i in range(0, self.vinCount):
-            self.vin.append(In(stream))
+            isfirst = False
+            if i == 0:
+                isfirst = True
+            self.vin.append(In(stream, isfirst))
 
     def readVout(self, stream, rskFlag):
         self.voutCount = compactSize(stream)
@@ -138,7 +142,11 @@ class Tx:
             # coinbase 0 out
             self.vout.append(Out(stream, False))
 
-            # coinbase 1 out -> RSKBLOCK:
+            # coinbase 1 out
+            self.vout.append(Out(stream, False))
+
+            # btcpool 构建的区块是这样的!
+            # coinbase 2 out -> RSKBLOCK:
             self.vout.append(Out(stream, True))
         else:
             for i in range(0, self.voutCount):
@@ -157,7 +165,7 @@ class Tx:
 
 
 class In:
-    def __init__(self, stream):
+    def __init__(self, stream, isfirst=False):
         self.prevouthash = hash32(stream)
         self.preoutn = uint4(stream)
         self.scriptSiglen = compactSize(stream)
@@ -166,10 +174,25 @@ class In:
         self.scriptWitnessCount = 0
         self.scriptWitness = []
 
+        self.isfirst = isfirst
+
     def __str__(self):
         str = "prevout 0x{0} {1}\n".format(hashStr(self.prevouthash), self.preoutn)
         str = str + "scriptSiglen: {0}\n".format(self.scriptSiglen)
-        str = str + "scriptSig: {0}\n".format(scriptToAsmStr(self.scriptSig))
+
+        if self.isfirst:
+            stream = io.BytesIO(self.scriptSig)
+            heightLen = compactSize(stream)
+            height = struct.unpack("<h", stream.read(heightLen))[0]
+
+            blktimeLen = compactSize(stream)
+            blktime = struct.unpack("<I", stream.read(blktimeLen))[0]
+
+            remianLen = len(self.scriptSig) - heightLen - blktimeLen
+            remain = stream.read(remianLen)
+            str = str + "scriptSig: {} {} {}\n".format(height, blktime, remain)
+        else:
+            str = str + "scriptSig: {0}\n".format(scriptToAsmStr(self.scriptSig))
         str = str + "nSequence: 0x{0:x}\n".format(self.nSequence)
         str = str + "scriptWitnesslen: {0}".format(self.scriptWitnessCount)
 
@@ -209,7 +232,7 @@ class Out:
             rskBlock = self.scriptPubkey[:9]
             hashHex = self.scriptPubkey[9:]
 
-            str = str + "scriptPubkey: {0} {1}".format(rskBlock.decode("utf-8") , hashHex.hex())
+            str = str + "scriptPubkey: {0} {1}".format(rskBlock.decode("utf-8"), hashHex.hex())
         else:
             str = str + "scriptPubkey: {0}".format(scriptToAsmStr(self.scriptPubkey))
         return str
