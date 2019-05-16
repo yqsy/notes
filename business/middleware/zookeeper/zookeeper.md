@@ -35,7 +35,7 @@ sudo chown `whoami`:`id -g -n` /var/lib/zookeeper
 /env/zookeeper/bin/zkServer.sh stop
 
 # 删除持久数据
-rm /var/lib/zookeeper && sudo mkdir -p /var/lib/zookeeper && sudo chown `whoami`:`id -g -n` /var/lib/zookeeper
+sudo rm -rf /var/lib/zookeeper && sudo mkdir -p /var/lib/zookeeper && sudo chown `whoami`:`id -g -n` /var/lib/zookeeper
 
 ```
 

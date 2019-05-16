@@ -298,7 +298,6 @@ getdiffculty_str(0x1d00ffff)
 ```
 
 
-
 # 4. hash rate
 
 难度1的偏移:

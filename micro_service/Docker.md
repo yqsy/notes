@@ -44,12 +44,12 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo docker run hello-world
 
 sudo groupadd docker
 sudo gpasswd -a $USER docker
-# newgrp docker 
+newgrp docker 
 ```
 
 ```bash
@@ -59,7 +59,7 @@ mkdir -p /etc/docker
 echo \
 "{
   \"registry-mirrors\": [\"https://registry.docker-cn.com\"]
-}" > /etc/docker/daemon.json
+}" | sudo tee /etc/docker/daemon.json
 ```
 
 ```bash
@@ -72,7 +72,6 @@ systemctl status docker
 yum install docker-compose -y
 # https://github.com/certbot/certbot/issues/5104
 pip install requests urllib3 pyOpenSSL --force --upgrade
-
 ```
 
 # 3. 指令
@@ -104,5 +103,9 @@ RUN set -ex;
 -x 打印执行语句
 
 
+docker run -it
+
+-i  Keep STDIN open even if not attached
+-t, --tty                            Allocate a pseudo-TTY
 
 ```

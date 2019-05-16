@@ -25,6 +25,7 @@
     - [12.9. 上传数据(智能)](#129-上传数据智能)
     - [12.10. 下载数据(智能)](#1210-下载数据智能)
 - [13. gitremotehelp](#13-gitremotehelp)
+- [14. 其他](#14-其他)
 
 <!-- /TOC -->
 
@@ -626,3 +627,8 @@ nc localhost 30001
 git clone ipld://439202fa1f18e16d448a4b7aad08baf89515034d hello
 nc localhost 30001
 ```
+
+
+# 14. 其他
+
+* https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files(删除提交但是ignore的)
