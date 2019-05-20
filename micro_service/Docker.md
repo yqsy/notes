@@ -4,7 +4,6 @@
 
 - [1. 资料](#1-资料)
 - [2. 安装](#2-安装)
-- [3. 指令](#3-指令)
 
 <!-- /TOC -->
 
@@ -36,23 +35,27 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
+    software-properties-common -y
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -; \
+sudo apt-key fingerprint 0EBFCD88; \
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
-   stable"
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-sudo docker run hello-world
+   stable"; \
+sudo apt-get update; \
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y;
+#sudo docker run hello-world;
 
-sudo groupadd docker
-sudo gpasswd -a $USER docker
+sudo groupadd docker; \
+sudo gpasswd -a $USER docker; \
 newgrp docker 
-```
 
-```bash
+
+# docker compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 # 改变源
 
 mkdir -p /etc/docker
@@ -60,52 +63,5 @@ echo \
 "{
   \"registry-mirrors\": [\"https://registry.docker-cn.com\"]
 }" | sudo tee /etc/docker/daemon.json
-```
-
-```bash
-yum install docker -y
-systemctl start docker
-systemctl enable docker
-
-systemctl status docker
-
-yum install docker-compose -y
-# https://github.com/certbot/certbot/issues/5104
-pip install requests urllib3 pyOpenSSL --force --upgrade
-```
-
-# 3. 指令
-
-```bash
-
-# 运行就删除
-docker run -it --rm debian bash
-docker run -it --rm nginx bash
-
--i, --interactive                 Keep STDIN open even if not attached
--t, --tty                         Allocate a pseudo-TTY
---rm                          Automatically remove the container when it exits
-
-# 附加到容器
-docker exec -it xxx bash;
-
-# 暂停和删除所有容器
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-
-# 删除none标签的images
-docker rmi $(docker images -f "dangling=true" -q)
-
-# 含义
-RUN set -ex; 
-
--e 遇到错误时退出
--x 打印执行语句
-
-
-docker run -it
-
--i  Keep STDIN open even if not attached
--t, --tty                            Allocate a pseudo-TTY
 
 ```

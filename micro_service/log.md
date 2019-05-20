@@ -12,7 +12,9 @@
 
 * https://www.cnblogs.com/sailrancho/p/4784763.html (lograte)
 * https://superuser.com/questions/291368/log-rotation-of-stdout (standout 配合lograte)
-* https://httpd.apache.org/docs/2.4/programs/rotatelogs.html (工具)
+* https://httpd.apache.org/docs/trunk/programs/rotatelogs.html
+* https://elk-docker.readthedocs.io/ (elk)
+* https://stackoverflow.com/questions/55357262/logstash-and-filebeat-in-the-elk-stack (filebeat读取多个文件)
 
 # 2. 实践     
 ```bash
@@ -20,6 +22,6 @@ yum install httpd -y
 
 sudo mkdir /var/log/frp
 sudo chown $(id -u):$(id -g) /var/log/frp
-nohup ./frps -c ./frps.ini | rotatelogs /var/log/frp/frp.log-%Y%m%d 86400 &
+nohup ./frps -c ./frps.ini | rotatelogs -v -e /var/log/frp/frp.log-%Y%m%d 86400 &
 
 ```
