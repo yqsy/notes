@@ -16,7 +16,7 @@
 * https://stackoverflow.com/questions/30494050/how-do-i-pass-environment-variables-to-docker-containers (传递环境变量给docker)
 * https://docs.docker.com/engine/admin/volumes/volumes/ (manager data in docker)
 * https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image (各大base镜像大小)
-
+* https://www.infoq.cn/article/3-simple-tricks-for-smaller-docker-images (缩小镜像)
 
 # 2. 安装
 
