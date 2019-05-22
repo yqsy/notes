@@ -5,6 +5,7 @@
 - [1. 资料](#1-资料)
 - [2. 安装](#2-安装)
 - [3. 缩小体积](#3-缩小体积)
+- [4. 网络](#4-网络)
 
 <!-- /TOC -->
 
@@ -18,6 +19,7 @@
 * https://docs.docker.com/engine/admin/volumes/volumes/ (manager data in docker)
 * https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image (各大base镜像大小)
 * https://www.infoq.cn/article/3-simple-tricks-for-smaller-docker-images (缩小镜像)
+* https://docs.docker.com/get-started/part2/ (很好的文章)
 
 # 2. 安装
 
@@ -73,3 +75,10 @@ echo \
 * 多层压缩
 * 编译层 和 运行层
 * Alpine
+
+# 4. 网络
+
+* host模式, --net=host, 使用宿主机的IP和端口
+* container模式, --net=container:NAMEorID, 和一个指定的容器共享IP,端口范围
+* none模式, --net=none , 不为容器添加任何网络配置
+* bridge模式, --net=bridge , 创建一个docker0的虚拟网卡
