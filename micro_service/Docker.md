@@ -4,6 +4,7 @@
 
 - [1. 资料](#1-资料)
 - [2. 安装](#2-安装)
+- [3. 缩小体积](#3-缩小体积)
 
 <!-- /TOC -->
 
@@ -30,17 +31,18 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 # ubuntu
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
+# https://download.docker.com/linux/ubuntu/gpg
+# https://download.docker.com/linux/ubuntu
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common -y
-    
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -; \
+    software-properties-common -y; \
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -; \
 sudo apt-key fingerprint 0EBFCD88; \
 sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu/ \
    $(lsb_release -cs) \
    stable"; \
 sudo apt-get update; \
@@ -65,3 +67,9 @@ echo \
 }" | sudo tee /etc/docker/daemon.json
 
 ```
+
+# 3. 缩小体积
+
+* 多层压缩
+* 编译层 和 运行层
+* Alpine

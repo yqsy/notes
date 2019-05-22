@@ -3,6 +3,8 @@
 <!-- TOC -->
 
 - [1. 说明](#1-说明)
+- [2. proxmox](#2-proxmox)
+- [3. ubuntu static ip](#3-ubuntu-static-ip)
 
 <!-- /TOC -->
 
@@ -19,10 +21,9 @@
 
 ---
 
-* qemu: 虚拟化服务
-* libvirt: 管理虚拟机实例接口
-* webvirtmgr: web管理
-* vnc: 可视化接入
+* KVM: 内核级别的虚拟化功能
+* QEMU: 用户操作界面, VNC/SPICE远程终端
+* Libvirtd: 虚拟化服务,运行在Hypervisor上提供TCP接口用于操作虚拟机的创建和起停
 
 
 ```bash
@@ -143,3 +144,69 @@ sudo ufw allow 16509
 
 virt-manager
 ```
+
+
+# 2. proxmox
+
+
+网络配置
+
+```bash
+
+# /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+iface eno1 inet manual
+
+iface eno2 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+	address 192.168.0.221
+	netmask 255.255.255.0
+	gateway 192.168.0.1
+	bridge_ports eno1
+	bridge_stp off
+	bridge_fd 0
+
+# /etc/resolv.conf
+search com
+nameserver 223.5.5.5
+```
+
+指令:
+```bash
+# 查看各个网卡的ip
+ip a
+
+#　开关网卡
+ifup 
+ifdown
+
+# 下载镜像
+cd /var/lib/vz/template/iso
+
+# http://mirrors.aliyun.com/ubuntu-releases/
+wget http://mirrors.aliyun.com/ubuntu-releases/18.04.2/ubuntu-18.04.2-live-server-amd64.iso
+```
+
+# 3. ubuntu static ip
+
+
+```bash
+# /etc/netplan/50-cloud-init.yaml
+network:
+	ethernets:
+		ens18:
+			dhcp4: false
+			addresses: [192.168.0.213/24]
+			gateway4: 192.168.0.1
+			nameservers:
+				addresses: [223.5.5.5]
+	version: 2
+
+
+sudo netplan apply
+```
+
