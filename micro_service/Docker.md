@@ -61,13 +61,16 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 # 改变源
-
 mkdir -p /etc/docker
 echo \
 "{
   \"registry-mirrors\": [\"https://registry.docker-cn.com\"]
 }" | sudo tee /etc/docker/daemon.json
 
+# 改变存储的地点
+# 修改 /etc/docker/daemon.json
+"graph": "/mnt/disk1/linux/docker",
+"storage-driver": "overlay"
 ```
 
 # 3. 缩小体积
