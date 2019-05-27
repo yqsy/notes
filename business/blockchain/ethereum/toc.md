@@ -13,7 +13,7 @@
 * ~~[叔区块.md](./叔区块.md)~~
 * ~~[账户模型.md](./账户模型.md)~~
 * [Gas.md](./Gas.md)
-* ~~[难度调整之Difficulty.md](./难度调整之Difficulty.md)~~
+* [难度调整之Difficulty.md](./难度调整之Difficulty.md)
 
 交易:
 * [测试账号.md](./测试账号.md)

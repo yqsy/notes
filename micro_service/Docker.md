@@ -67,10 +67,11 @@ echo \
   \"registry-mirrors\": [\"https://registry.docker-cn.com\"]
 }" | sudo tee /etc/docker/daemon.json
 
-# 改变存储的地点
+# 改变存储的地点 (不能用ntfs!!!)
 # 修改 /etc/docker/daemon.json
 "graph": "/mnt/disk1/linux/docker",
-"storage-driver": "overlay"
+"storage-driver": "devicemapper",
+"experimental":true
 ```
 
 # 3. 缩小体积
