@@ -6,6 +6,7 @@
 - [2. 安装](#2-安装)
 - [3. 缩小体积](#3-缩小体积)
 - [4. 网络](#4-网络)
+- [5. 开发心得](#5-开发心得)
 
 <!-- /TOC -->
 
@@ -86,3 +87,87 @@ echo \
 * container模式, --net=container:NAMEorID, 和一个指定的容器共享IP,端口范围
 * none模式, --net=none , 不为容器添加任何网络配置
 * bridge模式, --net=bridge , 创建一个docker0的虚拟网卡
+
+```bash
+defaultip=$(route | awk '/default/ {print $2}')
+echo $defaultip
+```
+
+systemd-resolv 
+```bash
+# (我们不要使用这个)
+# ubuntu默认的监听127.0.0.53:53的systemd-resolv服务的配置
+/etc/systemd/resolved.conf
+
+# 本地使用的dns服务器的配置 (右边才是真正的运行时dns服务器)
+/etc/resolv.conf => /run/systemd/resolve/resolv.conf 
+
+# 查看系统解析
+systemd-resolve --status
+```
+
+bind9
+```bash
+# /etc/bind/named.conf.options
+
+#     forward only;
+#     forwarders {223.5.5.5;};
+
+# 系统bug
+# sudo rm -f /etc/resolv.conf
+# sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+# reboot
+```
+
+dnsmasq
+```bash
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+
+sudo apt-get install dnsmasq -y
+sudo systemctl enable dnsmasq
+
+sudo bash -c "cat >> /etc/dnsmasq.conf" << EOF
+resolv-file=/etc/resolv.dnsmasq.conf
+EOF
+
+sudo bash -c "cat > /etc/resolv.dnsmasq.conf" << EOF
+nameserver 223.5.5.5
+EOF
+
+sudo bash -c "cat > /etc/resolv.conf" << EOF
+nameserver 127.0.0.1
+EOF
+```
+
+* https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html (修改容器内的host)
+* https://www.hiroom2.com/2018/05/06/ubuntu-1804-bind-en/ (bind9配置)
+* https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager (修改hosts)
+# 5. 开发心得
+
+总结下来,一般程序分为输入,输出和交互
+
+* 输入 =>  1. 命令行flags 2. 环境变量 3. 配置文件
+* 输出 => 日志
+* 交互 => 1. docker容器访问其他docker容器ipv4 2. docker容器访问宿主机 3. 宿主机访问docker容器
+
+可执行程序一般在 =>  1. /usr/local/bin  2. /usr/bin 中.
+
+我们调试运行程序不可能是docker解决任何问题的,也需要宿主机跑起来程序,然后用gdb,或者ide进行调试.(注释部分docker-compose)  那么最好就是宿主机的配置和docker环境的配置保持一致.
+
+输入:
+
+1. 命令行flags  => 没啥问题
+2. 环境变量 => 没啥问题, 宿主机放在 ~/.local/etc/local.sh  中, docker 用docker-compose environment
+3. 配置文件 =>  1) 尽量使用特定目录的, /env/xxx/cfg/xxx.cfg.  那容器外内都一致了 2. 如果特定在/etc/xxx/xxx.cfg 可以创建软链接
+
+输出:
+
+日志 => stdout rotatelogs 输出到/env/xxx/log/  容器内外都一致
+
+交互
+
+1. docker容器访问其他docker容器ipv4
+2. docker容器访问宿主机
+3. 宿主机访问docker容器
+<!-- 4. 容器跨网络访问其他网络的容器 -->
