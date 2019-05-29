@@ -121,12 +121,14 @@ bind9
 
 dnsmasq
 ```bash
+sudo apt-get install dnsmasq -y
+
 sudo systemctl disable systemd-resolved
 sudo systemctl stop systemd-resolved
 
-sudo apt-get install dnsmasq -y
 sudo systemctl enable dnsmasq
 
+# addn-hosts=/etc/dnsmasqhosts
 sudo bash -c "cat >> /etc/dnsmasq.conf" << EOF
 resolv-file=/etc/resolv.dnsmasq.conf
 EOF
@@ -135,14 +137,28 @@ sudo bash -c "cat > /etc/resolv.dnsmasq.conf" << EOF
 nameserver 223.5.5.5
 EOF
 
-sudo bash -c "cat > /etc/resolv.conf" << EOF
-nameserver 127.0.0.1
-EOF
+# 服务器没有networkmanager 就加
+# sudo rm -rf /etc/resolv.conf
+# sudo bash -c "cat > /etc/resolv.conf" << EOF
+# nameserver 127.0.0.1
+# EOF
+
+sudo systemctl restart dnsmasq
+
+# 配置/etc/docker/daemon.json
+"dns": ["172.17.0.1"]
+```
+
+networkmanager
+```bash
+sudo systemctl restart network-manager
+sudo vim /etc/NetworkManager/NetworkManager.conf
 ```
 
 * https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html (修改容器内的host)
 * https://www.hiroom2.com/2018/05/06/ubuntu-1804-bind-en/ (bind9配置)
 * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager (修改hosts)
+* https://askubuntu.com/questions/907246/how-to-disable-systemd-resolved-in-ubuntu (禁止系统的systemd-resolved)
 # 5. 开发心得
 
 总结下来,一般程序分为输入,输出和交互
@@ -167,7 +183,7 @@ EOF
 
 交互
 
-1. docker容器访问其他docker容器ipv4
-2. docker容器访问宿主机
-3. 宿主机访问docker容器
+1. docker容器访问其他docker容器ipv4 -> 
+2. docker容器访问宿主机  ->
+3. 宿主机访问docker容器  -> 
 <!-- 4. 容器跨网络访问其他网络的容器 -->
