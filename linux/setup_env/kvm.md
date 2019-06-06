@@ -189,6 +189,8 @@ cd /var/lib/vz/template/iso
 
 # http://mirrors.aliyun.com/ubuntu-releases/
 wget http://mirrors.aliyun.com/ubuntu-releases/18.04.2/ubuntu-18.04.2-live-server-amd64.iso
+
+wget http://mirrors.aliyun.com/ubuntu-releases/18.04.2/ubuntu-18.04.2-desktop-amd64.iso
 ```
 
 # 3. ubuntu static ip
