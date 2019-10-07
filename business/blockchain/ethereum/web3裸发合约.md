@@ -43,7 +43,11 @@ solc --abi SimpleStorage.sol
 npm install web3@0.20.1 --save
 npm install ethereumjs-tx --save
 
-# 打开命令行
+```
+
+
+```js
+// 打开命令行
 node
 
 var Web3 = require('web3');
@@ -51,16 +55,18 @@ var ethTx = require('ethereumjs-tx');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 // 生成合约二进制,并把合约二进制放到交易内
-CONTRACT_BINARY="0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610113806100606000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b606860dd565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560da57806001819055505b50565b600060015490509056fea165627a7a723058203f8d2e22f896e984802e219178a4b53194ec95eb0f1cc92fb1541453b290c2d80029";
-CONTRACT_ABI=[{"constant":false,"inputs":[{"name":"n","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
+CONTRACT_BINARY="0x60806040523480156100115760006000fd5b505b33600060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b61005a565b610130806100696000396000f3fe608060405234801560105760006000fd5b506004361060365760003560e01c806360fe47b114603c5780636d4ce63c146068576036565b60006000fd5b60666004803603602081101560515760006000fd5b81019080803590602001909291905050506084565b005b606e60ea565b6040518082815260200191505060405180910390f35b600060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e6578060016000508190909055505b5b50565b6000600160005054905060f8565b9056fea265627a7a723158205225946d76d6689f8080d59b1a926a9be0731dcc62f9bda18de6852a4c2df33964736f6c634300050b0032";
+CONTRACT_ABI=[{"constant":false,"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
 var contract = web3.eth.contract(CONTRACT_ABI);
 var contractData = contract.new.getData({data: CONTRACT_BINARY});
-var number = web3.eth.getTransactionCount("0x1b563a38e5f6c6d9fa9206cca6390912de3f1d7d");
-var txParams = { nonce: web3.toHex(number), gasPrice: web3.toHex(183000),gasLimit: web3.toHex(2500000),from: '0x1b563a38e5f6c6d9fa9206cca6390912de3f1d7d',value: '0x00', data: contractData};
+var number = web3.eth.getTransactionCount("0xC8Fcd57eDe5C1633172e130ED95F2Ba3f5fe98D0");
+var txParams = { nonce: web3.toHex(number), gasPrice: web3.toHex(183000),gasLimit: web3.toHex(2500000),from: '0xC8Fcd57eDe5C1633172e130ED95F2Ba3f5fe98D0',value: '0x00', data: contractData};
 
 // 签名交易
-var tx = new ethTx(txParams);
-var privKey = Buffer.from('99cb1d7c7d7ee79464e24a564bcf36fbb8e7e8c104f28612e723e6f2453e5f38', 'hex');
+// var tx = new ethTx(txParams);
+var tx = new ethTx.Transaction(txParams);
+
+var privKey = Buffer.from('224ed4e9e740fdd972f467885ef70ef31abeed7dba0c1edb20b63de2b5e21cf6', 'hex');
 tx.sign(privKey);
 var serializedTx = tx.serialize();
 var rawTx = '0x' + serializedTx.toString('hex');
@@ -71,20 +77,29 @@ var contractAddress=web3.eth.getTransactionReceipt(TXID).contractAddress;
 
 // 使用函数使用
 var contractInstance = contract.at(contractAddress);
-var callSetData = contractInstance.set.getData(10)
-var number = web3.eth.getTransactionCount("0x1b563a38e5f6c6d9fa9206cca6390912de3f1d7d");
-var txParams = { nonce: web3.toHex(number), gasPrice: web3.toHex(183000),gasLimit: web3.toHex(2500000),from: '0x1b563a38e5f6c6d9fa9206cca6390912de3f1d7d', to: contractAddress,value: '0x00', data: callSetData};
+var callSetData = contractInstance.set.getData(100)
+var number = web3.eth.getTransactionCount("0xC8Fcd57eDe5C1633172e130ED95F2Ba3f5fe98D0");
+var txParams = { 
+    nonce: web3.toHex(number),
+    gasPrice: web3.toHex(2500000), 
+    gasLimit: web3.toHex(6800000),
+    from: '0xC8Fcd57eDe5C1633172e130ED95F2Ba3f5fe98D0', 
+    to: contractAddress,
+    value: '0x00', 
+    data: callSetData};
 
 // 签名函数使用
-var tx = new ethTx(txParams);
-var privKey = Buffer.from('99cb1d7c7d7ee79464e24a564bcf36fbb8e7e8c104f28612e723e6f2453e5f38', 'hex');
+var tx = new ethTx.Transaction(txParams);
+var privKey = Buffer.from('224ed4e9e740fdd972f467885ef70ef31abeed7dba0c1edb20b63de2b5e21cf6', 'hex');
 tx.sign(privKey);
 var serializedTx = tx.serialize();
 var rawTx = '0x' + serializedTx.toString('hex');
 
 // 发送函数使用
-var TXID=web3.eth.sendRawTransaction(rawTx);
-web3.eth.getTransactionReceipt(TXID)
+// var TXID=web3.eth.sendRawTransaction(rawTx);
+// web3.eth.getTransactionReceipt(TXID)
+
+
 
 // 查看
 contractInstance.get();
