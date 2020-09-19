@@ -159,6 +159,7 @@ sudo vim /etc/NetworkManager/NetworkManager.conf
 * https://www.hiroom2.com/2018/05/06/ubuntu-1804-bind-en/ (bind9配置)
 * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager (修改hosts)
 * https://askubuntu.com/questions/907246/how-to-disable-systemd-resolved-in-ubuntu (禁止系统的systemd-resolved)
+
 # 5. 开发心得
 
 总结下来,一般程序分为输入,输出和交互
